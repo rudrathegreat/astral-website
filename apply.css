@@ -1,0 +1,57 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("telescope.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+
+.apply-section {
+    display:flex;
+    flex-direction: column;
+    gap:3vh;
+    width:100%;
+    padding:0 10vw;
+}
+
+.apply-section .section {
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+}
+
+form input {
+    outline:none;
+    border:2px solid black;
+    font-family: 'Space Mono', sans-serif;
+    font-weight:400;
+    text-transform:initial;
+    background:none;
+    padding:1.5vh 1vw;
+    font-size:1.25em;
+}
+
+.scroll-container > h2 {
+    margin-top:10vh;
+    text-align:center
+}

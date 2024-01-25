@@ -1,0 +1,161 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("team.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero h1 {
+    font-size:11vw;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+    margin-bottom:1.5vh;
+}
+
+.hero a img {
+    height:9vw;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding:10vh 1vw;
+    grid-column-gap:1vw;
+    grid-row-gap:1vh;
+}
+
+.team .person:nth-child(1) {
+    background:url('mbailes.jpg');
+    background-repeat: no-repeat;
+    height:90vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(2) {
+    background:url('cflynn.png');
+    background-repeat: no-repeat;
+    height:90vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person div {
+    overflow:hidden;
+    display:block;
+}
+
+.team .person h1, .team .person p {
+    transform:translateY(100%);
+    transition:transform 0.3s ease;
+}
+
+.team .person:hover > div h1 {
+    transform:translateY(0);
+    transition:transform 0.3s ease;
+}
+
+.team .person:hover > div p {
+    transform:translateY(0);
+    transition:transform 0.3s ease;
+    transition-delay:0.05s;
+}
+
+.team .person:hover {
+    background-size:105%;
+    transition:background-size 1s ease;
+}
+
+.cflynn, .mbailes {
+    position:fixed;
+    top:55%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(0.95);
+    z-index:3;
+    padding:15vh 10vw;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+    width:80vw;
+    border-radius:1vw;
+    display:flex;
+    flex-direction: column;
+    gap:5vh;
+    opacity:0;
+    transition:transform 0.5s ease, opacity 0.3s ease-in-out;
+    pointer-events: none;
+    transition-delay: 0.1s;
+}
+
+.card-activated {
+    opacity:1;
+    transform:translate(-50%, -50%) scale(1);
+    pointer-events: all;
+    transition:transform 0.5s ease, opacity 0.3s ease-in-out;
+}
+
+.cflynn .summary p, .mbailes .summary p {
+    font-size:2em;
+}
+
+.cflynn p b, .mbailes p b {
+    color:#6A6BF4;
+}
+
+.cflynn p, .mbailes p {
+    transform:translateY(5vh);
+    transition:transform 0.3s ease, opacity 0.3s ease-in-out;
+    opacity:0;
+}
+
+.card-activated p {
+    transform:translateY(0vh);
+    transition:transform 0.3s ease, opacity 0.3s ease-in-out;
+    opacity:1;
+    transition-delay: 0.1s;
+}
+
+.cflynn > p, .mbailes > p {
+    font-size:1.25em;
+}
+
+.cflynn .cross, .mbailes .cross {
+    position:absolute;
+    right:3vw;
+    top:5vh;
+}
+
+.scroll-container > h2 {
+    margin-top:10vh;
+    text-align:center
+}

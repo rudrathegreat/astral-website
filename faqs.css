@@ -1,0 +1,37 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("parkes.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.panel a {
+    text-decoration: none;
+    font-size:1.5em;
+    color:black;
+    padding:1vh 1.5vw;
+    border:2px solid black;
+    width: max-content;
+    border-radius:1000px;
+    position:relative;
+}

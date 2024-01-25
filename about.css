@@ -1,0 +1,154 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("Supercomputer.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.apply {
+    padding:15vh 5vw;
+}
+
+.apply .text {
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+}
+
+.apply .text p {
+    text-align: left !important;
+}
+
+.apply .image .effect-container {
+    height:100vh;
+}
+
+.apply .image {
+    transform:translateY(15vh);
+}
+
+.apply .text p:last-child {
+    padding-bottom:5vh;
+    border-bottom: 2px solid black;
+}
+
+.how {
+    padding:10vh 5vw;
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+}
+
+.how .main-text {
+    font-size:2em;
+    width:80%;
+}
+
+.projects .project:nth-child(1) {
+    background:url('ozstar.jpg');
+    background-position: 100% center;
+    background-size:200%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.projects .project:nth-child(2) {
+    background:url('parkes.jpg');
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.projects .project:nth-child(3) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url("research.jpg");
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.projects .project:nth-child(4) {
+    background-image:url("code.png");
+    background-position: 100% center;
+    background-size:175%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.projects .project:nth-child(5) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url("leadership.jpg");
+    background-position: 100% center;
+    background-size:175%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.projects .project:nth-child(6) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url("maths.jpg");
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.project h1 {
+    font-size:4vw;
+}
+
+.scroll-container > h2 {
+    margin-bottom:3vh;
+    text-align:left;
+    margin-left:5vw;
+}
+
+.services {
+    margin-top:30vh;
+}
+
+.how .more-info {
+    margin-left:15vw;
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+    margin-top:3vh;
+}
+
+.astronomy {
+    padding:10vh 10vw;
+}
+
+.astronomy p {
+    font-size:2em;
+    text-align: center;
+}

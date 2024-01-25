@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASTRAL | Home</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.ico">
+</head>
+<body>
+    <div class="cursor">
+        <p></p>
+        <div class="arrows">
+            <img src="arrow_purple.svg" alt="">
+            <img style="transform:rotate(180deg);" src="arrow_purple.svg" alt="">
+        </div>
+    </div>
+    <div class="blob"></div>
+    <div class="floating-imgs">
+        <img class="floating-img" id="astrophysics" src="bhns.jpg" alt="">
+        <img class="floating-img" id="supercomputing" src="ozstar.jpg" alt="">
+        <img class="floating-img" id="technology" src="parkes.jpg" alt="">
+        <img class="floating-img" id="research" src="maths.jpg" alt="">
+        <img class="floating-img" id="analytics" src="research.jpg" alt="">
+        <img class="floating-img" id="leadership" src="bhns.jpg" alt="">
+        <img class="floating-img rudra" src="rudra.jpg" alt="">
+        <img class="floating-img evie" src="evie.jpg" alt="">
+        <img class="floating-img hendrik" src="hendrik.png" alt="">
+        <img class="floating-img robert" src="robert.jpg" alt="">
+    </div>
+    <div class="navbar">
+        <img src="logo.svg" alt="" class="logo">
+        <div class="menu-icon">
+            <div class="text">
+                <p>menu</p>
+                <p>close</p>
+            </div>
+            <a onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <a onclick="goTo('.hero');">HOME</a>
+                <a onclick="goTo('.why');">ABOUT</a>
+                <a onclick="goTo('.projects');">PROJECTS</a>
+                <a href="team.html">TEAM</a>
+                <a href="cohort.html">COHORT</a>
+                <a href="apply.html">APPLY</a>
+                <a href="contacts.html">CONTACTS</a>
+                <a href="faqs.html">FAQS</a>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="hero">
+            <p class="introduction">Hello There! We are</p>
+            <p class="vision">WE ARE CULTIVATING THE NEXT GENERATION OF LEADERS IN A FUTURE INCREASINGLY INVOLVING SCIENCE, TECHNOLOGY, ENGINEERING AND MATHEMATICS.</p>
+            <div class="title-container">
+                <h1 class="glitch-header" data-value="ASTRAL_">ASTRAL_</h1>
+                <a onclick="lenis.scrollTo('.why');"><img class="hero-button" src="circle_arrow.svg" alt=""></a>
+            </div>
+            <p>65 83 84 82 65 76</p>
+        </div>
+        <div class="video">
+            <video src="space.mp4" muted loop></video>
+        </div>
+        <div class="why">
+            <div class="text">
+                <h2>WHY</h2>
+                <p>SKILLS SUCH AS DATA ANALYSIS, PROGRAMMING, RESEARCH AND LEADERSHIP ARE BECOMING MORE IMPORTANT_</p>
+                <div class="more-info">
+                    <p>THE ASTRAL PROGRAM AIMS TO EQUIP STUDENTS WITH THESE SKILLS SO THAT THEY CAN SUCCEED IN FUTURE CAREERS.</p>
+                    <a class="underline-button" href="about.html">
+                        <div>
+                            <div class="text-indicator">
+                                <p>LEARN MORE</p>
+                                <p>LEARN MORE</p>
+                            </div>
+                            <div class="img-indicator">
+                                <img src="arrow-link.svg" alt="">
+                                <img src="arrow-link.svg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="caption">
+                    <p>IMAGE: EARTH AS SEEN FROM THE INTERNATIONAL SPACE STATION</p>
+                    <img src="star.svg" alt="">
+                </div>
+            </div>
+            <div class="image">
+                <p>87 72 89</p>
+                <div class="effect-container">
+                    <img src="placeholder_img.jpg" alt="">
+                    <div class="grid-effect"></div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="who-we-are">
+            <h2>who we are</h2>
+            <p>87 72 79 32 65 82 69 32 87 69 63</p>
+            <div class="expanded-name">
+                <h1 class="astrophysics glitch-header", data-value="ASTROPHYSICS">ASTROPHYSICS</h1>
+                <h1 class="supercomputing glitch-header", data-value="SUPERCOMPUTING">SUPERCOMPUTING</h1>
+                <h1 class="technology glitch-header" data-value="technology">TECHNOLOGY</h1>
+                <h1 class="research glitch-header" data-value="RESEARCH">RESEARCH</h1>
+                <h1 class="analytics glitch-header" data-value="ANALYTICS">ANALYTICS</h1>
+                <h1 class="leadership glitch-header" data-value="LEADERSHIP_">LEADERSHIP_</h1>
+            </div>
+            <p>(aka astral)</p>
+        </div>
+        <div class="about">
+            <p style="top:0; left:10%; width:50%;">65 83 84 82 79 80 72 89 83 73 67 83 10 83 85 80 69 82 67 79 77 80 85 84 73 78 71 10 84 69 67 72 78 79 76 79 71 89 10 82 69 83 69 65 82 67 72 32 65 78 65 76 89 84 73 67 83 10 76 69 65 68 69 82 83 72 73 80</p>
+            <p style="top:50%; left:55%; width:35%; font-size:1.5em;">THE ASTRAL PROGRAM AIMS TO INSPIRE STUDENTS TO PURSUE AREAS SUCH AS ASTROPHYSICS, RESEARCH, DATA SCIENCE AND LEADERSHIP THROUGH WORKSHOPS AND RESEARCH PROJECTS IN ASTRONOMY</p>
+        </div>
+        <div class="services">
+            <h2>what we offer</h2>
+            <a class="accordion"><div><p>The MilliPHeDe (milli-PHD) Summer Program</p><img src="accordian-arrow.svg" alt=""></div></a>
+            <div class="panel">
+                <p>THIS 3-WEEK SUMMER INTERNSHIP ALLOWS STUDENTS THE PAID OPPORTUNITY TO PARTICIPATE IN ACTIVE RESEARCH IN THE ARC CENTRE OF EXCELLENCE FOR GRAVITATIONAL WAVE DISCOVERY (OZGRAV), FOCUSING ON ACCOMPLISHING A FOCUSED RESEARCH TASK DURING THOSE THREE WEEKS.</p>
+                <p>STUDENTS ACQUIRE SKILLS IN A MULTITUDE OF AREAS, SUCH AS PROGRAMMING, SUPERCOMPUTERS, DOCUMENTATION, DATA ANALYSIS, AUTOMATION AND MUCH MORE.</p>
+                <p>STUDENTS ALSO GET TO LEARN TOPICS IN ASTRONOMY RELATED TO THE RESEARCH TASK. SOME EXAMPLES ARE PULSAR ASTRONOMY, GRAVITATIONAL WAVES, BLACK HOLES, FAST RADIO BURSTS, ETC.</p>
+                <p>STUDENTS ALSO LEARN HOW TO WORK IN TEAM ENVIRONMENTS, MANAGE STRESS, AND THE ENVIRONMENT OF WORKPLACES THROUGH THIS THREE-WEEK INTERNSHIP, SKILLS THAT CAN BE APPLIED IN ANY CAREER OF CHOICE.</p>
+            </div>
+            <a class="accordion"><div><p>WEEKLY SESSIONS DURING THE SCHOOL TERM</p><img src="accordian-arrow.svg" alt=""></div></a>
+            <div class="panel">
+              <p>Description yet to be added</p>
+            </div>
+
+            <a class="accordion"><div><p>CONTENT CREATION WITH OZGRAV'S OZVU TOOL</p><img src="accordian-arrow.svg" alt=""></div></a>
+            <div class="panel">
+              <p>Lorem ipsum...</p>
+            </div>
+        </div>
+        <div class="projects">
+            <h2>PROJECTS</h2>
+            <p>A LIST OF MANY PROJECTS ASTRAL STUDENTS HAVE DONE IN THE PAST WITH WORLD-RENOWNED RESEARCHERS_</p>
+            <p class="ascii">80 82 79 74 69 67 84 83</p>
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                <div class="project">
+                    <h1>DISCOVERING NANOHERTZ FREQUENCY GRAVITATIONAL WAVES USING PULSAR TIMING ARRAYS</h1>
+                    <div class="more-info">
+                        <p>YEAR: 2024</p>
+                        <a href="" class="round-button">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h1>DISCOVERING NANOHERTZ FREQUENCY GRAVITATIONAL WAVES USING PULSAR TIMING ARRAYS</h1>
+                    <div class="more-info">
+                        <p>YEAR: 2024</p>
+                        <a href="" class="round-button">LEARN MORE</a>
+                    </div>
+                    
+                </div>
+                <div class="project">
+                    <h1>DISCOVERING NANOHERTZ FREQUENCY GRAVITATIONAL WAVES USING PULSAR TIMING ARRAYS</h1>
+                    <div class="more-info">
+                        <p>YEAR: 2024</p>
+                        <a href="" class="round-button">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-projects-container">
+                <p>83 111 117 116 104 101 114 110 32 67 114 111 115 115</p>
+                <a class='round-button' href="projects.html">VIEW MORE PROJECTS</a>
+            </div>
+        </div>
+        <div class="cohort">
+            <div class="cohort-title">
+                <h2>COHORT 2024</h2>
+                <p>MEET THE ASTRAL PROGRAM'S 2024 STUDENT COHORT AND THEIR THOUGHTS ON THE ASTRAL PROGRAM_</p>
+            </div>
+            <div class="reviews">
+                <div class="review" data-value="rudra">
+                    <p>“ASTRAL is out of this world (literally)! The ASTRAL program allowed myself to learn what it really feels like to do research, especially in an amazing team environment. It was fun, engaging, and through this program, I was able to fully realise why I love astronomy. It's fun, challenging and very rewarding!”</p>
+                    <h3>rudra sekhri</h3>
+                </div>
+                <div class="review" data-value="evie">
+                    <p>“I loved my time at ASTRAL! It was a life-changing opportunity to actively engage with my interests in a completely new way, as well as work with some amazing like-minded people I never would have met otherwise.”</p>
+                    <h3>Evie Spilias</h3>
+                </div>
+                <div class="review" data-value="hendrik">
+                    <p>“Working in the Astral program has been an immensely rewarding experience. Being able to collaborate and learn from such a rich and diverse group of people is what drew me to science in the first place, and this program offered it in spades! I have learned skills and techniques, not only in science and data analysis but also interpersonal relations, that I will carry with me and apply for the rest of my career.”</p>
+                    <h3>Hendrik Combrinck</h3>
+                </div>
+                <div class="review" data-value="robert">
+                    <p>The non-orthodoxical learning in the Astral program truly amazes me! I've never imagined the potential to learn from the most recent discoveries in the astronomy field. The helpful environment allowed me to acquire so much new knowledge about research and data science!</p>
+                    <h3>Ruoyao Ni</h3>
+                </div>
+            </div>
+            <p class="ascii">99 111 104 111 114 116 32 50 48 50 52</p>
+        </div>
+        <div class="apply">
+            <div class="image">
+                <div class="effect-container">
+                    <img src="placeholder_img.jpg" alt="">
+                    <div class="grid-effect"></div>
+                </div>
+                <p>65 80 80 76 89</p>
+            </div>
+            <div class="text">
+                <h2>APPLY</h2>
+                <p>WE ARE NO LONGER ACCEPTING ANY PARTICIPANTS FOR THE 2024 PROGRAM. IF YOU ARE INTERESTED IN PARTICIPATING IN THE 2025 COHORT FOR THE ASTRAL PROGRAM</p>
+                <a class="underline-button" href="apply.html">
+                    <div>
+                        <div class="text-indicator">
+                            <p>CLICK HERE</p>
+                            <p>CLICK HERE</p>
+                        </div>
+                        <div class="img-indicator">
+                            <img src="arrow-link.svg" alt="">
+                            <img src="arrow-link.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="caption">
+                    <img src="star.svg" alt="">
+                    <p>IMAGE: EARTH AS SEEN FROM THE INTERNATIONAL SPACE STATION</p>
+                </div>
+            </div>
+        </div>
+        <div class="faqs">
+            <a class="underline-button" href="faqs.html">
+                <div>
+                    <div class="text-indicator">
+                        <p>SEE OUR MOST FREQUENTLY ASKED QUESTIONS (FAQS) HERE</p>
+                        <p>SEE OUR MOST FREQUENTLY ASKED QUESTIONS (FAQS) HERE</p>
+                    </div>
+                    <div class="img-indicator">
+                        <img src="arrow-link.svg" alt="">
+                        <img src="arrow-link.svg" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="contacts">
+            <h2>HAVE A QUESTION?</h2>
+            <h1>WARP TO US!</h1>
+            <a class="round-button" href="mailto:astral@gmail.com">CONTACT US</a>
+        </div>
+        <div class="footer">
+            <div class="supporters">
+                <h2>supported by</h2>
+                <div class="partners">
+                    <img src="swin.jpg" alt="">
+                    <img src="ozgrav.png" alt="">
+                </div>
+            </div>
+                <div class="final-info">
+                    <div class="copyright">
+                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
+                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (astral). all rights reserved. designed and developed by rudra sekhri</p>
+                    </div>
+                    <div class="socials">
+                        <h2>SOCIALS</h2>
+                        <div class="links">
+                            <a href="" class="footer-link">TWITTER</a>
+                            <a href="" class="footer-link">YOUTUBE</a>
+                            <a href="" class="footer-link">LINKEDIN</a>
+                            <a href="" class="footer-link">INSTAGRAM</a>
+                            <a href="mailto:astral@gmail.com" class="footer-link">EMAIL</a>
+                        </div>
+                    </div>
+                    <div class="sitemap">
+                        <h2>SITEMAP</h2>
+                        <div class="links">
+                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">HOME</a>
+                            <a onclick="lenis.scrollTo('.why')" class="footer-link">ABOUT</a>
+                            <a href="team.html" class="footer-link">TEAM</a>
+                            <a onclick="lenis.scrollTo('.projects')" class="footer-link">PROJECTS</a>
+                            <a href="apply.html" class="footer-link">APPLY</a>
+                            <a href="cohort.html" class="footer-link">COHORT</a>
+                            <a href="faqs.html" class="footer-link">FAQS</a>
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="smooth-scroll.js"></script>
+    <script src="accordian.js"></script>
+    <script src="carousel.js"></script>
+    <script src="cursor.js"></script>
+    <script src="keyword-hover-effect.js"></script>
+    <script src="glitch_effect.js"></script>
+    <script src="grid-effect.js"></script>
+    <script src="navbar.js"></script>
+    <script src="apply_section_grid_effect.js"></script>
+    <script src="home.js"></script>
+    <script>document.querySelector('.video video').play();</script>
+</body>
+</html>

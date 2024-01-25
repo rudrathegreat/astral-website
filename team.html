@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASTRAL | Team</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="team.css">
+<link rel="icon" href="logo.ico">
+</head>
+<body>
+    <div class="cursor">
+        <p></p>
+    </div>
+    <div class="blob"></div>
+    <div class="navbar bg-nav">
+        <img src="logo.svg" alt="" class="logo">
+        <div class="menu-icon">
+            <div class="text">
+                <p>menu</p>
+                <p>close</p>
+            </div>
+            <a onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="projects.html">PROJECTS</a>
+                <a onclick="goTo('.hero');">TEAM</a>
+                <a href="cohort.html">COHORT</a>
+                <a href="apply.html">APPLY</a>
+                <a href="contacts.html">CONTACTS</a>
+                <a href="faqs.html">FAQS</a>
+            </div>
+        </div>
+    </div>
+    <div class="cflynn">
+        <a class="cross" onclick="toggleDescription('cflynn');"><img src="cross.svg" alt=""></a>
+        <div class="summary">
+            <p><b>FIELD </b>ASTROPHYSICS</p>
+            <p><b>PHD </b>AUSTRALIAN NATIONAL UNIVERSITY 1989</p>
+            <p><b>EXPERIENCE </b>30 YEARS</p>
+            <p><b>EXPERTISE </b>GALAXIES, STARS, PULSARS AND FAST RADIO BURSTS</p>
+        </div>
+        <p class="long-description">DR. Chris Flynn has over 30 years experience working in optical and radio astronomy, with an emphasis on measuring the matter content of the universe. He obtained his PhD in 1989 from Mount Stromlo Observatory at the Australian National University, has worked in Heidelberg Germany, Copenhagen Denmark, in Princeton and Columbus in the US and at the Tuorla Observatory in Finland. During this period he worked primarily with space-based optical observatories, such as Hipparcos,the Hubble Space Telescope, and Gaia. He has been a senior researcher in the Centre for Astrophysics and Supercomputing at Swinburne University of Technology for the last decade, working on Fast Radio Bursts and pulsars.</p>
+    </div>
+    <div class="mbailes">
+        <a class="cross" onclick="toggleDescription('mbailes');"><img src="cross.svg" alt=""></a>
+        <div class="summary">
+            <p><b>FIELD </b>ASTROPHYSICS</p>
+            <p><b>PHD </b>AUSTRALIAN NATIONAL UNIVERSITY</p>
+            <p><b>EXPERIENCE </b>30+ YEARS</p>
+            <p><b>EXPERTISE </b>PULSARS, GRAVITATIONAL WAVES, FAST RADIO BURSTS</p>
+        </div>
+        <p class="long-description">Professor Matthew Bailes is known for his pioneering work on millisecond pulsars
+            and fast radio bursts and is the founder of the ASTRAL program.
+            His PhD on at ANU was awarded the Crawford Prize in 1990, and he won the CSIRO medal for his work that unveiled
+            many of the brightest millisecond pulsars in the Southern hemisphere. He was awarded the Australian Research
+            Council's Endeavour, QEII, Senior and Laureate Fellowships, and has led two
+            successful Centre of Excellence bids on gravitational wave discovery. He is
+            currently the Director of the OzGrav Centre of Excellence.
+            In 1998 he founded the Swinburne Centre for Astrophysics and Supercomputing, now one
+            of Australia's major astronomical research centres.</p>
+    </div>
+    <div class="scroll-container">
+        <div class="hero with-bg">
+            <div class="title-container">
+                <h1 class="glitch-header" data-value="ASTRAL TEAM">ASTRAL TEAM</h1>
+                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+            </div>
+        </div>
+        <h2 class="start">MEET THE TEAM</h2>
+        <div class="team">
+            <div class="person" onclick="toggleDescription('mbailes');">
+                <div><h1>Professor Matthew Bailes</h1></div>
+                <div><p>FOUNDER</p></div>
+            </div>
+            <div class="person" onclick="toggleDescription('cflynn');">
+                <div><h1>Dr. Chris Flynn</h1></div>
+                <div><p>ASTRAL SUPERVISOR</p></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="supporters">
+                <h2>supported by</h2>
+                <div class="partners">
+                    <img src="swin.jpg" alt="">
+                    <img src="ozgrav.png" alt="">
+                </div>
+            </div>
+                <div class="final-info">
+                    <div class="copyright">
+                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
+                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (astral). all rights reserved. designed and developed by rudra sekhri</p>
+                    </div>
+                    <div class="socials">
+                        <h2>SOCIALS</h2>
+                        <div class="links">
+                            <a href="" class="footer-link">TWITTER</a>
+                            <a href="" class="footer-link">YOUTUBE</a>
+                            <a href="" class="footer-link">LINKEDIN</a>
+                            <a href="" class="footer-link">INSTAGRAM</a>
+                            <a href="" class="footer-link">EMAIL</a>
+                        </div>
+                    </div>
+                    <div class="sitemap">
+                        <h2>SITEMAP</h2>
+                        <div class="links">
+                            <a href="index.html" class="footer-link">HOME</a>
+                            <a href="about.html" class="footer-link">ABOUT</a>
+                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">TEAM</a>
+                            <a href="projects.html" class="footer-link">PROJECTS</a>
+                            <a href="apply.html" class="footer-link">APPLY</a>
+                            <a href="cohort.html" class="footer-link">COHORT</a>
+                            <a href="faqs.html" class="footer-link">FAQS</a>
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="smooth-scroll.js"></script>
+    <script src="cursor.js"></script>
+    <script src="glitch_effect.js"></script>
+    <script src="navbar.js"></script>
+    <script src="parallax_bg.js"></script>
+    <script src="white-cursor-bg.js"></script>
+    <script src="team.js"></script>
+    <script>
+        function toggleDescription(person) {
+            document.querySelector('.' + person).classList.toggle('card-activated');
+        }
+    </script>
+</body>
+</html>

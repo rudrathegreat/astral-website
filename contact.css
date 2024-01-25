@@ -1,0 +1,41 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("ns.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.contact-div {
+    padding:10vh 10vw;
+    display:flex;
+    gap:5vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-div div {
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+    align-items: center;
+}
