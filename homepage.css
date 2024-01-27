@@ -20,6 +20,10 @@ scroll-behavior: auto;
 overscroll-behavior: contain;
 }
 
+.scroll-container {
+    width:100vw;
+}
+
 .lenis.lenis-stopped {
 overflow: hidden;
 }
@@ -894,6 +898,7 @@ h3 {
     display:flex;
     flex-direction:column;
     position:relative;
+    overflow-x:hidden;
 }
 
 .project {
@@ -1047,7 +1052,7 @@ h3 {
     display:none;
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1710px) {
     .cursor {
         display:none;
     }
@@ -1168,7 +1173,7 @@ h3 {
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     .hero .vision {
         font-size:3vw;
         width:100vw;
