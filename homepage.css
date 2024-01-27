@@ -236,7 +236,7 @@ body {
 .hero a {
     display:inline-block;
     margin-bottom:3vh;
-    height:100%;
+    width:100%;
     aspect-ratio:1/1;
 }
 
@@ -1030,4 +1030,323 @@ h3 {
 .project p {
     font-size:1.5em;
     color:white;
+}
+
+.hero .second {
+    display:none;
+}
+
+.projects .instructions {
+    font-size:1.25em;
+    margin-left:0;
+    width:100%;
+    display:none;
+}
+
+.faqs .mobile {
+    display:none;
+}
+
+@media screen and (max-width:1280px) {
+    .cursor {
+        display:none;
+    }
+
+    .blob {
+        display:none;
+    }
+
+    .floating-img {
+        display:none;
+    }
+
+    .grid-effect {
+        display:none !important;
+    }
+    
+    .projects .instructions {
+        display:block;
+        margin-bottom:0;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .why a {
+        margin-top:1.5vh;
+    }
+
+    .why .more-info {
+        padding-top:3vh !important;
+    }
+
+    .why .more-info > p {
+        font-size:1.25em;
+    }
+
+    .why .caption p {
+        font-size:1.25em !important;
+    }
+
+    .about p {
+        font-size:1em;
+        position:relative !important;
+        top:0 !important;
+        left:5vw !important;
+        width:90vw !important;
+        margin-left:0;
+        margin-top:10vh;
+    }
+
+    .footer .final-info {
+        flex-direction: column;
+    }
+
+    .final-info > div {
+        width:100% !important;
+    }
+
+    .final-info p {
+        width:100% !important;
+    }
+
+    .final-info > div:last-child {
+        display:none;
+    }
+
+    .final-info .links {
+        flex-direction: row !important;
+        display:flex;
+        gap:3vw;
+    }
+
+    .footer .final-info .socials, .footer .final-info .sitemap {
+        flex-direction: column;
+        gap:1vh !important;
+        align-items: normal;
+        margin-top:3vh;
+    }
+
+    .final-info h2 {
+        font-size:1.5em;
+    }
+
+    .supporters .partners {
+        margin-bottom:5vh !important;
+    }
+
+    .projects h1 {
+        font-size:4vw;
+    }
+
+    .projects a {
+        font-size:1.25em;
+        padding:1vh 2vw;
+    }
+
+    .projects .view-more-projects-container p {
+        display: none;
+    }
+
+    .apply a {
+        margin-top:3vh;
+    }
+
+    .apply .caption {
+        width:100% !important;
+    }
+
+    .apply .caption p {
+        width:100%;
+    }
+
+    .apply .text > p {
+        font-size:4vw !important;
+    }
+
+    .faqs a {
+        margin-left:5vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .hero .vision {
+        font-size:3vw;
+        width:100vw;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .hero .first {
+        display:none;
+    }
+
+    .hero .second {
+        display:block;
+        padding-top:5vh;
+        padding-left:0;
+        padding-bottom:0;
+    }
+
+    .hero a {
+        width:25% !important;
+        margin-bottom:0;
+    }
+
+    .hero .title-container {
+        margin-top:20vh;
+    }
+
+    .hero h1 {
+        font-size:17vw;
+    }
+
+    .hero .ascii {
+        font-size:3vw !important;
+    }
+
+    .hero .introduction {
+        top:20vh;
+        font-size:3vw;
+    }
+
+    .why {
+        flex-direction: column;
+    }
+
+    .why .text {
+        height:max-content;
+    }
+
+    .why .effect-container {
+        width:100% !important;
+    }
+
+    .why .image {
+        transform:translateY(0);
+    }
+
+    .why .text > p {
+        width:100%;
+        margin-bottom:3vh;
+    }
+
+    .why .text .more-info a {
+        margin-top:3vh;
+    }
+
+    .why img {
+        width:100%;
+    }
+
+    .why .text .caption {
+        display:none;
+    }
+
+    .projects > p {
+        width:100%;
+        margin-bottom:3vh;
+    }
+
+    .project {
+        background:url('bg-vertical.jpg');
+        background-position: 100% center;
+        background-size:150%;
+        background-repeat: no-repeat;
+        height:90vh;
+        width:100vw;
+    }
+
+    .projects .ascii {
+        margin-bottom:1.5vh !important;
+    }
+
+    .projects .instructions {
+        margin-bottom:1.5vh;
+    }
+
+    .cohort-title {
+        flex-direction: column;
+    }
+
+    .cohort-title p {
+        width:100%;
+    }
+
+    .apply {
+        flex-direction: column;
+    }
+
+    .apply .effect-container {
+        width:100%;
+    }
+
+    .apply .text {
+        margin-top:5vh;
+    }
+
+    .apply .caption {
+        display:none;
+    }
+
+    .apply .text {
+        height:max-content;
+    }
+
+    .faqs .desktop {
+        display:none;
+    }
+
+    .faqs .mobile {
+        display:inline-block;
+    }
+
+    .supporters .partners {
+        flex-direction: column !important;
+        margin-top:5vh;
+        gap:1.5vh;
+    }
+
+    .footer .links {
+        flex-wrap: wrap;
+    }
+
+    .footer .final-info .socials, .footer .final-info .sitemap {
+        flex-direction: column;
+        gap:1vh !important;
+        align-items: normal;
+    }
+}
+
+@media screen and (max-height:800px) {
+    .hero {
+        height:91vh;
+    }
+
+    .why .text {
+        height:125vh;
+    }
+
+    .why .effect-container {
+        height:110vh;
+    }
+
+    .about {
+        height:50vh;
+    }
+
+    .projects .project {
+        height:100vh;
+    }
+
+    .apply .text {
+        height:110vh;
+    }
+
+    .apply .effect-container {
+        height:110vh;
+    }
 }
