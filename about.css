@@ -192,13 +192,12 @@
         margin-bottom:0;
         display:none;
     }
-}
-
-@media screen and (max-width:1000px) {
     .hero {
         background-size:cover !important;
     }
+}
 
+@media screen and (max-width:1000px) {
     .hero h1 {
         font-size:13vw;
     }
