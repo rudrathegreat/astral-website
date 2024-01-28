@@ -64,7 +64,7 @@
     width:80%;
 }
 
-.projects .project:nth-child(1) {
+.project:nth-child(1) {
     background:url('ozstar.jpg');
     background-position: 100% center;
     background-size:200%;
@@ -73,7 +73,7 @@
     width:100vw;
 }
 
-.projects .project:nth-child(2) {
+.project:nth-child(2) {
     background:url('parkes.jpg');
     background-position: 100% center;
     background-size:150%;
@@ -82,7 +82,7 @@
     width:100vw;
 }
 
-.projects .project:nth-child(3) {
+.project:nth-child(3) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url("research.jpg");
     background-position: 100% center;
@@ -92,7 +92,7 @@
     width:100vw;
 }
 
-.projects .project:nth-child(4) {
+.project:nth-child(4) {
     background-image:url("code.png");
     background-position: 100% center;
     background-size:175%;
@@ -101,7 +101,7 @@
     width:100vw;
 }
 
-.projects .project:nth-child(5) {
+.project:nth-child(5) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url("leadership.jpg");
     background-position: 100% center;
@@ -111,7 +111,7 @@
     width:100vw;
 }
 
-.projects .project:nth-child(6) {
+.project:nth-child(6) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url("maths.jpg");
     background-position: 100% center;
@@ -151,4 +151,106 @@
 .astronomy p {
     font-size:2em;
     text-align: center;
+}
+
+.projects-mobile {
+    display:none;
+}
+
+.projects {
+    display:block;
+}
+
+@media screen and (max-width:1710px) {
+    .projects {
+        display:none;
+    }
+
+    .projects-mobile {
+        display:block;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        padding:3vh 2.5vw;
+        gap:1vh;
+    }
+
+    .projects-mobile .project {
+        width:100%;
+        height:50vh;
+        background-size:cover !important;
+        background-position: center !important;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .apply .text p {
+        font-size:3vw !important;
+    }
+
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .hero {
+        background-size:cover !important;
+    }
+
+    .hero h1 {
+        font-size:13vw;
+    }
+
+    .apply .image {
+        transform:translate(0);
+    }
+
+    .apply .text p {
+        margin-left:0 !important;
+        width:100%;
+    }
+
+    .how p {
+        width:100% !important;
+    }
+
+    .how .more-info {
+        width:80% !important;
+    }
+
+    .services a p {
+        font-size:1em;
+    }
+
+    .cohort-title h2 {
+        font-size:3em;
+    }
+
+    .cohort {
+        padding-top:5vh;
+        padding-bottom:10vh;
+    }
+
+    .services {
+        margin-top:0;
+    }
+
+    .footer {
+        padding-top:0;
+    }
+
+    .astronomy {
+        padding-top:5vh;
+    }
+
+    .how {
+        padding-top:5vh;
+        padding-bottom:5vh;
+    }
+
+    .apply {
+        padding-bottom:5vh;
+    }
 }
