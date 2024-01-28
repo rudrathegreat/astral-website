@@ -36,7 +36,7 @@
 
 .team {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding:10vh 1vw;
     grid-column-gap:1vw;
     grid-row-gap:1vh;
@@ -106,7 +106,7 @@
     background:rgba(255,255,255,0.6);
     backdrop-filter: blur(40px);
     border: 1px solid rgba(255,255,255,0.15);
-    width:80vw;
+    width:90vw;
     border-radius:1vw;
     display:flex;
     flex-direction: column;
@@ -158,4 +158,100 @@
 .scroll-container > h2 {
     margin-top:10vh;
     text-align:center
+}
+
+.instructions {
+    text-align: center;
+    display:none;
+}
+
+@media screen and (max-height:800px) {
+    .person {
+        height:150vh !important;
+    }
+
+    .cflynn .summary p, .mbailes .summary p {
+        font-size:1.5em;
+    }
+
+    .cflynn .long-description, .mbailes .long-description {
+        font-size:1em;
+    }
+
+    .cflynn, .mbailes {
+        padding:10vh 10vw;
+    }
+}
+
+@media screen and (max-width:1710px) {
+    .person {
+        background-size:cover !important;
+    }
+
+    .team .person h1, .team .person p {
+        transform:translateY(0%);
+        transition:transform 0.3s ease;
+    }
+
+    .instructions {
+        display:block;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+    }
+
+    .cflynn, .mbailes {
+        padding:7vh 10vw;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .hero h1 {
+        font-size:13vw;
+    }
+
+    .footer {
+        padding-top:0;
+    }
+
+    .person {
+        padding:3vh 5vw !important;
+    }
+
+    .person h1 {
+        font-size:5vw;
+    }
+
+    .person p {
+        font-size:4vw;
+    }
+
+    .cflynn .long-description, .mbailes .long-description {
+        font-size:2.5vw;
+    }
+
+    .cflynn .cross img, .mbailes .cross img {
+        width:5vw;
+    }
+
+    .cflynn .cross, .mbailes .cross {
+        right:5vw;
+    }
+
+    .cflynn .summary p, .mbailes .summary p {
+        font-size:3vw;
+    }
+}
+
+@media screen and (max-height:500px) {
+    .person {
+        height:200vh !important;
+    }
 }

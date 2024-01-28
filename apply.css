@@ -55,3 +55,23 @@ form input {
     margin-top:10vh;
     text-align:center
 }
+
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .hero h1 {
+        font-size:13vw;
+    }
+
+    .footer {
+        padding-top:0;
+    }
+}

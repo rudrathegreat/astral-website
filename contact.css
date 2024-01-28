@@ -39,3 +39,28 @@
     gap:1.5vh;
     align-items: center;
 }
+
+
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+    }
+
+    .contact-div h2, .contact-div p {
+        font-size:5vw !important;
+    }    
+}
+
+@media screen and (max-width:1000px) {
+    .hero h1 {
+        font-size:13vw;
+    }
+
+    .footer {
+        padding-top:0;
+    }
+}
