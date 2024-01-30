@@ -415,6 +415,10 @@ body {
     padding-bottom:0;
 }
 
+.caption {
+    display:block;
+}
+
 .about p {
     position:absolute;
 }
@@ -715,7 +719,7 @@ h3 {
 }
 
 .cursor p {
-    font-size:1.5em;
+    font-size:1.5vw;
     font-weight:700;
     color:#6A6BF4;
     transition: opacity 0.3s ease;
@@ -755,6 +759,10 @@ h3 {
     z-index:4;
     display:flex;
     gap:1vw;
+}
+
+.cursor .arrows img {
+    width:3vw;
 }
 
 /* Hover Effects */
@@ -1052,7 +1060,7 @@ h3 {
     display:none;
 }
 
-@media screen and (max-width:1710px) {
+@media (pointer:none), (pointer:coarse) {
     .cursor {
         display:none;
     }
@@ -1071,7 +1079,13 @@ h3 {
     
     .projects .instructions {
         display:block;
-        margin-bottom:0;
+        margin-bottom:3vh;
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .why .more-info a {
+        margin-top:3vh;
     }
 }
 
@@ -1183,6 +1197,7 @@ h3 {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        height:50vh !important;
     }
 
     .hero .first {
@@ -1214,7 +1229,7 @@ h3 {
     }
 
     .hero .introduction {
-        top:20vh;
+        top:10vh;
         font-size:3vw;
     }
 
@@ -1234,6 +1249,14 @@ h3 {
         transform:translateY(0);
     }
 
+    .why .more-info p {
+        font-size:3vw !important;
+    }
+
+    .why {
+        padding-bottom:0;
+    }
+
     .why .text > p {
         width:100%;
         margin-bottom:3vh;
@@ -1251,9 +1274,27 @@ h3 {
         display:none;
     }
 
+    .about p {
+        font-size:3vw !important;
+        margin-top: 5vh !important;
+    }
+
+    .services {
+        padding-top:5vh;
+        padding-bottom:0;
+    }
+
+    .services h2 {
+        margin-bottom:1.5vh;
+    }
+
     .projects > p {
         width:100%;
         margin-bottom:3vh;
+    }
+
+    .projects .ascii {
+        display:none;
     }
 
     .project {
@@ -1271,6 +1312,10 @@ h3 {
 
     .projects .instructions {
         margin-bottom:1.5vh;
+    }
+
+    .cohort {
+        padding-top:5vh;
     }
 
     .cohort-title {
@@ -1319,14 +1364,46 @@ h3 {
         flex-wrap: wrap;
     }
 
+    .footer .links a {
+        font-size:3vw !important;
+    }
+
     .footer .final-info .socials, .footer .final-info .sitemap {
         flex-direction: column;
         gap:1vh !important;
         align-items: normal;
     }
+
+    .faqs a {
+        font-size:3vw;
+    }
+
+    .faqs a div {
+        gap:3vw;
+    }
+
+    .faqs a div img {
+        height:100%;
+    }
+
+    .cohort {
+        padding-bottom:5vh;
+    }
 }
 
 @media screen and (max-height:800px) {
+    .faqs .desktop {
+        display:none;
+    }
+
+    .faqs .mobile {
+        display:inline-block;
+    }
+
+    .faqs a {
+        margin-left:5vw;
+    }
+
     .hero {
         height:91vh;
     }
@@ -1340,7 +1417,7 @@ h3 {
     }
 
     .about {
-        height:50vh;
+        height:max-content;
     }
 
     .projects .project {
@@ -1348,10 +1425,124 @@ h3 {
     }
 
     .apply .text {
-        height:110vh;
+        height:max-content;
     }
 
     .apply .effect-container {
         height:110vh;
     }
+
+    .apply .text > p {
+        font-size:2.5vw !important;
+    }
+
+    .why .text > p {
+        font-size:2.5vw !important;
+    }
+
+    .why .text .more-info > p {
+        font-size:1.5vw !important;
+    }
+
+    .apply .caption {
+        position:relative;
+        top:0;
+        left:0;
+        padding-top:50vh;
+    }
+
 }
+
+@media screen and (max-height:600px) {
+    .caption {
+        display:none !important;
+    }
+
+    .scroll-container .hero {
+        height:100vh !important;
+    }
+
+    .hero .vision {
+        font-size:1.5vw;
+        width:100vw;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height:50vh !important;
+    }
+
+    .hero .first {
+        display:none;
+    }
+
+    .hero .second {
+        display:block;
+        padding-top:5vh;
+        padding-left:0;
+        padding-bottom:0;
+    }
+
+    .why .text {
+        height:max-content;
+    }
+
+    .why .text .more-info a {
+        margin-top:5vh;
+    }
+
+    .why .effect-container {
+        height:100%;
+    }
+
+    .who-we-are {
+        padding-top:10vh;
+    }
+
+    .about {
+        height:max-content;
+    }
+
+    .about p {
+        position:relative;
+        top:0;
+        left:5vw !important;
+        width:90% !important;
+        font-size:1.5vw !important;
+    }
+
+    .about p:first-child {
+        display: none;
+    }
+
+    .services a {
+        font-size:1.5vw;
+    }
+
+    .projects .description {
+        font-size:2.5vw !important;
+    }
+
+    .projects .project {
+        height:125vh;
+    }
+
+    .apply .text > p {
+        font-size:2.5vw !important;
+    }
+
+    .faqs {
+        padding:5vh 0;
+    }
+
+    .cohort-title p {
+        font-size:2.5vw !important;
+    }
+
+    .reviews p, .reviews h3 {
+        font-size:1.5vw !important;
+    }
+}
+
