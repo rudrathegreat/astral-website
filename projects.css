@@ -33,7 +33,7 @@
     grid-row-gap:1vh;
 }
 
-.team .person:nth-child(1) {
+.team a:nth-child(1) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)), url('bhns.jpg');
     background-repeat: no-repeat;
@@ -46,9 +46,10 @@
     flex-direction: column;
     justify-content: flex-end;
     transition:background-size 1s ease;
+    text-decoration:none;
 }
 
-.team .person:nth-child(2) {
+.team a:nth-child(2) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url('homepage-screenshot.jpg');
     background-repeat: no-repeat;
@@ -61,6 +62,11 @@
     flex-direction: column;
     justify-content: flex-end;
     transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a {
+    text-decoration:none !important;
 }
 
 .team .person div {
