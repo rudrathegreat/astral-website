@@ -193,6 +193,16 @@ body {
     flex-wrap: wrap;
 }
 
+.navbar .menu-icon > a {
+    transform:rotate(0deg);
+    transition:transform 0.3s ease;
+}
+
+.navbar .menu-icon > a:hover {
+    transform:rotate(45deg);
+    transition:transform 0.3s ease;
+}
+
 .scroll-container {
     position:relative;
     z-index:2;
@@ -378,6 +388,19 @@ body {
     padding:5vh 5vw;
 }
 
+.section p {
+    line-height:1.6;
+}
+
+.introduction p {
+    line-height:1.6;
+}
+
+.section mark {
+    text-transform:lowercase;
+    background:none;
+}
+
 .grid {
     display:grid;
     grid-template-columns: repeat(auto-fit, 550px);
@@ -399,7 +422,7 @@ h3 {
     font-weight:400;
 }
 
-.text {
+.section.text {
     display:flex;
     flex-direction: column;
     gap:1.5vh;
@@ -460,4 +483,8 @@ h3 {
     -ms-filter: blur(100px);
     opacity:0.2;
     animation: rotate 3s infinite linear;
+}
+
+.download p {
+    margin-bottom:3vh;
 }
