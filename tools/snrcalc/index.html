@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRAL | SNRCalc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="navbar">
+        <img src="logo.svg" alt="" class="logo">
+        <div class="menu-icon">
+            <div class="text">
+                <p>menu</p>
+                <p>close</p>
+            </div>
+            <a onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <a href="../../index.html">HOME</a>
+                <a href="../../about.html">ABOUT</a>
+                <a href="../../projects.html">PROJECTS</a>
+                <a href="../../team.html">TEAM</a>
+                <a href="../../cohort.html">COHORT</a>
+                <a href="../../apply.html">APPLY</a>
+                <a href="../../contacts.html">CONTACTS</a>
+                <a href="../../faqs.html">FAQS</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <h1 class="title">Signal-to-Noise Calculator_</h1>
+        <div class="container">
+            <div class="form">
+                <div class="form-names">
+                    <div class="field">
+                        <h1>Area (m<sup>2</sup>)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Efficiency (%)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Bandwidth (MHz)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Flux (Jy)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Time (s)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>System Temperature (K)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Number of Polarisations</h1>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="text" id="area">
+                    <input type="text" id="efficiency">
+                    <input type="text" id="bandwidth">
+                    <input type="text" id="flux">
+                    <input type="text" id="time">
+                    <input type="text" id="tsys">
+                    <input type="text" id="np">
+                </div>
+            </div>
+            <div class="side">
+                    <h2>The SNR will be</h2>
+                    <h3 id="answer">None</h3>
+                <a onclick="calculateSNR();" class="normal">Calculate</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateSNR() {
+            var area = document.getElementById("area").value;
+            var efficiency = document.getElementById("efficiency").value;
+            var bandwidth = document.getElementById("bandwidth").value;
+            var flux = document.getElementById("flux").value;
+            var time = document.getElementById("time").value;
+            var tsys = document.getElementById("tsys").value;
+            var np = document.getElementById("np").value;
+            if (area != "nothing" && efficiency != "nothing" && bandwidth != "nothing" && flux != "nothing" && time != "nothing" && tsys != "nothing" && np != "nothing"){
+                var k = 1.38064852e-23;
+                var g = (((parseFloat(efficiency) * parseFloat(area)) / 100) / (2 * parseFloat(k))) * (10**-26);
+                var snr = ((parseFloat(flux) * parseFloat(g)) / parseFloat(tsys)) * Math.sqrt((parseFloat(time)*parseFloat(bandwidth)*1000000*parseFloat(np)));
+                var answer = document.getElementById("answer");
+                answer.innerHTML = snr.toFixed(1);
+            }
+        }
+    </script>
+    <script src="../../navbar.js"></script>
+</body>
+</html>
