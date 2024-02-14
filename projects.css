@@ -54,7 +54,7 @@
 
 .team {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     padding:10vh 1vw;
     grid-column-gap:1vw;
     grid-row-gap:1vh;
@@ -88,6 +88,22 @@
 .team a:nth-child(2) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url('homepage-screenshot.jpg');
+    background-repeat: no-repeat;
+    height:90vh;
+    background-position: top;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a:nth-child(3) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url('snrcalc.jpg');
     background-repeat: no-repeat;
     height:90vh;
     background-position: top;

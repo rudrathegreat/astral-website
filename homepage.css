@@ -986,6 +986,15 @@ h3 {
     background-repeat: no-repeat;
 }
 
+.project:nth-child(3) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)),url('snrcalc.jpg');
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+}
+
+
 #image-track {
     display: flex;
     gap: 1vw;
