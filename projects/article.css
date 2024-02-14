@@ -4,6 +4,21 @@
     box-sizing:border-box;
 }
 
+:root {
+    --small-font-size: 1vw;
+    --medium-font-size:1.25vw;
+    --heading-font-size:1.75vw;
+    --large-font-size:2vw;
+    --extreme-font-size:4vw;
+    --width-between-img-text:3vh;
+    --heading-text-padding:1.5vh;
+    --small-font-size-mobile: 2vw;
+    --medium-font-size-mobile:3vw;
+    --large-font-size-mobile:4vw;
+    --heading-font-size-mobile:3.5vw;
+    --extreme-font-size-mobile:5vw;
+}
+
 .lenis.lenis-stopped {
     overflow: hidden;
 }
@@ -33,13 +48,13 @@ overflow: hidden;
 }
 
 p {
-    font-size:1.25em;
+    font-size:var(--small-font-size);
 }
 
 h2 {
     font-weight:700;
     color:#6A6BF4;
-    font-size:2em;
+    font-size:var(--heading-font-size);
 }
 
 body {
@@ -262,7 +277,7 @@ body {
     position:relative;
     text-decoration:none;
     color:black;
-    font-size:1.25em;
+    font-size:var(--small-font-size);
 }
 
 .hero {
@@ -322,7 +337,7 @@ body {
 }
 
 .hero h1 {
-    font-size:4vw;
+    font-size:var(--extreme-font-size);
     font-weight:400;
     line-height:1.1;
 }
@@ -335,7 +350,7 @@ body {
 }
 
 .hero .tag, .section a {
-    font-size:1.25em;
+    font-size:var(--small-font-size);
     display: inline-block;
     padding:1vh 1vw;
     border:2px solid black;
@@ -415,7 +430,7 @@ body {
 }
 
 h3 {
-    font-size:1.5em;
+    font-size:var(--medium-font-size);
 }
 
 .text h3 {
@@ -487,4 +502,154 @@ h3 {
 
 .download p {
     margin-bottom:3vh;
+}
+
+.footer-link {
+    width:max-content;
+}
+
+.footer-link::before {
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform 0.3s ease;
+}
+
+.footer-link:hover::before {
+    transform:scaleX(1);
+    transform-origin:left;
+    transition:transform 0.3s ease;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .cursor {
+        display:none;
+    }
+
+    .blob {
+        display:none;
+    }
+
+    .grid-effect {
+        display:none !important;
+    }
+    
+    .projects .instructions {
+        display:block;
+        margin-bottom:3vh;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .footer .final-info {
+        flex-direction: column;
+    }
+
+    .final-info > div {
+        width:100% !important;
+    }
+
+    .final-info p {
+        width:100% !important;
+    }
+
+    .final-info > div:last-child {
+        display:none;
+    }
+
+    .final-info .links {
+        flex-direction: row !important;
+        display:flex;
+        gap:3vw;
+    }
+
+    .footer .final-info .socials, .footer .final-info .sitemap {
+        flex-direction: column;
+        gap:1vh !important;
+        align-items: normal;
+        margin-top:3vh;
+    }
+
+    .projects .view-more-projects-container p {
+        display: none;
+    }
+
+    .apply .caption {
+        width:100% !important;
+    }
+
+    .apply .caption p {
+        width:100%;
+    }
+
+    .footer .partners {
+        margin-bottom:0
+    }
+
+    .footer {
+        padding-top:5vh;
+    }
+
+    .footer-link {
+        font-size:var(--small-font-size-mobile);
+    }
+
+}
+
+@media screen and (max-width:1000px) {
+    .grid {
+        display:flex;
+        flex-direction: column;
+    }
+
+    .grid .person {
+        width:100%;
+    }
+
+    .person h3 {
+        font-size:var(--medium-font-size-mobile)
+    }
+
+    h2 {
+        font-size:var(--heading-font-size-mobile);
+    }
+
+    p {
+        font-size:var(--small-font-size-mobile);
+    }
+
+    .credits h3 {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .download a {
+        font-size:var(--small-font-size-mobile);
+        padding:1vh 2vw;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap:1vh;
+        height:max-content;
+    }
+
+    .hero h1 {
+        font-size:7vw;
+        margin-bottom:3vh;
+    }
+
+    .hero .tags .tag {
+        font-size:var(--small-font-size-mobile);
+        padding:1vh 2vw;
+    }
+
+    .hero .effect-container {
+        height:50vh;
+    }
 }
