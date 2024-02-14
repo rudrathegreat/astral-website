@@ -8,6 +8,32 @@
     color:white;
     display: flex;
     align-items: flex-end;
+    flex-direction: row;
+}
+
+.hero h1 {
+    font-size:12vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:10vw;
+}
+
+.hero a {
+    display:inline-block;
+    margin-bottom:3vh;
+    aspect-ratio:1/1;
 }
 
 .navbar {

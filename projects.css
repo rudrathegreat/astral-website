@@ -8,7 +8,34 @@
     color:white;
     display: flex;
     align-items: flex-end;
+    flex-direction: row;
 }
+
+.hero h1 {
+    font-size:12vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:10vw;
+}
+
+.hero a {
+    display:inline-block;
+    margin-bottom:3vh;
+    aspect-ratio:1/1;
+}
+
 
 .navbar {
     background:rgba(255,255,255,0.4);
@@ -32,6 +59,15 @@
     grid-column-gap:1vw;
     grid-row-gap:1vh;
 }
+
+.team .person h1 {
+    font-size:var(--heading-font-size);
+}
+
+.team .person p {
+    font-size:var(--medium-font-size);
+}
+
 
 .team a:nth-child(1) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
@@ -124,7 +160,7 @@
 }
 
 .cflynn .summary p, .mbailes .summary p {
-    font-size:2em;
+    font-size:var(--large-font-size);
 }
 
 .cflynn p b, .mbailes p b {
@@ -145,7 +181,7 @@
 }
 
 .cflynn > p, .mbailes > p {
-    font-size:1.25em;
+    font-size:var(--medium-font-size);
 }
 
 .cflynn .cross, .mbailes .cross {
@@ -166,11 +202,7 @@
     font-size:3vw;
 }
 
-@media screen and (max-width:1710px) {
-    .person {
-        background-size:cover !important;
-    }
-
+@media (pointer:none), (pointer:coarse) {
     .team .person h1, .team .person p {
         transform:translateY(0%);
         transition:transform 0.3s ease;
@@ -178,6 +210,13 @@
 
     .instructions {
         display:block;
+        font-size:var(--large-font-size-mobile);
+    }
+}
+
+@media screen and (max-width:1710px) {
+    .person {
+        background-size:cover !important;
     }
 }
 
@@ -188,48 +227,39 @@
     }
     .hero {
         background-size:cover !important;
+        height:70vh;
     }
 
-    .cflynn, .mbailes {
-        padding:7vh 10vw;
+    .hero h1 {
+        font-size:14vw;
     }
 }
 
 @media screen and (max-width:1000px) {
-    .hero h1 {
-        font-size:13vw;
-    }
-
-    .footer {
-        padding-top:0;
-    }
-
-    .person {
-        padding:3vh 5vw !important;
-    }
-
     .person h1 {
-        font-size:5vw;
+        font-size:var(--large-font-size-mobile) !important;
     }
 
     .person p {
-        font-size:4vw;
+        font-size:var(--medium-font-size-mobile) !important;
     }
 
-    .cflynn .long-description, .mbailes .long-description {
-        font-size:2.5vw;
+    .person {
+        height:50vh !important;
+        padding:3vh 3vw !important;
     }
 
-    .cflynn .cross img, .mbailes .cross img {
-        width:5vw;
+    .team {
+        padding-top:3vh;
+        padding-bottom:0;
     }
 
-    .cflynn .cross, .mbailes .cross {
-        right:5vw;
+    .scroll-container > h2 {
+        margin-top:7vh;
     }
 
-    .cflynn .summary p, .mbailes .summary p {
-        font-size:3vw;
+    .footer {
+        padding-top:7vh;
     }
 }
 

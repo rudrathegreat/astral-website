@@ -8,23 +8,33 @@
     color:white;
     display: flex;
     align-items: flex-end;
+    flex-direction: row;
 }
 
-.navbar {
-    background:rgba(255,255,255,0.4);
-    backdrop-filter: blur(40px);
-    border: 1px solid rgba(255,255,255,0.15);
+.hero h1 {
+    font-size:12vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:10vw;
 }
 
 .hero a {
-    z-index:2;
+    display:inline-block;
+    margin-bottom:3vh;
+    aspect-ratio:1/1;
 }
-
-.hero a::before {
-    z-index:-1;
-    background:white;
-}
-
 
 .apply-section {
     display:flex;

@@ -35,6 +35,14 @@ const handleOnMove = e => {
   const percentage = ((mouseDelta / maxDelta) * -100),
         nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
+  if (nextPercentage > 0) {
+    nextPercentage = 0;
+  }
+
+  if (nextPercentage < (-200/3)) {
+    nextPercentage = -200/3;
+  }
+  
   track.dataset.percentage = nextPercentage;
 
   track.animate({

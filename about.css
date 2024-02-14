@@ -8,6 +8,45 @@
     color:white;
     display: flex;
     align-items: flex-end;
+    flex-direction: row;
+}
+
+.hero .introduction {
+    position:absolute;
+    top:5vh;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.hero .vision {
+    padding-top:20vh;
+    padding-left:55vw;
+    padding-right:8vw;
+}
+
+.hero h1 {
+    font-size:12vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:10vw;
+}
+
+.hero a {
+    display:inline-block;
+    margin-bottom:3vh;
+    aspect-ratio:1/1;
 }
 
 .navbar {
@@ -40,11 +79,7 @@
 }
 
 .apply .image .effect-container {
-    height:100vh;
-}
-
-.apply .image {
-    transform:translateY(15vh);
+    height:100%;
 }
 
 .apply .text p:last-child {
@@ -60,8 +95,8 @@
 }
 
 .how .main-text {
-    font-size:2em;
-    width:80%;
+    font-size:var(--large-font-size);
+    width:100%;
 }
 
 .project:nth-child(1) {
@@ -122,7 +157,7 @@
 }
 
 .project h1 {
-    font-size:4vw;
+    font-size:var(--extreme-font-size);
 }
 
 .scroll-container > h2 {
@@ -136,21 +171,11 @@
 }
 
 .how .more-info {
-    margin-left:15vw;
-    width:50%;
+    width:100%;
     display:flex;
     flex-direction: column;
     gap:1.5vh;
     margin-top:3vh;
-}
-
-.astronomy {
-    padding:10vh 10vw;
-}
-
-.astronomy p {
-    font-size:2em;
-    text-align: center;
 }
 
 .projects-mobile {
@@ -159,6 +184,10 @@
 
 .projects {
     display:block;
+}
+
+.footer {
+    padding-top:0;
 }
 
 @media screen and (max-width:1710px) {
@@ -177,31 +206,29 @@
 
     .projects-mobile .project {
         width:100%;
-        height:50vh;
+        height:30vh;
         background-size:cover !important;
         background-position: center !important;
+        padding:2vh 2.5vw;
     }
 }
 
 @media screen and (max-width:1300px) {
-    .apply .text p {
-        font-size:3vw !important;
-    }
-
     .hero a {
         margin-bottom:0;
         display:none;
     }
     .hero {
         background-size:cover !important;
+        height:70vh;
+    }
+
+    .hero h1 {
+        font-size:14vw;
     }
 }
 
 @media screen and (max-width:1000px) {
-    .hero h1 {
-        font-size:13vw;
-    }
-
     .apply .image {
         transform:translate(0);
     }
@@ -216,40 +243,37 @@
     }
 
     .how .more-info {
-        width:80% !important;
+        width:100% !important;
     }
 
-    .services a p {
-        font-size:1em;
+    .how .main-text {
+        font-size:var(--large-font-size-mobile);
     }
 
-    .cohort-title h2 {
-        font-size:3em;
+    .project h1 {
+        font-size:var(--extreme-font-size-mobile)
     }
 
-    .cohort {
-        padding-top:5vh;
-        padding-bottom:10vh;
+    .how .more-info p {
+        font-size:var(--small-font-size-mobile);
     }
 
-    .services {
+    .panel p {
+        font-size:var(--small-font-size-mobile);
+    }
+
+    .apply, .how, .scroll-container > h2, .services, .cohort, .footer, .services h2 {
+        padding-top:7.5vh;
         margin-top:0;
+        margin-bottom:0;
+        padding-bottom:0;
     }
 
     .footer {
-        padding-top:0;
-    }
-
-    .astronomy {
-        padding-top:5vh;
-    }
-
-    .how {
-        padding-top:5vh;
         padding-bottom:5vh;
     }
 
-    .apply {
-        padding-bottom:5vh;
+    .services h2 {
+        margin-bottom:1vh;
     }
 }
