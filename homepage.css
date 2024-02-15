@@ -241,10 +241,11 @@ body {
     display:flex;
     flex-direction: column;
     gap:3vh;
+    width:max-content;
 }
 
 .hero h1 {
-    font-size:7vw;
+    font-size:6.5vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -253,7 +254,7 @@ body {
 .hero .line .org-name {
     display:inline-block;
     height:6vw;
-    padding:0 7vw;
+    padding:0 11vw;
     border:2px solid #6A6BF4;
     border-radius: 1000px;
     position:relative;
@@ -273,6 +274,11 @@ body {
     transform:scaleY(0);
     transform-origin:bottom;
     transition:transform 0.3s ease;
+}
+
+.hero .line:nth-child(1) h1 {
+    text-align: center;
+    width:100%;
 }
 
 .hero .line .org-name:hover::before {
@@ -315,6 +321,7 @@ body {
     display:inline-block;
     width:max-content;
     aspect-ratio:1/1;
+    margin-left:1vw;
 }
 
 .video {
