@@ -245,7 +245,7 @@ body {
 }
 
 .hero h1 {
-    font-size:6.5vw;
+    font-size:5vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -253,8 +253,8 @@ body {
 
 .hero .line .org-name {
     display:inline-block;
-    height:6vw;
-    padding:0 11vw;
+    height:5vw;
+    padding:0 8vw;
     border:2px solid #6A6BF4;
     border-radius: 1000px;
     position:relative;
@@ -314,7 +314,7 @@ body {
 }
 
 .hero a img {
-    height:7vw;
+    height:5vw;
 }
 
 .hero a {
@@ -420,8 +420,14 @@ body {
     bottom:1vh;
 }
 
-.image .effect-container {
-    height:90vh;
+.why .image .effect-container {
+    height:110vh;
+    width:40vw;
+    position:relative;
+}
+
+.apply .image .effect-container {
+    height:80vh;
     width:40vw;
     position:relative;
 }
@@ -603,7 +609,8 @@ h3 {
     width:98vw;
     height:98vh;
     margin:1vh 1vw;
-    background:url('contacts-bg.png');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url('contacts-bg.jpg');
     background-size: cover;
     background-position: center;
     border-radius:2vw;
@@ -1214,16 +1221,16 @@ h3 {
 
     .hero h1 {
         letter-spacing:-3px;
-        font-size:8vw;
+        font-size:7vw;
     }
 
     .hero .line .org-name {
-        height:8vw;
+        height:7vw;
         padding:0 7vw;
     }
 
     .hero a img {
-        height:8vw;
+        height:7vw;
     }
 
     .hero {
