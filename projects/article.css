@@ -12,7 +12,7 @@
     --extreme-font-size:4vw;
     --width-between-img-text:3vh;
     --heading-text-padding:1.5vh;
-    --small-font-size-mobile: 2vw;
+    --small-font-size-mobile: 1.5vw;
     --medium-font-size-mobile:3vw;
     --large-font-size-mobile:4vw;
     --heading-font-size-mobile:3.5vw;
@@ -608,20 +608,24 @@ h3 {
         flex-direction: column;
     }
 
+    .navbar .text p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
     .grid .person {
         width:100%;
     }
 
+    .person img {
+        height:60vh;
+    }
+
     .person h3 {
-        font-size:var(--medium-font-size-mobile)
+        font-size:var(--medium-font-size-mobile);
     }
 
     h2 {
         font-size:var(--heading-font-size-mobile);
-    }
-
-    p {
-        font-size:var(--small-font-size-mobile);
     }
 
     .credits h3 {
@@ -644,12 +648,83 @@ h3 {
         margin-bottom:3vh;
     }
 
-    .hero .tags .tag {
-        font-size:var(--small-font-size-mobile);
-        padding:1vh 2vw;
+    .hero .tags {
+        width:100%;
+    }
+
+    .hero .title-container {
+        width:100%;
+    }
+
+    .content .section:first-child {
+        padding-top:0;
+    }
+
+    .download p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .hero .tags .tag, .section a {
+        font-size:var(--medium-font-size-mobile);
+        padding:0.5vh 3vw;
     }
 
     .hero .effect-container {
         height:50vh;
+    }
+
+    .navbar .text {
+        height:var(--medium-font-size-mobile);
+    }
+
+    .footer .partners {
+        margin-bottom:0
+    }
+
+    .footer {
+        padding-top:5vh;
+    }
+
+    .projects div a, .contacts a {
+        padding:0.5vh 2vw;
+    }
+
+    .supporters .partners {
+        flex-direction: column !important;
+        gap:1.5vh;
+    }
+
+    .footer .links {
+        flex-wrap: wrap;
+    }
+
+    .footer .final-info .socials, .footer .final-info .sitemap {
+        flex-direction: column;
+        gap:1vh !important;
+        align-items: normal;
+    }
+
+    .footer-link, .project p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .footer p {
+        font-size: var(--medium-font-size-mobile);
+    }
+
+    .footer h2 {
+        font-size:var(--large-font-size-mobile);
+    }
+
+    .final-info {
+        margin-top:var(--heading-text-padding);
+    }
+
+    .project .more-info {
+        align-items: center;
+    }
+
+    .cohort .ascii {
+        font-size:var(--small-font-size);
     }
 }

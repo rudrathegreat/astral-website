@@ -12,7 +12,7 @@
     --extreme-font-size:4vw;
     --width-between-img-text:3vh;
     --heading-text-padding:1.5vh;
-    --small-font-size-mobile: 2vw;
+    --small-font-size-mobile: 1.25vw;
     --medium-font-size-mobile:3vw;
     --large-font-size-mobile:4vw;
     --heading-font-size-mobile:3.5vw;
@@ -349,7 +349,7 @@ body {
 }
 
 .ascii {
-    font-size:1.25em !important;
+    font-size:var(--small-font-size) !important;
 }
 
 .why .text p, .cohort p, .projects > p {
@@ -520,7 +520,7 @@ body {
     flex-direction: column;
 }
 
-.cohort-title p {
+.cohort > p {
     margin-top:var(--heading-text-padding);
 }
 
@@ -1143,6 +1143,7 @@ h3 {
     font-size:var(--small-font-size);
     margin-left:0;
     width:100%;
+    letter-spacing: 0;
     display:none;
 }
 
@@ -1219,6 +1220,18 @@ h3 {
 
 @media screen and (max-width: 1000px) {
 
+    .why .image p, .apply .image p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .navbar .text p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .panel p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
     .hero h1 {
         letter-spacing:-3px;
         font-size:7vw;
@@ -1226,7 +1239,7 @@ h3 {
 
     .hero .line .org-name {
         height:7vw;
-        padding:0 7vw;
+        padding:0 12vw;
     }
 
     .hero a img {
@@ -1255,13 +1268,32 @@ h3 {
         font-size:var(--extreme-font-size-mobile);
     }
 
-    .why .text .more-info p, .why .image p, .apply .image p, .ascii, .services .panel p, .about p, .who-we-are p, .projects > p, .project p, .projects div a, .review p, .review h3, .apply .text a p, .faqs a p, .contacts a, .footer a, .footer p, .navbar p {
-        font-size:var(--small-font-size-mobile) !important;
-        letter-spacing: 0 !important;
+    .why .more-info a p, .apply a p, .faqs a p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .underline-button .text-indicator {
+        height:var(--medium-font-size-mobile);
+    }
+
+    .underline-button div {
+        gap:3vw;
+    }
+
+    .projects .description, .cohort > p {
+        font-size:var(--large-font-size-mobile);
+    }
+
+    .projects .instructions {
+        font-size:var(--small-font-size-mobile);
     }
 
     .navbar .text {
-        height:var(--small-font-size-mobile);
+        height:var(--medium-font-size-mobile);
+    }
+    
+    .cohort-title h2 {
+        font-size:var(--large-font-size-mobile);
     }
 
     .why .text a, .apply .text a {
@@ -1306,11 +1338,8 @@ h3 {
     }
 
     .services a div p {
-        font-size:var(--medium-font-size-mobile) !important;
-    }
-
-    .underline-button .text-indicator {
-        height:var(--small-font-size-mobile);
+        font-size:var(--heading-font-size-mobile) !important;
+        padding-right:1.5vw;
     }
 
     .footer .partners {
@@ -1353,6 +1382,10 @@ h3 {
 
     .projects .ascii {
         display:none;
+    }
+
+    .services h2 {
+        margin-bottom:var(--heading-text-padding);
     }
 
     .project {
@@ -1417,5 +1450,34 @@ h3 {
 
     .faqs a div img {
         height:100%;
+    }
+
+    .footer-link, .project p {
+        font-size:var(--medium-font-size-mobile);
+    }
+
+    .footer p {
+        font-size: var(--medium-font-size-mobile);
+    }
+
+    .footer h2 {
+        font-size:var(--large-font-size-mobile);
+    }
+
+    .final-info {
+        margin-top:var(--heading-text-padding);
+    }
+
+    .contacts a, .view-more-projects-container a, .project a {
+        font-size:var(--medium-font-size-mobile);
+        padding:0.5vh 3vw !important;
+    }
+
+    .project .more-info {
+        align-items: center;
+    }
+
+    .cohort .ascii {
+        font-size:var(--small-font-size);
     }
 }
