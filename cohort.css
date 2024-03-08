@@ -31,7 +31,7 @@
 }
 
 .hero h1 {
-    font-size:12vw;
+    font-size:10vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -46,7 +46,7 @@
 }
 
 .hero a img {
-    height:10vw;
+    height:8vw;
 }
 
 .hero a {
@@ -66,7 +66,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)), url('rudra.jpg');
     background-repeat: no-repeat;
-    height:80vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -81,7 +81,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)), url('hendrik_copy.png');
     background-repeat: no-repeat;
-    height:80vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -96,7 +96,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)), url('evie.JPG');
     background-repeat: no-repeat;
-    height:80vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -111,7 +111,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)), url('rebecca.png');
     background-repeat: no-repeat;
-    height:80vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -130,7 +130,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)), url('robert.jpg');
     background-repeat: no-repeat;
-    height:80vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;

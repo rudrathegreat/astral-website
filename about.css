@@ -25,7 +25,7 @@
 }
 
 .hero h1 {
-    font-size:12vw;
+    font-size:10vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -40,7 +40,7 @@
 }
 
 .hero a img {
-    height:10vw;
+    height:8vw;
 }
 
 .hero a {
