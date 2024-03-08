@@ -12,6 +12,8 @@ document.querySelectorAll('.review').forEach(review => {
     review.addEventListener('mouseover', function(e) {
         review_img = document.querySelector('.'+review.getAttribute('data-value'));
         review_img.style.opacity = 0.5;
+        cursor.style.width = 0;
+        cursor.style.height = 0;
     })
     
     review.addEventListener('mousemove', function(e) {
@@ -25,5 +27,7 @@ document.querySelectorAll('.review').forEach(review => {
     review.addEventListener('mouseleave', function() {
         review_img = document.querySelector('.'+review.getAttribute('data-value'));
         review_img.style.opacity = 0;
+        cursor.style.width = "1.5vw";
+        cursor.style.height = "1.5vw";
     })
 })
