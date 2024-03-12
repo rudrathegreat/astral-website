@@ -110,7 +110,7 @@ body {
     background:white;
     top:10vh;
     left:0;
-    padding: 0 3vw;
+    padding: 0 10vw;
     transform:scaleY(0);
     transform-origin:top;
     pointer-events: none;
@@ -149,7 +149,7 @@ body {
 .menu a {
     color:black;
     text-decoration: none;
-    font-size:6vw;
+    font-size:var(--extreme-font-size);
     margin-right:5vw;
     position:relative;
 }
@@ -201,7 +201,7 @@ body {
     left:50%;
     transform:translate(-50%, -50%);
     width:100%;
-    padding: 0 3vw;
+    padding: 0 10vw;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -425,7 +425,7 @@ body {
 }
 
 .grid img {
-    height:80vh;
+    height:70vh;
     object-fit: cover;
 }
 
@@ -726,5 +726,9 @@ h3 {
 
     .cohort .ascii {
         font-size:var(--small-font-size);
+    }
+
+    .menu a {
+        font-size:var(--extreme-font-size-mobile);
     }
 }
