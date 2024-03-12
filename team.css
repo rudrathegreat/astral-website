@@ -12,7 +12,7 @@
 }
 
 .hero h1 {
-    font-size:10vw;
+    font-size:9vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -27,18 +27,13 @@
 }
 
 .hero a img {
-    height:8vw;
+    height:7vw;
 }
 
 .hero a {
     display:inline-block;
     margin-bottom:3vh;
     aspect-ratio:1/1;
-}
-
-
-.hero h1 {
-    font-size:11vw;
 }
 
 .navbar {
@@ -50,10 +45,6 @@
 .hero a {
     z-index:2;
     margin-bottom:1.5vh;
-}
-
-.hero a img {
-    height:9vw;
 }
 
 .hero a::before {
@@ -72,7 +63,7 @@
 .team .person:nth-child(1) {
     background:url('mbailes.jpg');
     background-repeat: no-repeat;
-    height:90vh;
+    height:80vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -86,7 +77,21 @@
 .team .person:nth-child(2) {
     background:url('cflynn.png');
     background-repeat: no-repeat;
-    height:90vh;
+    height:80vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(3) {
+    background:url('saurav.jpg');
+    background-repeat: no-repeat;
+    height:80vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -131,7 +136,7 @@
     transition:background-size 1s ease;
 }
 
-.cflynn, .mbailes {
+.cflynn, .mbailes, .smishra {
     position:fixed;
     top:55%;
     left:50%;
@@ -159,15 +164,15 @@
     transition:transform 0.5s ease, opacity 0.3s ease-in-out;
 }
 
-.cflynn .summary p, .mbailes .summary p {
+.cflynn .summary p, .mbailes .summary p, .smishra .summary p {
     font-size:var(--heading-font-size);
 }
 
-.cflynn p b, .mbailes p b {
+.cflynn p b, .mbailes p b, .smishra p b {
     color:#6A6BF4;
 }
 
-.cflynn p, .mbailes p {
+.cflynn p, .mbailes p, .smishra p {
     transform:translateY(5vh);
     transition:transform 0.3s ease, opacity 0.3s ease-in-out;
     opacity:0;
@@ -180,11 +185,11 @@
     transition-delay: 0.1s;
 }
 
-.cflynn > p, .mbailes > p {
+.cflynn > p, .mbailes > p, .smishra > p {
     font-size:var(--medium-font-size);
 }
 
-.cflynn .cross, .mbailes .cross {
+.cflynn .cross, .mbailes .cross, .smishra .cross {
     position:absolute;
     right:3vw;
     top:5vh;
@@ -201,7 +206,7 @@
 }
 
 @media screen and (max-height:800px) {
-    .cflynn, .mbailes {
+    .cflynn, .mbailes, .smishra {
         padding:10vh 10vw;
     }
 }
@@ -232,7 +237,7 @@
         height:70vh;
     }
 
-    .cflynn, .mbailes {
+    .cflynn, .mbailes, .smishra {
         padding:7vh 10vw;
     }
 }
@@ -259,19 +264,19 @@
         font-size:var(--medium-font-size-mobile) !important;
     }
 
-    .cflynn .summary p, .mbailes .summary p {
+    .cflynn .summary p, .mbailes .summary p, .smishra .summary p {
         font-size:var(--large-font-size-mobile);
     }
 
-    .cflynn .long-description, .mbailes .long-description {
+    .cflynn .long-description, .mbailes .long-description, .smishra .long-description {
         font-size:var(--small-font-size-mobile);
     }
 
-    .cflynn .cross img, .mbailes .cross img {
+    .cflynn .cross img, .mbailes .cross img, .smishra .cross img {
         width:5vw;
     }
 
-    .cflynn .cross, .mbailes .cross {
+    .cflynn .cross, .mbailes .cross, .smishra .cross {
         right:5vw;
     }
 

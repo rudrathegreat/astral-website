@@ -31,7 +31,7 @@
 }
 
 .hero h1 {
-    font-size:10vw;
+    font-size:9vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -46,7 +46,7 @@
 }
 
 .hero a img {
-    height:8vw;
+    height:7vw;
 }
 
 .hero a {
@@ -94,7 +94,7 @@
 
 .team .person:nth-child(3) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('evie.JPG');
+    rgba(0, 0, 0, 0.2)), url('evie.jpg');
     background-repeat: no-repeat;
     height:70vh;
     background-position: center;

@@ -110,7 +110,7 @@ body {
     background:white;
     top:10vh;
     left:0;
-    padding: 0 3vw;
+    padding: 0 10vw;
     transform:scaleY(0);
     transform-origin:top;
     pointer-events: none;
@@ -154,7 +154,7 @@ body {
 .menu a {
     color:black;
     text-decoration: none;
-    font-size:6vw;
+    font-size:var(--extreme-font-size);
     margin-right:5vw;
     position:relative;
 }
@@ -206,7 +206,7 @@ body {
     left:50%;
     transform:translate(-50%, -50%);
     width:100%;
-    padding: 0 3vw;
+    padding: 0 10vw;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -1484,5 +1484,9 @@ h3 {
 
     .services a div img {
         height: var(--medium-font-size-mobile);
+    }
+
+    .menu a {
+        font-size:var(--extreme-font-size-mobile);
     }
 }
