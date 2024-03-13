@@ -205,6 +205,18 @@
     display:none;
 }
 
+@media (pointer:none), (pointer:coarse) {
+    .team .person h1, .team .person p {
+        transform:translateY(0%);
+        transition:transform 0.3s ease;
+    }
+
+    .instructions {
+        display:block;
+        font-size:var(--large-font-size-mobile);
+    }
+}
+
 @media screen and (max-height:800px) {
     .cflynn, .mbailes, .smishra {
         padding:10vh 10vw;
@@ -214,16 +226,6 @@
 @media screen and (max-width:1710px) {
     .person {
         background-size:cover !important;
-    }
-
-    .team .person h1, .team .person p {
-        transform:translateY(0%);
-        transition:transform 0.3s ease;
-    }
-
-    .instructions {
-        display:block;
-        font-size:var(--medium-font-size-mobile);
     }
 }
 
