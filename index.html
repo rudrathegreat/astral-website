@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ASTRAL | Home</title>
+    <title>A.S.T.R.A.L. | Home</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,13 +32,17 @@
         <img class="floating-img rebecca" src="rebecca.png" alt="">
     </div>
     <div class="navbar">
-        <img src="logo.svg" alt="" class="logo">
+        <a onclick="lenis.scrollTo('.hero');">
+            <img src="logo.svg" alt="" class="logo">
+        </a>
         <div class="menu-icon">
-            <div class="text">
-                <p>menu</p>
-                <p>close</p>
-            </div>
-            <a onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
+            <a onclick="toggleMenu();">
+                <div class="text">
+                    <p>menu</p>
+                    <p>close</p>
+                </div>
+            </a>
+            <a class="img-icon" onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
         </div>
         <div class="menu">
             <div class="links">
@@ -75,7 +79,7 @@
             </div>
         </div>
         <div class="video">
-            <video src="space.mp4" muted loop></video>
+            <video src="ASTRAL.mp4" loop></video>
         </div>
         <div class="why">
             <div class="text">
@@ -83,12 +87,12 @@
                 <p>STUDENTS OFTEN THINK SCIENCE AND TECHNOLOGY ARE RESTRICTED TO OLD (OFTEN MALE) GENIUSES AND NOT PEOPLE LIKE THEM.</p>
                 <div class="more-info">
                     <p>
-                        ASTRAL IS BUILDING A COHORT OF STEM STUDENT LEADERS OF THE FUTURE THAT CAN BOTH ACT AS ROLE MODELS AND PARTICIPATE
-                        IN CUTTING-EDGE ASTROPHYSICS RESEARCH. ASTRAL STUDENTS ARE TAUGHT THE RIGOUR OF THE SCIENTIFIC PROCESS, AND SKILLS
+                        A.S.T.R.A.L. IS BUILDING A COHORT OF STEM STUDENT LEADERS OF THE FUTURE THAT CAN BOTH ACT AS ROLE MODELS AND PARTICIPATE
+                        IN CUTTING-EDGE ASTROPHYSICS RESEARCH. A.S.T.R.A.L. STUDENTS ARE TAUGHT THE RIGOUR OF THE SCIENTIFIC PROCESS, AND SKILLS
                         IN ASTROPHYSICS, SUPERCOMPUTING, TECHNOLOGY, RESEARCH ANALYTICS AND LEADERSHIP.
                     </p>
                     <p>
-                        THEY ARE ENCOURAGED TO USE ASTRAL'S UNIQUE PRESENTATION TOOLS TO TEACH THEIR PEERS ABOUT THEIR EXPERIENCES ON BOTH
+                        THEY ARE ENCOURAGED TO USE A.S.T.R.A.L.'S UNIQUE PRESENTATION TOOLS TO TEACH THEIR PEERS ABOUT THEIR EXPERIENCES ON BOTH
                         SOCIAL MEDIA AND face-to-face ACTIVITIES. Yes, this website was developed by one of our students!
                     </p>
                     <a class="underline-button" href="about.html">
@@ -119,7 +123,7 @@
             </div>
         </div>
         <div class="who-we-are">
-            <h2>who we are</h2>
+            <h2>A.S.T.R.A.L. stands for</h2>
             <p>87 72 79 32 65 82 69 32 87 69 63</p>
             <div class="expanded-name">
                 <h1 class="astrophysics glitch-header", data-value="ASTROPHYSICS">ASTROPHYSICS</h1>
@@ -129,10 +133,10 @@
                 <h1 class="analytics glitch-header" data-value="ANALYTICS">ANALYTICS</h1>
                 <h1 class="leadership glitch-header" data-value="LEADERSHIP_">LEADERSHIP_</h1>
             </div>
-            <p>(aka astral)</p>
+            <p>(aka A.S.T.R.A.L.)</p>
         </div>
         <div class="about">
-            <p>THE ASTRAL PROGRAM AIMS TO INSPIRE STUDENTS TO PURSUE AREAS SUCH AS ASTROPHYSICS, RESEARCH, DATA SCIENCE AND LEADERSHIP THROUGH WORKSHOPS AND RESEARCH PROJECTS IN ASTRONOMY</p>
+            <p>THE A.S.T.R.A.L. PROGRAM AIMS TO INSPIRE STUDENTS TO PURSUE AREAS SUCH AS ASTROPHYSICS, RESEARCH, DATA SCIENCE AND LEADERSHIP THROUGH WORKSHOPS AND RESEARCH PROJECTS IN ASTRONOMY</p>
         </div>
         <div class="services">
             <h2>what we offer</h2>
@@ -150,7 +154,7 @@
             <a class="accordion"><div><p>WEEKLY ENGAGEMENT DURING THE SCHOOL TERM</p><img src="accordian-arrow.svg" alt=""></div></a>
             <div class="panel">
               <p>In these weekly sessions, we continue to work on mini-projects throughout the term in a similar format to our MilliPHeDe (milli-PHD) program, with the aim of keeping students engaged and working on something new.</p>
-              <p> These sessions are typically run online for a maximum of 2 hours a week, where students join virtually to update each other on their components of the project and to continue to work on research.</p>
+              <p> These sessions are typically run online for a maximum of 2 hours a week, and are hosted, organised and run by A.S.T.R.A.L. mentors, where students join virtually to update each other on their components of the project and to continue to work on research.</p>
             </div>
 
             <a class="accordion"><div><p>PUBLIC LECTURES AND SOCIAL MEDIA CONTENT DEVELOPMENT</p><img src="accordian-arrow.svg" alt=""></div></a>
@@ -160,7 +164,7 @@
         </div>
         <div class="projects">
             <h2>PROJECTS</h2>
-            <p class="description">A LIST OF MANY PROJECTS ASTRAL STUDENTS HAVE DONE IN THE PAST WITH WORLD-RENOWNED RESEARCHERS_</p>
+            <p class="description">A LIST OF MANY PROJECTS A.S.T.R.A.L. INSTITUTE STUDENTS HAVE DONE IN THE PAST WITH WORLD-RENOWNED RESEARCHERS_</p>
             <p class="ascii">80 82 79 74 69 67 84 83</p>
             <p class="instructions">Hold down and drag to see slideshow</p>
             <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
@@ -172,7 +176,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <h1>ASTRAL - Branding, Logo Design and Website Development</h1>
+                    <h1>A.S.T.R.A.L. - Branding, Logo Design and Website Development</h1>
                     <div class="more-info">
                         <p>YEAR: 2024</p>
                         <a href="projects/astral-case-study.html" class="round-button">LEARN MORE</a>
@@ -194,26 +198,26 @@
         </div>
         <div class="cohort">
             <h2>COHORT 2024</h2>
-            <p>MEET THE ASTRAL PROGRAM'S 2024 STUDENT COHORT AND THEIR THOUGHTS ON THE ASTRAL PROGRAM_</p>
+            <p>MEET THE A.S.T.R.A.L. INSTITUTE'S 2024 STUDENT COHORT AND THEIR THOUGHTS ON THE PROGRAMS WE OFFER_</p>
             <div class="reviews">
                 <div class="review" data-value="rudra">
-                    <p>“ASTRAL is out of this world (literally)! The ASTRAL program allowed myself to learn what it really feels like to do research, especially in an amazing team environment. It was fun, engaging, and through this program, I was able to fully realise why I love astronomy. It's fun, challenging and very rewarding!”</p>
+                    <p>“A.S.T.R.A.L. is out of this world (literally)! The A.S.T.R.A.L. program allowed myself to learn what it really feels like to do research, especially in an amazing team environment. It was fun, engaging, and through this program, I was able to fully realise why I love astronomy. It's fun, challenging and very rewarding!”</p>
                     <h3>rudra sekhri</h3>
                 </div>
                 <div class="review" data-value="evie">
-                    <p>“I loved my time at ASTRAL! It was a life-changing opportunity to actively engage with my interests in a completely new way, as well as work with some amazing like-minded people I never would have met otherwise.”</p>
+                    <p>“I loved my time at A.S.T.R.A.L.! It was a life-changing opportunity to actively engage with my interests in a completely new way, as well as work with some amazing like-minded people I never would have met otherwise.”</p>
                     <h3>Evie Spilias</h3>
                 </div>
                 <div class="review" data-value="hendrik">
-                    <p>“Working in the Astral program has been an immensely rewarding experience. Being able to collaborate and learn from such a rich and diverse group of people is what drew me to science in the first place, and this program offered it in spades! I have learned skills and techniques, not only in science and data analysis but also interpersonal relations, that I will carry with me and apply for the rest of my career.”</p>
+                    <p>“Working in the A.S.T.R.A.L. program has been an immensely rewarding experience. Being able to collaborate and learn from such a rich and diverse group of people is what drew me to science in the first place, and this program offered it in spades! I have learned skills and techniques, not only in science and data analysis but also interpersonal relations, that I will carry with me and apply for the rest of my career.”</p>
                     <h3>Hendrik Combrinck</h3>
                 </div>
                 <div class="review" data-value="robert">
-                    <p>"The non-orthodoxical learning in the Astral program truly amazes me! I've never imagined the potential to learn from the most recent discoveries in the astronomy field. The helpful environment allowed me to acquire so much new knowledge about research and data science!"</p>
+                    <p>"The non-orthodoxical learning in the A.S.T.R.A.L. program truly amazes me! I've never imagined the potential to learn from the most recent discoveries in the astronomy field. The helpful environment allowed me to acquire so much new knowledge about research and data science!"</p>
                     <h3>Ruoyao Ni</h3>
                 </div>
                 <div class="review" data-value="rebecca">
-                    <p>"As someone intensely interested in astronomy, participating in ASTRAL has been an incredible experience. From manipulating real data to using a supercomputer, I've been able to get a taste of what working as an astrophysicist is truly like, which has only strengthened my determination to become one in the future!"</p>
+                    <p>"As someone intensely interested in astronomy, participating in A.S.T.R.A.L. has been an incredible experience. From manipulating real data to using a supercomputer, I've been able to get a taste of what working as an astrophysicist is truly like, which has only strengthened my determination to become one in the future!"</p>
                     <h3>Rebecca Koehne</h3>
                 </div>
             </div>
@@ -229,7 +233,7 @@
             </div>
             <div class="text">
                 <h2>APPLY</h2>
-                <p>WE ARE NO LONGER ACCEPTING ANY PARTICIPANTS FOR THE 2024 PROGRAM. IF YOU ARE INTERESTED IN PARTICIPATING IN THE 2025 COHORT FOR THE ASTRAL PROGRAM</p>
+                <p>WE ARE NO LONGER ACCEPTING ANY PARTICIPANTS FOR THE 2024 PROGRAM. IF YOU ARE INTERESTED IN PARTICIPATING IN THE 2025 COHORT FOR THE A.S.T.R.A.L. PROGRAM</p>
                 <a class="underline-button" href="apply.html">
                     <div>
                         <div class="text-indicator">
@@ -283,14 +287,18 @@
             <div class="supporters">
                 <h2>supported by</h2>
                 <div class="partners">
-                    <img src="swin.jpg" alt="">
-                    <img src="ozgrav.png" alt="">
+                    <a href="https://www.swinburne.edu.au">
+                        <img src="swin.jpg" alt="">
+                    </a>
+                    <a href="https://ozgrav.org">
+                        <img src="ozgrav.png" alt="">
+                    </a>
                 </div>
             </div>
                 <div class="final-info">
                     <div class="copyright">
                         <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (astral). all rights reserved. designed and developed by rudra sekhri</p>
+                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (A.S.T.R.A.L.). all rights reserved. designed and developed by rudra sekhri</p>
                     </div>
                     <div class="socials">
                         <h2>SOCIALS</h2>
