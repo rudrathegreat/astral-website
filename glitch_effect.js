@@ -2,10 +2,12 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
+let iteration = 0;
+
 document.querySelectorAll('.glitch-header').forEach(header => {
     header.onmouseover = event => {  
-        let iteration = 0;
-        
+
+        iteration = 0;
         clearInterval(interval);
         
         interval = setInterval(() => {
@@ -25,6 +27,6 @@ document.querySelectorAll('.glitch-header').forEach(header => {
           }
           
           iteration += 1/2;
-        }, 30);
+        }, 25);
       }
 })
