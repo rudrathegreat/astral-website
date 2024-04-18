@@ -112,7 +112,7 @@
 }
 
 .team .person p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 .team .person h1, .team .person p {
@@ -165,7 +165,7 @@
 }
 
 .cflynn .summary p, .mbailes .summary p, .smishra .summary p {
-    font-size:var(--heading-font-size);
+    font-size:var(--large-font-size);
 }
 
 .cflynn p b, .mbailes p b, .smishra p b {
@@ -186,13 +186,17 @@
 }
 
 .cflynn > p, .mbailes > p, .smishra > p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 .cflynn .cross, .mbailes .cross, .smishra .cross {
     position:absolute;
     right:3vw;
     top:5vh;
+}
+
+.cflynn .cross img, .mbailes .cross img, .smishra .cross img {
+    width:2vw;
 }
 
 .scroll-container > h2 {
@@ -227,6 +231,14 @@
     .person {
         background-size:cover !important;
     }
+
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .team .person {
+        height:60vh !important;
+    }
 }
 
 @media screen and (max-width:1300px) {
@@ -251,27 +263,6 @@
 
     .footer {
         padding-top:0;
-    }
-
-    .person {
-        padding:3vh 5vw !important;
-        height:70vh !important;
-    }
-
-    .person h1 {
-        font-size:var(--large-font-size-mobile) !important;
-    }
-
-    .person p {
-        font-size:var(--medium-font-size-mobile) !important;
-    }
-
-    .cflynn .summary p, .mbailes .summary p, .smishra .summary p {
-        font-size:var(--large-font-size-mobile);
-    }
-
-    .cflynn .long-description, .mbailes .long-description, .smishra .long-description {
-        font-size:var(--small-font-size-mobile);
     }
 
     .cflynn .cross img, .mbailes .cross img, .smishra .cross img {

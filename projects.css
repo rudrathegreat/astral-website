@@ -228,6 +228,14 @@
         display:block;
         font-size:var(--large-font-size-mobile);
     }
+
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .team .person {
+        height:60vh !important;
+    }
 }
 
 @media screen and (max-width:1710px) {

@@ -54,6 +54,7 @@
     margin-bottom:3vh;
     aspect-ratio:1/1;
 }
+
 .team {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -190,6 +191,14 @@
     }
     .hero {
         background-size:cover !important;
+    }
+
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .team .person {
+        height:60vh !important;
     }
 }
 

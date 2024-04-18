@@ -746,4 +746,12 @@ h3 {
     .menu a {
         font-size:var(--extreme-font-size-mobile);
     }
+
+    p {
+        font-size: var(--medium-font-size-mobile);
+    }
+
+    .footer .supporters a > img {
+        width:60%;
+    }
 }

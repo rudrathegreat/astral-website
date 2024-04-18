@@ -237,6 +237,8 @@
     .apply .text p {
         margin-left:0 !important;
         width:100%;
+        font-size:var(--small-font-size);
+        letter-spacing: 0;
     }
 
     .how p {
@@ -245,22 +247,6 @@
 
     .how .more-info {
         width:100% !important;
-    }
-
-    .how .main-text {
-        font-size:var(--large-font-size-mobile);
-    }
-
-    .project h1 {
-        font-size:var(--extreme-font-size-mobile)
-    }
-
-    .how .more-info p {
-        font-size:var(--small-font-size-mobile);
-    }
-
-    .panel p {
-        font-size:var(--small-font-size-mobile);
     }
 
     .apply, .how, .scroll-container > h2, .services, .cohort, .footer, .services h2 {

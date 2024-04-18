@@ -5,18 +5,13 @@
 }
 
 :root {
-    --small-font-size: 1vw;
-    --medium-font-size:1.25vw;
-    --heading-font-size:1.75vw;
-    --large-font-size:2vw;
-    --extreme-font-size:4vw;
+    --ascii-font-size:18px;
+    --small-font-size:22px;
+    --heading-font-size:30px;
+    --large-font-size:36px;
+    --extreme-font-size:72px;
     --width-between-img-text:3vh;
     --heading-text-padding:1.5vh;
-    --small-font-size-mobile: 1.25vw;
-    --medium-font-size-mobile:3vw;
-    --large-font-size-mobile:4vw;
-    --heading-font-size-mobile:3.5vw;
-    --extreme-font-size-mobile:5vw;
 }
 
 .lenis.lenis-stopped {
@@ -48,7 +43,7 @@ overflow: hidden;
 }
 
 p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 h2 {
@@ -120,12 +115,12 @@ body {
 
 .navbar .text {
     width:max-content;
-    height:var(--small-font-size);
+    height:var(--ascii-font-size);
     overflow:hidden;
 }
 
 .navbar .text p {
-    font-size:var(--small-font-size);
+    font-size:var(--ascii-font-size);
     line-height:1;
 }
 
@@ -299,8 +294,12 @@ body {
     object-fit:cover;
 }
 
+.why, .who-we-are, .services, .projects, .cohort, .footer {
+    padding:10vh 5vw;
+    width:100vw;
+}
+
 .why {
-    padding:10vh 4vw;
     display:flex;
     gap:3vh;
 }
@@ -312,12 +311,11 @@ body {
 }
 
 .ascii {
-    font-size:var(--small-font-size) !important;
+    font-size:var(--ascii-font-size) !important;
 }
 
 .why .text p, .cohort p, .projects > p {
     font-size:var(--large-font-size);
-    letter-spacing:-1px;
     width:90%;
 }
 
@@ -333,7 +331,7 @@ body {
 }
 
 .why .more-info p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 .underline-button {
@@ -367,7 +365,7 @@ body {
 }
 
 .why .text .caption p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
     width:90%;
     text-align:right;
     padding-left:35%;
@@ -432,7 +430,6 @@ body {
 }
 
 .who-we-are {
-    width:100%;
     padding:5vh 5vw;
 }
 
@@ -488,7 +485,7 @@ body {
 }
 
 .cohort .review p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 .cohort .review {
@@ -507,7 +504,7 @@ body {
 }
 
 h3 {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
     margin-top:1.5vh;
 }
 
@@ -521,7 +518,6 @@ h3 {
 }
 
 .apply {
-    width:100%;
     padding:0 5vw;
     display:flex;
     gap:var(--width-between-img-text);
@@ -608,12 +604,11 @@ h3 {
     padding:1vh 1.5vw;
     border-radius: 1000px;
     border: 2px solid white;
-    font-size: var(--medium-font-size);
+    font-size: var(--small-font-size);
     width:max-content;
 }
 
 .footer {
-    width:100%;
     padding:10vh 5vw;
 }
 
@@ -670,7 +665,6 @@ h3 {
 }
 
 .services {
-    width:100%;
     padding:10vh 5vw;
 }
 
@@ -717,7 +711,7 @@ h3 {
 .services a div img {
     transform:rotate(0deg);
     transition:transform 0.3s ease;
-    height:var(--medium-font-size);
+    height:var(--small-font-size);
 }
 
 .services a.active div img {
@@ -766,7 +760,7 @@ h3 {
 }
 
 .cursor p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
     font-weight:700;
     color:#6A6BF4;
     transition: opacity 0.3s ease;
@@ -856,7 +850,7 @@ h3 {
 
 .text-indicator {
     display:block !important;
-    height:var(--medium-font-size);
+    height:var(--small-font-size);
     overflow:hidden;
 }
 
@@ -871,12 +865,12 @@ h3 {
 }
 
 .apply a p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 .img-indicator {
     display:block !important;
-    height:1em;
+    height:1rem;
     overflow:hidden;
 }
 
@@ -940,7 +934,6 @@ h3 {
 }
 
 .projects {
-    width:100%;
     padding:0 5vw;
     display:flex;
     flex-direction:column;
@@ -998,7 +991,6 @@ h3 {
 }
 
 .projects > .ascii {
-    font-size:var(--small-font-size);
     margin-bottom:1.5vh;
     width:100%;
 }
@@ -1017,7 +1009,7 @@ h3 {
     border: 2px solid black;
     border-radius: 1000px;
     padding:1vh 1.5vw;
-    font-size:var(--small-font-size);
+    font-size:var(--ascii-font-size);
     position:relative;
 }
 
@@ -1047,6 +1039,7 @@ h3 {
     overflow:hidden;
     transition: color 0.3s ease-in-out;
     z-index:2;
+    font-size: var(--ascii-font-size);
 }
 
 .contacts a::before, .project a::before {
@@ -1095,7 +1088,7 @@ h3 {
 }
 
 .project p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
     color:white;
 }
 
@@ -1118,11 +1111,16 @@ h3 {
 .footer .supporters a > img {
     transform:scale(1.0);
     transition:transform 1s ease;
+    width:80%;
 }
 
 .footer .supporters a:hover > img {
     transform:scale(1.03);
     transition:transform 1s ease;
+}
+
+.underline-button img {
+    height:var(--small-font-size);
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -1194,16 +1192,12 @@ h3 {
 
 @media screen and (max-width: 1000px) {
 
-    .why .image p, .apply .image p {
-        font-size:var(--medium-font-size-mobile);
-    }
-
-    .navbar .text p {
-        font-size:var(--medium-font-size-mobile);
-    }
-
-    .panel p {
-        font-size:var(--medium-font-size-mobile);
+    :root {
+        --ascii-font-size:12px;
+        --small-font-size:16px;
+        --heading-font-size:20px;
+        --large-font-size:22px;
+        --extreme-font-size:30px;
     }
 
     .hero h1 {
@@ -1225,49 +1219,13 @@ h3 {
         padding-right:3vw;
     }
 
-    h2, .contacts h2 {
-        font-size:var(--heading-font-size-mobile);
-    }
-
-    .why .text > p, .apply .text > p, .project h1 {
-        font-size:var(--large-font-size-mobile);
-    }
-
     .contacts h1 {
         font-size: 7vw;
         margin-bottom:1vh;
     }
 
-    .who-we-are h1 {
-        font-size:var(--extreme-font-size-mobile);
-    }
-
-    .why .more-info a p, .apply a p, .faqs a p {
-        font-size:var(--medium-font-size-mobile);
-    }
-
-    .underline-button .text-indicator {
-        height:var(--medium-font-size-mobile);
-    }
-
     .underline-button div {
         gap:3vw;
-    }
-
-    .projects .description, .cohort > p {
-        font-size:var(--large-font-size-mobile);
-    }
-
-    .projects .instructions {
-        font-size:var(--small-font-size-mobile);
-    }
-
-    .navbar .text {
-        height:var(--medium-font-size-mobile);
-    }
-    
-    .cohort-title h2 {
-        font-size:var(--large-font-size-mobile);
     }
 
     .why .text a, .apply .text a {
@@ -1312,7 +1270,6 @@ h3 {
     }
 
     .services a div p {
-        font-size:var(--heading-font-size-mobile) !important;
         padding-right:1.5vw;
     }
 
@@ -1426,24 +1383,11 @@ h3 {
         height:100%;
     }
 
-    .footer-link, .project p {
-        font-size:var(--medium-font-size-mobile);
-    }
-
-    .footer p {
-        font-size: var(--medium-font-size-mobile);
-    }
-
-    .footer h2 {
-        font-size:var(--large-font-size-mobile);
-    }
-
     .final-info {
         margin-top:var(--heading-text-padding);
     }
 
     .contacts a, .view-more-projects-container a, .project a {
-        font-size:var(--medium-font-size-mobile);
         padding:0.5vh 3vw !important;
     }
 
@@ -1451,15 +1395,7 @@ h3 {
         align-items: center;
     }
 
-    .cohort .ascii {
-        font-size:var(--small-font-size);
-    }
-
-    .services a div img {
-        height: var(--medium-font-size-mobile);
-    }
-
-    .menu a {
-        font-size:var(--extreme-font-size-mobile);
+    .footer .supporters a > img {
+        width:60%;
     }
 }

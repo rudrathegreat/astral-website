@@ -97,6 +97,10 @@ p {
     margin:1.5vh 5vw;
 }
 
+.content div a {
+    font-size:var(--ascii-font-size);
+}
+
 @media screen and (max-width:1710px) {
     .projects {
         display:none;
@@ -182,5 +186,9 @@ p {
 
     .services h2 {
         margin-bottom:1vh;
+    }
+
+    .content div a {
+        padding:1vh 3vw;
     }
 }
