@@ -77,7 +77,6 @@ body {
 
 .navbar.activated {
     background:white;
-    border:1px solid white;
     backdrop-filter: none;
     transition:background 0.3s ease-out, backdrop-filter 0.3s ease-in-out, border 0.3s ease;
 }
@@ -471,7 +470,8 @@ body {
 }
 
 .cohort {
-    padding:15vh 5vw;
+    padding:5vh 5vw;
+    padding-top:10vh;
     width:100%;
 }
 
@@ -665,7 +665,7 @@ h3 {
 }
 
 .services {
-    padding:10vh 5vw;
+    padding:5vh 5vw;
 }
 
 .services h2 {
@@ -941,7 +941,7 @@ h3 {
     overflow-x:hidden;
 }
 
-.project {
+.projects .project {
     background:url('bg.jpg');
     background-position: 100% center;
     background-size:150%;
@@ -950,20 +950,45 @@ h3 {
     width:100vw;
 }
 
-.project:nth-child(2) {
+.projects .project:nth-child(2) {
     background:url('astral-website.jpg');
     background-position: 100% center;
     background-size:150%;
     background-repeat: no-repeat;
 }
 
-.project:nth-child(3) {
+.projects .project:nth-child(3) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)),url('snrcalc.jpg');
     background-position: 100% center;
     background-size:150%;
     background-repeat: no-repeat;
 }
+
+.projects-mobile .project {
+    background:url('bg.jpg');
+    background-position: center center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:50vh;
+    width:90vw;
+}
+
+.projects-mobile > .project:nth-child(4) {
+    background:url('astral-website.jpg');
+    background-position: center center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.projects-mobile > .project:nth-child(5) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)),url('snrcalc.jpg');
+    background-position: center center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
 
 
 #image-track {
@@ -996,8 +1021,9 @@ h3 {
 }
 
 .view-more-projects-container {
+    margin-left:5%;
     margin-top:3vh;
-    width:100%;
+    width:90%;
     display:flex;
     justify-content: space-between;
 }
@@ -1067,17 +1093,25 @@ h3 {
     transition: color 0.3s ease-in-out;
 }
 
-.project {
+.projects .project {
     padding:7.5vh 5vw;
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
+.projects-mobile .project {
+    padding:3vh 5vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap:2vh;
+}
+
 .project h1 {
     color:white;
     font-size:var(--large-font-size);
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     width:80%;
 }
 
@@ -1090,6 +1124,19 @@ h3 {
 .project p {
     font-size:var(--small-font-size);
     color:white;
+}
+
+.projects-mobile {
+    display:none;
+    width:100%;
+    flex-direction: column;
+    padding:3vh 5vw;
+    gap:1vh;
+}
+
+.projects-mobile > p {
+    font-size:var(--large-font-size);
+    margin-bottom:3vh;
 }
 
 .hero .second {
@@ -1247,7 +1294,7 @@ h3 {
         margin-left:0;
     }
 
-    .who-we-are, .about ,.services, .projects, .projects h2 {
+    .who-we-are, .about, .projects, .projects h2 {
         padding-top:0;
         margin-top:0;
     }
@@ -1319,13 +1366,12 @@ h3 {
         margin-bottom:var(--heading-text-padding);
     }
 
-    .project {
-        background:url('bg-vertical.jpg');
-        background-position: 100% center;
-        background-size:150%;
-        background-repeat: no-repeat;
-        height:50vh;
-        width:100vw;
+    .projects {
+        display:none;
+    }
+
+    .projects-mobile {
+        display:flex;
     }
 
     .cohort-title {
@@ -1397,5 +1443,9 @@ h3 {
 
     .footer .supporters a > img {
         width:60%;
+    }
+
+    .services {
+        padding:5vh 5vw;
     }
 }
