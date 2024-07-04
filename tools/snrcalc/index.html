@@ -61,6 +61,12 @@
                     <div class="field">
                         <h1>Number of Polarisations</h1>
                     </div>
+                    <div class="field">
+                        <h1>Period (s)</h1>
+                    </div>
+                    <div class="field">
+                        <h1>Width (s)</h1>
+                    </div>
                 </div>
                 <div class="inputs">
                     <input type="text" id="area">
@@ -70,6 +76,8 @@
                     <input type="text" id="time">
                     <input type="text" id="tsys">
                     <input type="text" id="np">
+                    <input type="text" id="period">
+                    <input type="text" id="width">
                 </div>
             </div>
             <div class="side">
@@ -88,12 +96,16 @@
             var time = document.getElementById("time").value;
             var tsys = document.getElementById("tsys").value;
             var np = document.getElementById("np").value;
+            var period = document.getElementById("period").value;
+            var width = document.getElementById("width").value;
             if (area != "nothing" && efficiency != "nothing" && bandwidth != "nothing" && flux != "nothing" && time != "nothing" && tsys != "nothing" && np != "nothing"){
                 var k = 1.38064852e-23;
                 var g = (((parseFloat(efficiency) * parseFloat(area)) / 100) / (2 * parseFloat(k))) * (10**-26);
                 var snr = ((parseFloat(flux) * parseFloat(g)) / parseFloat(tsys)) * Math.sqrt((parseFloat(time)*parseFloat(bandwidth)*1000000*parseFloat(np)));
+                var dutyCycleFactor = Math.sqrt((period - width) / (width));
+                var final_answer = snr * dutyCycleFactor;
                 var answer = document.getElementById("answer");
-                answer.innerHTML = snr.toFixed(1);
+                answer.innerHTML = final_answer.toFixed(1);
             }
         }
     </script>
