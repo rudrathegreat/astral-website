@@ -31,16 +31,16 @@ window.addEventListener('scroll', function() {
     styleNavbar();
 })
 
-window.addEventListener('mousemove', function(e) {
-    percentage_x = (e.clientX / this.window.screen.width) * 100;
-    offset_x = 50 + ((percentage_x - 50)/40);
-    percentage_y = (e.clientY / this.window.screen.height) * 100;
-    offset_y = 50 + ((percentage_y - 50)/40);
-    menu_links.animate({
-        top: offset_y + '%',
-        left: offset_x + '%'
-    }, {duration:1500, fill:'forwards'});
-})
+// window.addEventListener('mousemove', function(e) {
+//     percentage_x = (e.clientX / this.window.screen.width) * 100;
+//     offset_x = 50 + ((percentage_x - 50)/40);
+//     percentage_y = (e.clientY / this.window.screen.height) * 100;
+//     offset_y = 50 + ((percentage_y - 50)/40);
+//     menu_links.animate({
+//         top: offset_y + '%',
+//         left: offset_x + '%'
+//     }, {duration:1500, fill:'forwards'});
+// })
 
 function toggleMenu() {
     document.querySelector('.navbar').classList.toggle('activated');
@@ -52,4 +52,13 @@ function goTo(section_name) {
     setTimeout(() => {
         toggleMenu();
     }, 300);
+}
+
+function toggleOptions(section_name) {
+    document.querySelectorAll('.options-activated').forEach(activated_item => {
+        if (activated_item.classList.contains(section_name) == false) {
+            activated_item.classList.toggle('options-activated');
+        }
+    })
+    document.querySelector('.' + section_name).classList.toggle('options-activated');
 }
