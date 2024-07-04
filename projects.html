@@ -31,15 +31,35 @@
         </div>
         <div class="menu">
             <div class="links">
-                <a href="index.html">HOME</a>
-                <a href="about.html">ABOUT</a>
-                <a onclick="goTo('.hero')">PROJECTS</a>
-                <a href="team.html">TEAM</a>
-                <a href="cohort.html">COHORT</a>
-                <a href="apply.html">APPLY</a>
-                <a href="contacts.html">CONTACTS</a>
-                <a href="faqs.html">FAQS</a>
-                <a href="code-of-conduct.html">Code of Conduct</a>
+                <div class="categories">
+                    <a href="index.html">HOME</a>
+                    <a onclick="toggleOptions('about-options');">ABOUT</a>
+                    <a onclick="toggleOptions('work-options');">Work</a>
+                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
+                    <a href="apply.html">APPLY</a>
+                    <a href="contacts.html">CONTACTS</a>
+                    <a href="faqs.html">FAQS</a>
+                </div>
+                <div class="options">
+                    <div class="about-options nav-options">
+                        <a href="about.html">Vision and Mission</a>
+                        <a href="team.html">Team</a>
+                        <a href="code-of-conduct.html">Code of Conduct</a>
+                    </div>
+                    <div class="work-options nav-options">
+                        <a onclick="goTo('.hero');">Featured Projects</a>
+                        <a onclick="goTo('.hero');">Current Projects</a>
+                        <a onclick="goTo('.hero');">Online Tools</a>
+                        <a onclick="goTo('.hero');">School Programs</a>
+                        <a onclick="goTo('.hero');">Past Projects</a>
+                        <a onclick="goTo('.hero');">Other Resources</a>
+                    </div>
+                    <div class="cohort-options nav-options">
+                        <a href="cohort.html">Current ASTRAL Cohort</a>
+                        <a href="cohort.html">Work Experience Students</a>
+                        <a href="cohort.html">Past ASTRAL Alumni</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
