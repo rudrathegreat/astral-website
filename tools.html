@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S.T.R.A.L. | FAQs</title>
+    <title>A.S.T.R.A.L. | Projects</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="faqs.css">
+<link rel="stylesheet" href="tools.css">
 <link rel="icon" href="logo.ico">
 </head>
 <body>
@@ -32,7 +32,7 @@
         <div class="menu">
             <div class="links">
                 <div class="categories">
-                    <a onclick="goTo('.hero');">HOME</a>
+                    <a href="index.html">HOME</a>
                     <a onclick="toggleOptions('about-options');">ABOUT</a>
                     <a onclick="toggleOptions('work-options');">Work</a>
                     <a onclick="toggleOptions('cohort-options');">COHORT</a>
@@ -49,7 +49,7 @@
                     <div class="work-options nav-options">
                         <a href="projects.html">Featured Projects</a>
                         <a href="projects.html">Current Projects</a>
-                        <a href="tools.html">Online Tools</a>
+                        <a onclick="goTo('.hero')">Online Tools</a>
                         <a href="projects.html">School Programs</a>
                         <a href="projects.html">Past Projects</a>
                         <a href="projects.html">Other Resources</a>
@@ -66,39 +66,19 @@
     <div class="scroll-container">
         <div class="hero with-bg">
             <div class="title-container">
-                <h1 class="glitch-header" data-value="FAQS_">FAQS_</h1>
-                <a onclick="lenis.scrollTo('.services');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+                <h1 class="glitch-header" data-value="TOOLS_">TOOLS_</h1>
+                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
             </div>
         </div>
-        <div class="services">
-            <h2>Frequently Asked Questions</h2>
-            <a class="accordion"><div><p>HOW DO WE APPLY?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>AS OF NOW, WE DO NOT HAVE AN OFFICIAL APPLICATION PROCESS. TO PARTICIPATE IN A WORK EXPERIENCE PROGRAM, CONTACT US FOR MORE INFORMATION</p>
-                <a href="apply.html">LEARN MORE</a>
-            </div>
-            <a class="accordion"><div><p>WHAT IS THE SOURCE OF our FUNDING?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>The A.S.T.R.A.L. program receives all of its funding from the A.S.T.R.A.L. foundation, a foundation set up where donors can help provide pathways for students to prepare themselves for the future, especially those with low socio-economic backgrounds.</p>
-                <p>The A.S.T.R.A.L. foundation receives all of its funding from donors, and if you are interested, you can donate using the link below.</p>
-                <a href="">DONATE</a>
-            </div>
-            <a class="accordion"><div><p>Is A.S.T.R.A.L. targeted at future astronomers?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>THE PRIMARY AIM OF A.S.T.R.A.L. IS NOT TO ENCOURAGE STUDENTS IN ASTRONOMY, BUT RATHER INSPIRE AND TEACH STUDENTS IMPORTANT SKILLS THAT ARE BECOMING MORE AND MORE NECESSARY IN FUTURE CAREERS (SUCH AS PROGRAMMING, DATA ANALYSIS, ETC.).</p>
-                <p>HOWEVER, IN THE DEVELOPMENT OF A.S.T.R.A.L.'S COHESIVE PROGRAM, WE FOUND THAT ASTRONOMY INCLUDES ALL THESE SKILLS AND ALLOWS STUDENTS TO GET A SNEAK PEAK IN RESEARCH WHILE ALSO LEARNING SKILLS THAT AREN'T EXCLUSIVE TO JUST ASTROPHYSICS RESEARCH.</p>
-                <a href="about.html">LEARN MORE</a>
-            </div>
-            <a class="accordion"><div><p>Does A.S.T.R.A.L. offer financial assistance to participants?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>STUDENTS WHO PARTICIPATE IN THE PROGRAM COULD RECEIVE MODEST SCHOLARSHIPS FOR THEIR WORK INVOLVED IN THE PROGRAM. STUDENTS PARTICIPATED IN THE PROGRAM MAY ALSO BE DONATED RESOURCES TO ASSIST THEM THROUGHOUT THE PROGRAM DEPENDING ON CIRCUMSTANCES.</p>
-                <p>INTERNATIONAL STUDENTS' LIVING COSTS MAY ALSO BE PARTIALLY COVERED UNDER THE PROGRAM FOR THEIR TIME IN AUSTRALIA.</p>
-            </div>
-
-            <a class="accordion"><div><p>WHAT DO THE NUMBERS ON THE HOME PAGE MEAN?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>THE DIGITS ARE SCATTERED THROUGHOUT THE HOME PAGE REPRESENT HEADINGS AND OTHER EASTER EGGS IN ASCII FORMAT, A FORMAT USED TO CONVERT THE ALPHANUMERIC CHARACTERS USED IN OUR DAY-TO-DAY LIVES ON COMPUTERS TO SPECIFIC LOW-LEVEL COMPUTER CODE WHICH THE COMPUTE CAN UNDERSTAND.</p>
-            </div>
+        <h2 class="start">LIST OF TOOLS</h2>
+        <p class="instructions">Click for more information</p>
+        <div class="team">
+            <a href="tools/snrcalc/index.html">
+                <div class="person">
+                    <div><h1>SNRCalc</h1></div>
+                    <div><p>Signal to Nois Calculator</p></div>
+                </div>
+            </a>
         </div>
         <div class="footer">
             <div class="supporters">
@@ -133,10 +113,10 @@
                             <a href="index.html" class="footer-link">HOME</a>
                             <a href="about.html" class="footer-link">ABOUT</a>
                             <a href="team.html" class="footer-link">TEAM</a>
-                            <a href="projects.html" class="footer-link">PROJECTS</a>
+                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">PROJECTS</a>
                             <a href="apply.html" class="footer-link">APPLY</a>
                             <a href="cohort.html" class="footer-link">COHORT</a>
-                            <a onclick="lenis.scrollTo('.hero');" class="footer-link">FAQS</a>
+                            <a href="faqs.html" class="footer-link">FAQS</a>
                         </div>
                     </div>
                     <div class="back-to-top">
@@ -153,7 +133,7 @@
     <script src="navbar.js"></script>
     <script src="parallax_bg.js"></script>
     <script src="white-cursor-bg.js"></script>
-    <script src="accordian.js"></script>
+    <script src="team.js"></script>
     <script>
         function toggleDescription(person) {
             document.querySelector('.' + person).classList.toggle('card-activated');
