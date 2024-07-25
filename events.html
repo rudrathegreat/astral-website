@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.S.T.R.A.L. | Projects</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="projects.css">
+<link rel="icon" href="logo.ico">
+</head>
+<body>
+    <div class="cursor">
+        <p></p>
+    </div>
+    <div class="blob"></div>
+    <div class="navbar bg-nav">
+        <a href="index.html">
+            <img src="logo.svg" alt="" class="logo">
+        </a>
+        <div class="menu-icon">
+            <a onclick="toggleMenu();">
+                <div class="text">
+                    <p>menu</p>
+                    <p>close</p>
+                </div>
+            </a>
+            <a class="img-icon" onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <div class="categories">
+                    <a href="index.html">HOME</a>
+                    <a onclick="toggleOptions('about-options');">ABOUT</a>
+                    <a onclick="toggleOptions('work-options');">Work</a>
+                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
+                    <a href="apply.html">APPLY</a>
+                    <a href="contacts.html">CONTACTS</a>
+                    <a href="faqs.html">FAQS</a>
+                </div>
+                <div class="options">
+                    <div class="about-options nav-options">
+                        <a href="about.html">Vision and Mission</a>
+                        <a href="team.html">Team</a>
+                        <a href="code-of-conduct.html">Code of Conduct</a>
+                    </div>
+                    <div class="work-options nav-options">
+                        <a onclick="goTo('.hero');">Featured Projects</a>
+                        <a onclick="goTo('.hero');">Current Projects</a>
+                        <a href="tools.html">Online Tools</a>
+                        <a onclick="goTo('.hero');">School Programs</a>
+                        <a onclick="goTo('.hero');">Past Projects</a>
+                        <a onclick="goTo('.hero');">Other Resources</a>
+                    </div>
+                    <div class="cohort-options nav-options">
+                        <a href="cohort.html">Current ASTRAL Cohort</a>
+                        <a href="cohort.html">Work Experience Students</a>
+                        <a href="cohort.html">Past ASTRAL Alumni</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="hero with-bg">
+            <div class="title-container">
+                <h1 class="glitch-header" data-value="PROJECTS_">PROJECTS_</h1>
+                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+            </div>
+        </div>
+        <h2 class="start">LIST OF EVENTS</h2>
+        <p class="instructions">Click for more information</p>
+        <div class="team">
+            <a href="projects/meerkat-pta.html">
+                <div class="person">
+                    <div><h1>A VIRTUAL TOUR OF EINSTEIN'S UNIVERSE</h1></div>
+                    <div><p>14TH AUGUST 2024 6:30-7:30PM</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="footer">
+            <div class="supporters">
+                <h2>supported by</h2>
+                <div class="partners">
+                    <a href="https://www.swinburne.edu.au">
+                        <img src="swin.jpg" alt="">
+                    </a>
+                    <a href="https://ozgrav.org">
+                        <img src="ozgrav.png" alt="">
+                    </a>
+                </div>
+            </div>
+                <div class="final-info">
+                    <div class="copyright">
+                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
+                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (A.S.T.R.A.L.). all rights reserved. designed and developed by rudra sekhri</p>
+                    </div>
+                    <div class="socials">
+                        <h2>SOCIALS</h2>
+                        <div class="links">
+                            <a href="" class="footer-link">TWITTER</a>
+                            <a href="" class="footer-link">YOUTUBE</a>
+                            <a href="" class="footer-link">LINKEDIN</a>
+                            <a href="" class="footer-link">INSTAGRAM</a>
+                            <a href="" class="footer-link">EMAIL</a>
+                        </div>
+                    </div>
+                    <div class="sitemap">
+                        <h2>SITEMAP</h2>
+                        <div class="links">
+                            <a href="index.html" class="footer-link">HOME</a>
+                            <a href="about.html" class="footer-link">ABOUT</a>
+                            <a href="team.html" class="footer-link">TEAM</a>
+                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">PROJECTS</a>
+                            <a href="apply.html" class="footer-link">APPLY</a>
+                            <a href="cohort.html" class="footer-link">COHORT</a>
+                            <a href="faqs.html" class="footer-link">FAQS</a>
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="smooth-scroll.js"></script>
+    <script src="cursor.js"></script>
+    <script src="glitch_effect.js"></script>
+    <script src="navbar.js"></script>
+    <script src="parallax_bg.js"></script>
+    <script src="white-cursor-bg.js"></script>
+    <script src="team.js"></script>
+    <script>
+        function toggleDescription(person) {
+            document.querySelector('.' + person).classList.toggle('card-activated');
+        }
+    </script>
+</body>
+</html>
