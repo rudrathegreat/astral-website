@@ -1,3 +1,7 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
 .hero {
     height:90vh;
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
@@ -9,6 +13,8 @@
     display: flex;
     align-items: flex-end;
     flex-direction: row;
+    padding: 0 5vh;
+    padding-bottom:5vh;
 }
 
 .hero h1 {

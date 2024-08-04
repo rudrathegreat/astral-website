@@ -11,6 +11,10 @@
 }
 
 
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
 .navbar {
     background:rgba(255,255,255,0.4);
     backdrop-filter: blur(40px);
@@ -50,10 +54,15 @@
 }
 
 .hero a {
+    position:relative;
+    overflow:hidden;
     display:inline-block;
-    margin-bottom:3vh;
+    border-radius:100%;
+    width:max-content;
     aspect-ratio:1/1;
+    margin-bottom:3vh;
 }
+
 
 .team {
     display: grid;
