@@ -1,19 +1,3 @@
-video.addEventListener('mouseover', function() {
-    cursor.style.width = '10vw';
-    cursor.style.height = '10vw';
-    cursor.style.background = 'white';
-    cursor.querySelector('p').innerHTML = 'UNMUTE';
-    cursor.querySelector('p').style.opacity = 1;
-})
-
-video.addEventListener('mouseleave', function() {
-    cursor.style.width = '1.5vw';
-    cursor.style.height = '1.5vw';
-    cursor.style.background = '#6A6BF4';
-    cursor.querySelector('p').innerHTML = '';
-    cursor.querySelector('p').style.opacity = 1;
-})
-
 let astrophysics_img = document.querySelector('#astrophysics');
 
 let supercomputing_tag = document.querySelector('.supercomputing');
@@ -142,10 +126,11 @@ whoweare_div.addEventListener('mouseleave', function() {
 
 track.addEventListener('mouseover', function() {
     cursor.style.width = '10vw';
-    cursor.style.height = '5vw';
+    cursor.style.height = '10vw';
     cursor.style.background = 'white';
+    cursor.querySelector('p').innerHTML = 'CLICK AND DRAG';
+    cursor.querySelector('p').style.opacity = 1;
     blob.style.opacity = 0;
-    cursor.querySelector('.arrows').style.opacity = 1;
 })
 
 track.addEventListener('mouseleave', function() {
@@ -153,5 +138,5 @@ track.addEventListener('mouseleave', function() {
     cursor.style.height = '1.5vw';
     cursor.style.background = '#6A6BF4';
     blob.style.opacity = 0.2;
-    cursor.querySelector('.arrows').style.opacity = 0;
+    cursor.querySelector('p').style.opacity = 0;
 })

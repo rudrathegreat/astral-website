@@ -64,17 +64,11 @@
                         <a href="code-of-conduct.html">Code of Conduct</a>
                     </div>
                     <div class="work-options nav-options">
-                        <a href="projects.html">Featured Projects</a>
-                        <a href="projects.html">Current Projects</a>
+                        <a href="projects.html">Projects</a>
                         <a href="tools.html">Online Tools</a>
-                        <a href="projects.html">School Programs</a>
-                        <a href="projects.html">Past Projects</a>
-                        <a href="projects.html">Other Resources</a>
                     </div>
                     <div class="cohort-options nav-options">
                         <a href="cohort.html">Current ASTRAL Cohort</a>
-                        <a href="cohort.html">Work Experience Students</a>
-                        <a href="cohort.html">Past ASTRAL Alumni</a>
                     </div>
                 </div>
             </div>
@@ -82,26 +76,27 @@
     </div>
     <div class="scroll-container">
         <div class="hero">
-            <div class="org">
-                <img src="logo.svg" alt="">
-                <h2>A.S.T.R.A.L.</h2>
+            <div class="video">
+                <video src="ASTRAL_final.mp4" muted autoplay loop></video>
             </div>
-            <div class="lines">
-                <div class="line">
-                    <h1>DEVELOPING A COHORT</h1>
+            <div class="left-column">
+                <div class="org-title">
+                    <h2>WELCOME TO THE</h2>
+                    <h1>A.S.T.R.A.L. INSTITUTE</h1>
                 </div>
-                <div class="line">
-                    <h1>OF INSPIRATIONAL</h1>
-                </div>
-                <div class="line">
-                    <h1>STUDENT STEM LEADERS_</h1>
-                    <a onclick="lenis.scrollTo('.why');"><img class="hero-button" src="circle_arrow.svg" alt=""></a>
+                <div class="subtitle">
+                    <p>DEVELOPING A COHORT OF INSPIRATIONAL STUDENT STEM LEADERS_</p>
+                    <p class="scroll-down-indicator">SCROLL DOWN</p>
                 </div>
             </div>
-            <p style="position: absolute;bottom: 3vh;">SCROLL DOWN</p>
-        </div>
-        <div class="video">
-            <video src="space.mp4" loop></video>
+            <div class="right-column">
+                <div class="watch-video-container">
+                    <a onclick="">WATCH VIDEO</a>
+                </div>
+                <div class="scroll-down-button">
+                    <a onclick="lenis.scrollTo('.why')"><img src="circle_arrow_white.svg" alt=""></a>
+                </div>
+            </div>
         </div>
         <div class="why">
             <div class="text">
@@ -176,10 +171,19 @@
             <h2>what we offer</h2>
             <a class="accordion"><div><p>WORK EXPERIENCE</p><img src="accordian-arrow.svg" alt=""></div></a>
             <div class="panel">
-                <p>Week long work experience program at the Centre for Astrophysics and Supercomputing at the Swinburne University of Technology.</p>
-            </div>
-            <div class="apply"><p style="padding:5vh 0;">Click below for the application form</p>
-            <a href="https://form.jotform.com/241187571332859"> WORK EXPERIENCE APPLICATION FORM</a>
+                <p>Week long work experience program at the Centre for Astrophysics and Supercomputing at the Swinburne University of Technology. Click below for the application form</p>
+                <a class="underline-button" href="https://form.jotform.com/241187571332859">
+                    <div>
+                        <div class="text-indicator">
+                            <p>WORK EXPERIENCE APPLICATION FORM</p>
+                            <p>WORK EXPERIENCE APPLICATION FORM</p>
+                        </div>
+                        <div class="img-indicator">
+                            <img src="arrow-link.svg" alt="">
+                            <img src="arrow-link.svg" alt="">
+                        </div>
+                    </div>
+                </a>
             </div>
             <a class="accordion"><div><p>The MilliPHeDe (milli-PHD) Summer Program</p><img src="accordian-arrow.svg" alt=""></div></a>
             <div class="panel">
@@ -408,6 +412,5 @@
     <script src="apply_section_grid_effect.js"></script>
     <script src="home.js"></script>
     <script src="contacts_section.js"></script>
-    <script>document.querySelector('.video video').play();</script>
 </body>
 </html>
