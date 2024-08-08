@@ -283,6 +283,10 @@
         right:5vw;
     }
 
+    .summary p {
+        font-size: var(--heading-font-size);
+    }
+
     .team {
         padding-top:3vh;
         padding-bottom:0;
