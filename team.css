@@ -299,6 +299,10 @@
     .footer {
         padding-top:7vh;
     }
+
+    .cflynn > p, .mbailes > p, .saurav > p {
+        font-size:var(--ascii-font-size) !important;
+    }
 }
 
 @media screen and (max-height:500px) {
