@@ -284,7 +284,7 @@
     }
 
     .summary p {
-        font-size: var(--heading-font-size) !important;
+        font-size: var(--medium-font-size) !important;
     }
 
     .team {
