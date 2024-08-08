@@ -179,7 +179,7 @@
 
 .scroll-container > h2 {
     margin-top:10vh;
-    text-align:center
+    padding-left:5vw;
 }
 
 @media screen and (max-width:1710px) {
