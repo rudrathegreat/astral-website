@@ -747,4 +747,8 @@ h3 {
     .menu .nav-options a {
         width:40vw;
     }
+
+    .menu {
+        height:100svh;
+    }
 }
