@@ -1420,9 +1420,14 @@ h3 {
         --extreme-font-size:30px;
     }
 
+    .menu {
+        height:100svh;
+    }
+
     .hero {
         flex-direction: column;
         margin-bottom:0;
+        height:100svh;
     }
 
     .hero > div > div {
