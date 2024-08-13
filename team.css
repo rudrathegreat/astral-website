@@ -18,7 +18,7 @@
 }
 
 .hero h1 {
-    font-size:9vw;
+    font-size:7vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -33,7 +33,7 @@
 }
 
 .hero a img {
-    height:7vw;
+    height:6vw;
 }
 
 .hero a {
@@ -43,7 +43,7 @@
     border-radius:100%;
     width:max-content;
     aspect-ratio:1/1;
-    margin-bottom:3vh;
+    margin-bottom:1vh;
 }
 
 .navbar {

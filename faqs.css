@@ -18,7 +18,7 @@
 }
 
 .hero h1 {
-    font-size:9vw;
+    font-size:7vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -33,7 +33,7 @@
 }
 
 .hero a img {
-    height:7vw;
+    height:6vw;
 }
 
 .hero a {
@@ -43,7 +43,7 @@
     border-radius:100%;
     width:max-content;
     aspect-ratio:1/1;
-    margin-bottom:3vh;
+    margin-bottom:1vh;
 }
 
 .navbar {
@@ -61,19 +61,12 @@
     background:white;
 }
 
-.panel a {
-    text-decoration: none;
-    font-size:var(--small-font-size);
-    color:black;
-    padding:1vh 1.5vw;
-    border:2px solid black;
-    width: max-content;
-    border-radius:1000px;
-    position:relative;
+.footer {
+    padding-top:3vh;
 }
 
-.footer {
-    padding-top:0vh;
+.panel a p {
+    margin:0 !important;
 }
 
 @media screen and (max-width:1300px) {

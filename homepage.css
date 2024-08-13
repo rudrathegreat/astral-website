@@ -59,6 +59,82 @@ body {
     text-transform:uppercase;
 }
 
+.overlay-video {
+    position:fixed;
+    top:0;
+    left:0;
+    opacity:0;
+    pointer-events: none;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index:3;
+    width:100vw;
+    height:100vh;
+    transition: opacity 0.5s ease;
+}
+
+.overlay-video video {
+    width:70%;
+    object-fit: scale-down;
+    height:initial;
+    flex-direction: column;
+    margin-top:5vh;
+}
+
+.overlay-video a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding:1vh 1.5vw;
+    border-radius: 1000px;
+    border: 2px solid white;
+    font-size: var(--small-font-size);
+    width:max-content;
+    height:none;
+    position:relative;
+    overflow:hidden;
+    z-index:4;
+    transition: color 0.3s ease-in-out;
+    margin-top:3vh;
+}
+
+.overlay-video a::before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    transform:scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin:bottom;
+    background:white;
+    opacity:1;
+}
+
+
+.overlay-video a:hover {
+    color:#6A6BF4;
+    transition: color 0.3s ease-in-out;
+}
+
+.overlay-video a:hover::before {
+    transform:scaleY(1);
+    transition: transform 0.3s ease;
+    transform-origin:bottom;
+}
+
+.overlay-video.active {
+    opacity:1;
+    pointer-events: all;
+    transition: opacity 0.3s ease;
+}
+
 .navbar {
     width:100%;
     background:none;
@@ -202,7 +278,7 @@ body {
 .menu a {
     color:black;
     text-decoration: none;
-    font-size:var(--extreme-font-size);
+    font-size:3vw;
     margin-right:5vw;
     position:relative;
     width:max-content;
@@ -260,13 +336,17 @@ body {
     position:relative;
     margin-bottom:5vh;
     color:white;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.1);
     display:flex;
 }
 
 .hero h1 {
     font-size:var(--extreme-font-size);
     line-height:1;
+}
+
+.hero .scroll-down-button img {
+    width:10vw;
 }
 
 .hero .left-column {
@@ -802,11 +882,11 @@ h3 {
     margin-top:3vh;
 }
 
-.panel p:first-child {
+.panel > p:first-child {
     margin-top:5vh;
 }
 
-.panel p:last-child {
+.panel > p:last-child {
     margin-bottom:5vh;
 }
 
@@ -1284,6 +1364,9 @@ h3 {
 }
 
 @media screen and (max-width:1300px) {
+    .hero .scroll-down-button img {
+        width:15vw;
+    }
     .footer .final-info {
         flex-direction: column;
     }
@@ -1337,23 +1420,38 @@ h3 {
         --extreme-font-size:30px;
     }
 
-    .hero h1 {
-        letter-spacing:-3px;
-        font-size:7vw;
-    }
-
-    .hero .line .org-name {
-        height:7vw;
-        padding:0 12vw;
-    }
-
-    .hero a img {
-        height:7vw;
-    }
-
     .hero {
-        padding-left:3vw;
-        padding-right:3vw;
+        flex-direction: column;
+        margin-bottom:0;
+    }
+
+    .hero > div > div {
+        border-bottom:none !important;
+        border-left:none !important;
+        border-top:none !important;
+        border-right:none !important;
+    }
+
+    .hero .left-column, .hero .right-column {
+        width:100%;
+        border:none;
+    }
+
+    .hero .watch-video-container {
+        height:max-content !important;
+        margin-top:3vh;
+    }
+
+    .hero .scroll-down-button {
+        display:none;
+    }
+
+    .hero h1 {
+        font-size:10vw;
+    }
+
+    .overlay-video video {
+        width:90%;
     }
 
     .contacts h1 {
@@ -1420,11 +1518,6 @@ h3 {
 
     .projects div a, .contacts a {
         padding:0.5vh 2vw;
-    }
-
-    .hero {
-        height:max-content;
-        padding-top:15vh;
     }
 
     .why {
@@ -1523,8 +1616,9 @@ h3 {
         margin-top:var(--heading-text-padding);
     }
 
-    .contacts a, .view-more-projects-container a, .project a {
+    .contacts a, .view-more-projects-container a, .project a, .overlay-video a, .hero .watch-video-container a {
         padding:0.5vh 3vw !important;
+        text-align: center;
     }
 
     .project .more-info {
@@ -1537,5 +1631,13 @@ h3 {
 
     .services {
         padding:5vh 5vw;
+    }
+
+    .menu a {
+        font-size:6vw;
+    }
+
+    .menu .nav-options a {
+        width:40vw;
     }
 }

@@ -1,0 +1,18 @@
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("ns.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 5vh;
+    padding-bottom:5vh;
+}
+
+/* .panel div > p {
+    margin:1.5vh 0 !important;
+} */

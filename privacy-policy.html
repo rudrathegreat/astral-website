@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S.T.R.A.L. | FAQs</title>
+    <title>A.S.T.R.A.L. | Projects</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="faqs.css">
+<link rel="stylesheet" href="code-of-conduct.css">
 <link rel="icon" href="logo.ico">
 </head>
 <body>
@@ -34,10 +34,9 @@
                 <div class="categories">
                     <a href="index.html">HOME</a>
                     <a onclick="toggleOptions('about-options');">ABOUT</a>
-                    <a onclick="toggleOptions('work-options');">WORK</a>
+                    <a onclick="toggleOptions('work-options');">Work</a>
                     <a onclick="toggleOptions('cohort-options');">COHORT</a>
                     <a href="apply.html">APPLY</a>
-                    <a href="events.html">EVENTS</a>
                     <a href="support.html">SUPPORT</a>
                     <a href="faqs.html">FAQS</a>
                 </div>
@@ -49,7 +48,7 @@
                     </div>
                     <div class="work-options nav-options">
                         <a href="projects.html">Projects</a>
-                        <a href="tools.html">Online Tools</a>
+                        <a onclick="goTo('.hero')">Online Tools</a>
                     </div>
                     <div class="cohort-options nav-options">
                         <a href="cohort.html">Current ASTRAL Cohort</a>
@@ -61,76 +60,51 @@
     <div class="scroll-container">
         <div class="hero with-bg">
             <div class="title-container">
-                <h1 class="glitch-header" data-value="FAQS_">FAQS_</h1>
-                <a onclick="lenis.scrollTo('.services');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+                <h1 class="glitch-header" data-value="PRIVACY POLICY_">PRIVACY POLICY_</h1>
             </div>
         </div>
-        <div class="services">
-            <h2>Frequently Asked Questions</h2>
-            <a class="accordion"><div><p>HOW DO WE APPLY?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>WE CURRENTLY OFFER TWO PROGRAMS FOR STUDENTS. THE FIRST IS OUR WORK EXPERIENCE PROGRAM FOR HIGH SCHOOL STUDENTS TO HONE THEIR SKILLS IN COMPUTATIONAL THINKING AND SCIENTIFIC REASONING THROUGH ASTRONOMY AND PROGRAMMING PROJECTS. TO APPLY FOR THIS PROGRAM, CLICK THE LINK BELOW.</p>
-                <a class="underline-button" href="https://form.jotform.com/241187571332859">
-                    <div>
-                        <div class="text-indicator">
-                            <p>APPLY HERE</p>
-                            <p>APPLY HERE</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="arrow-link.svg" alt="">
-                            <img src="arrow-link.svg" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <a class="accordion"><div><p>WHAT IS THE SOURCE OF our FUNDING?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>The A.S.T.R.A.L. INSTITUTE receives all of its funding from the A.S.T.R.A.L. foundation, a foundation set up where donors can help provide pathways for students to prepare themselves for the future, especially those with low socio-economic backgrounds.</p>
-                <p>The A.S.T.R.A.L. foundation receives all of its funding from donors, and if you are interested, you can donate using the link below.</p>
-                <a class="underline-button" href="https://alumni.swin.edu.au/giving-to-swinburne">
-                    <div>
-                        <div class="text-indicator">
-                            <p>DONATE</p>
-                            <p>DONATE</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="arrow-link.svg" alt="">
-                            <img src="arrow-link.svg" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <a class="accordion"><div><p>Is A.S.T.R.A.L. targeted at future astronomers?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>THE PRIMARY AIM OF A.S.T.R.A.L. IS NOT TO ENCOURAGE STUDENTS IN ASTRONOMY, BUT RATHER INSPIRE AND TEACH STUDENTS IMPORTANT SKILLS THAT ARE BECOMING MORE AND MORE NECESSARY IN FUTURE CAREERS (SUCH AS PROGRAMMING, DATA ANALYSIS, ETC.).</p>
-                <p>HOWEVER, IN THE DEVELOPMENT OF A.S.T.R.A.L.'S COHESIVE PROGRAM, WE FOUND THAT ASTRONOMY INCLUDES ALL THESE SKILLS AND ALLOWS STUDENTS TO GET A SNEAK PEAK IN RESEARCH WHILE ALSO LEARNING SKILLS THAT AREN'T EXCLUSIVE TO JUST ASTROPHYSICS RESEARCH.</p>
-                <a class="underline-button" href="about.html">
-                    <div>
-                        <div class="text-indicator">
-                            <p>LEARN MORE</p>
-                            <p>LEARN MORE</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="arrow-link.svg" alt="">
-                            <img src="arrow-link.svg" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <a class="accordion"><div><p>Does A.S.T.R.A.L. offer financial assistance to participants?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>STUDENTS WHO PARTICIPATE IN THE PROGRAM COULD RECEIVE MODEST SCHOLARSHIPS FOR THEIR WORK INVOLVED IN THE PROGRAM. STUDENTS PARTICIPATED IN THE PROGRAM MAY ALSO BE DONATED RESOURCES TO ASSIST THEM THROUGHOUT THE PROGRAM DEPENDING ON CIRCUMSTANCES.</p>
-                <p>INTERNATIONAL STUDENTS' LIVING COSTS MAY ALSO BE PARTIALLY COVERED UNDER THE PROGRAM FOR THEIR TIME IN AUSTRALIA.</p>
-            </div>
+        <div class="content">
+            <h2>Our Privacy Statement</h2>
+            <p>At ASTRAL, we are committed to the online security and safety of all members. This privacy policy explains how we collect, use, and protect your data. We are dedicated to maintaining the confidentiality and security of your personal information, and adhere to strict data protection regulations to ensure we are being transparent about our data handling practices. We believe in transparency and want you to understand how and why we collect your data. If you have any questions or concerns about our Privacy Policy or data practices, please contact us via the contact form at astral.institute
+            </p>
+            <h2>What We Collect</h2>
 
-            <a class="accordion"><div><p>WHAT DO THE NUMBERS ON THE HOME PAGE MEAN?</p><img src="accordian-arrow.svg" alt=""></div></a>
-            <div class="panel">
-                <p>THE DIGITS ARE SCATTERED THROUGHOUT THE HOME PAGE REPRESENT HEADINGS AND OTHER EASTER EGGS IN ASCII FORMAT, A FORMAT USED TO CONVERT THE ALPHANUMERIC CHARACTERS USED IN OUR DAY-TO-DAY LIVES ON COMPUTERS TO SPECIFIC LOW-LEVEL COMPUTER CODE WHICH THE COMPUTE CAN UNDERSTAND.</p>
-            </div>
+            <p>When you contact ASTRAL, our mentors collect your email addresses so we can respond to your inquiries. Any additional information provided in contact forms will also be recorded. Our two forms collect different profiles from you, to ensure we only record what is necessary for each applicant.
+            Our work experience form may collect: </p>
+            <ul>
+                <li>Your name</li>
+                <li>Birth date</li>
+                <li>Student details (e.g. school, year level, academic record)</li>
+                <li>Contact details (e.g. phone number, email)</li>
+                <li>Parent name</li>
+                <li>Parent contact details</li>
+            </ul>
+            <p>Our sponsorship form may collect:</p>
+            <ul>
+                <li>Your name and title</li>
+                <li>Contact details (e.g. phone number, email)</li>
+                <li>Banking details (e.g. credit card number, type, expiry date)</li>
+                <li>Address</li>
+            </ul>
+            <p>Support form may collect:</p>
+            <ul>
+                <li>Your name</li>
+                <li>Contact details (e.g. phone number, email)</li>
+            </ul>
+            <h2>How We Use Your Data</h2>
+            <p>The purpose of collecting your data varies based on what the information has been provided for but is primarily to ensure that we have a means of contacting you should further communication be required. This includes informing you of the outcome of a work experience application, confirming a donation or discussing other ways in which you may want to support us. Data collected from the work experience form is also used to verify eligibility and determine suitability for the offered programs. Data collected from the sponsorship form is used to carry out the monetary transfer and ensure due recognition can be given.
+            </p>
+            <h2>How We Protect Your Data</h2>
+            <p>We use third party apps to ensure data privacy, including JotForm and the Swinburne donation system, of whose integrity and security we are assured. Their policies can be found below.
+            </p>
+            <a href="https://www.swinburne.edu.au/privacy/">SWINBURNE</a>
+            <a href="https://www.jotform.com/privacy/">JOTFORM</a>
+            <p>Neither we nor they will share your details or use them for any purpose other than our stated objectives. We also will not store your information outside of these secure platforms beyond contact details (i.e. name & email) to enable clear lines of communication. These details will only be used when necessary and will not be used for promotional purposes without explicit consent.
+            </p>
         </div>
         <div class="footer">
             <div class="supporters">
-                <h2>ASTRAL IS supported by</h2>
+                <h2>A.S.T.R.A.L. is supported by</h2>
                 <div class="partners">
                     <a href="https://www.swinburne.edu.au">
                         <img src="swin.jpg" alt="">
@@ -173,14 +147,14 @@
                         <div class="links">
                             <a href="index.html" class="footer-link">HOME</a>
                             <a href="about.html" class="footer-link">ABOUT</a>
-                            <a href="projects.html" class="footer-link">PROJECTS</a>
+                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">PROJECTS</a>
                             <a href="tools.html" class="footer-link">TOOLS</a>
                             <a href="cohort.html" class="footer-link">COHORT</a>
-                            <a href="team.html" class="footer-link">MENTORS</a>
+                            <a href="mentors.html" class="footer-link">MENTORS</a>
                             <a href="apply.html" class="footer-link">APPLY</a>
                             <a href="events.html" class="footer-link">EVENTS</a>
                             <a href="support.html" class="footer-link">SUPPORT</a>
-                            <a onclick="lenis.scrollTo('.hero');" class="footer-link">FAQS</a>
+                            <a href="faqs.html" class="footer-link">FAQS</a>
                         </div>
                     </div>
                     <div class="back-to-top">
@@ -197,7 +171,7 @@
     <script src="navbar.js"></script>
     <script src="parallax_bg.js"></script>
     <script src="white-cursor-bg.js"></script>
-    <script src="accordian.js"></script>
+    <script src="team.js"></script>
     <script>
         function toggleDescription(person) {
             document.querySelector('.' + person).classList.toggle('card-activated');

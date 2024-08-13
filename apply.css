@@ -24,7 +24,7 @@
 }
 
 .hero h1 {
-    font-size:9vw;
+    font-size:7vw;
     font-weight:400;
     line-height:1;
     letter-spacing:-5px;
@@ -39,7 +39,7 @@
 }
 
 .hero a img {
-    height:7vw;
+    height:6vw;
 }
 
 .hero a {
@@ -49,7 +49,7 @@
     border-radius:100%;
     width:max-content;
     aspect-ratio:1/1;
-    margin-bottom:3vh;
+    margin-bottom:1vh;
 }
 
 
@@ -59,6 +59,7 @@
     gap:3vh;
     width:100%;
     padding:0 10vw;
+    padding-top:3vh;
 }
 
 .apply-section .section {
@@ -81,6 +82,44 @@ form input {
 .scroll-container > h2 {
     margin-top:10vh;
     text-align:center
+}
+
+.apply-section a {
+    text-decoration: none;
+    overflow:hidden;
+    color: black;
+    border: 2px solid black;
+    border-radius: 1000px;
+    padding:1vh 1.5vw;
+    font-size:var(--ascii-font-size);
+    position:relative;
+    transition: color 0.3s ease-in-out;
+    width:max-content;
+}
+
+.apply-section a:before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    z-index:-1;
+    transform:scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin:bottom;
+}
+
+.apply-section a:hover::before {
+    transform:scaleY(1);
+    transition: transform 0.3s ease;
+    transform-origin:bottom;
+}
+
+.apply-section a:hover {
+    color:white;
+    transition: color 0.3s ease-in-out;
 }
 
 @media screen and (max-width:1300px) {

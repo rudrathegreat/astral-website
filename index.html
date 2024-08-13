@@ -19,6 +19,10 @@
         </div>
     </div>
     <div class="blob"></div>
+    <div class="overlay-video">
+        <video src="ASTRAL_final.mp4" controls></video>
+        <a onclick="document.querySelector('.overlay-video').classList.toggle('active');">CLOSE</a>
+    </div>
     <div class="floating-imgs">
         <img class="floating-img" id="astrophysics" src="bhns.jpg" alt="">
         <img class="floating-img" id="supercomputing" src="ozstar.jpg" alt="">
@@ -91,7 +95,7 @@
             </div>
             <div class="right-column">
                 <div class="watch-video-container">
-                    <a onclick="">WATCH VIDEO</a>
+                    <a onclick="document.querySelector('.overlay-video').classList.toggle('active');">WATCH VIDEO</a>
                 </div>
                 <div class="scroll-down-button">
                     <a onclick="lenis.scrollTo('.why')"><img src="circle_arrow_white.svg" alt=""></a>
@@ -369,6 +373,18 @@
                         <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
                         <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (A.S.T.R.A.L.). all rights reserved. designed and developed by rudra sekhri</p>
                         <p>credit to carl knox from ozgrav, nasa</p>
+                        <a class="underline-button" href="about.html">
+                            <div>
+                                <div class="text-indicator">
+                                    <p>PRIVACY POLICY</p>
+                                    <p>PRIVACY POLICY</p>
+                                </div>
+                                <div class="img-indicator">
+                                    <img src="arrow-link.svg" alt="">
+                                    <img src="arrow-link.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
                     </div>
                     <div class="socials">
                         <h2>SOCIALS</h2>
