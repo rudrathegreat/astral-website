@@ -19,7 +19,8 @@
     flex-direction: column;
     gap:1.5vh;
     margin-top:3vh;
-    text-align:center;
+    margin-left: 10vw;
+    text-align:left;
 }
 /* .panel div > p {
     margin:1.5vh 0 !important;
