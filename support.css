@@ -13,6 +13,14 @@
     padding-bottom:5vh;
 }
 
+.contact-info {
+    display:flex;
+    flex-direction: column;
+    gap:3vh;
+    width:100%;
+    padding:0 10vw;
+    padding-top:3vh;
+}
 /* .panel div > p {
     margin:1.5vh 0 !important;
 } */
