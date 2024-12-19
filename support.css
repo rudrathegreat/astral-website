@@ -14,7 +14,7 @@
 }
 
 .contact-info {
-    width:100%;
+    width: 80vw;
     display:flex;
     flex-direction: column;
     gap:1.5vh;
