@@ -20,6 +20,8 @@
     gap:1.5vh;
     margin-top:3vh;
     margin-left: 10vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     text-align:left;
 }
 /* .panel div > p {
