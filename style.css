@@ -1,0 +1,54 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root {
+    --ascii-font-size:1em;
+    --small-font-size:1.25em;
+    --heading-font-size:1.75em;
+    --large-font-size:2em;
+    --extreme-font-size:4em;
+    --width-between-img-text:3vh;
+    --heading-text-padding:1.5vh;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+html.lenis {
+    height: auto;
+  }
+
+.lenis.lenis-smooth {
+scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+overscroll-behavior: contain;
+}
+
+.scroll-container {
+    width:100vw;
+}
+
+.lenis.lenis-stopped {
+overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width:0;
+}
+
+p {
+    font-size:var(--small-font-size);
+}
+
+h2 {
+    font-weight:700;
+    color:#6A6BF4;
+    font-size:var(--heading-font-size);
+}
+
