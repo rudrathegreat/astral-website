@@ -5,7 +5,7 @@
 .hero {
     height:90vh;
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)), url("Supercomputer.jpg");
+    rgba(0, 0, 0, 0.3)), url("virtual-universe.jfif");
     background-position: 50% 30%;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -120,25 +120,6 @@
     width:100vw;
 }
 
-.project:nth-child(2) {
-    background:url('parkes.jpg');
-    background-position: 100% center;
-    background-size:150%;
-    background-repeat: no-repeat;
-    height:90vh;
-    width:100vw;
-}
-
-.project:nth-child(3) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)), url("research.jpg");
-    background-position: 100% center;
-    background-size:150%;
-    background-repeat: no-repeat;
-    height:90vh;
-    width:100vw;
-}
-
 .project:nth-child(4) {
     background-image:url("code.png");
     background-position: 100% center;
@@ -201,6 +182,26 @@
 .footer {
     padding-top:0;
 }
+
+.scroll-container .project:nth-child(2) {
+    background:url('parkes.jpg');
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
+.scroll-container .project:nth-child(3) {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url("research.jpg");
+    background-position: 100% center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    height:90vh;
+    width:100vw;
+}
+
 
 @media screen and (max-width:1710px) {
     .projects {
