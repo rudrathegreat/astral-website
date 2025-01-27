@@ -65,7 +65,6 @@
     margin-bottom:1vh;
 }
 
-
 .team {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -74,114 +73,27 @@
     grid-row-gap:1vh;
 }
 
-.team .person:nth-child(1) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('rudra.jpg');
-    background-repeat: no-repeat;
-    height:70vh;
-    background-position: center;
-    background-size:100%;
-    color:white;
-    padding:3vh 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition:background-size 1s ease;
+.scroll-container > img {
+    width:90vw;
+    margin-left:5vw;
+    padding-top:1.5vh;
+    height:90vh;
+    object-fit: cover;
 }
 
-.team .person:nth-child(2) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('hendrik_copy.png');
-    background-repeat: no-repeat;
-    height:70vh;
-    background-position: center;
-    background-size:100%;
-    color:white;
-    padding:3vh 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition:background-size 1s ease;
-}
-
-.team .person:nth-child(3) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('evie.jpg');
-    background-repeat: no-repeat;
-    height:70vh;
-    background-position: center;
-    background-size:100%;
-    color:white;
-    padding:3vh 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition:background-size 1s ease;
-}
-
-.team .person:nth-child(4) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('rebecca.png');
-    background-repeat: no-repeat;
-    height:70vh;
-    background-position: center;
-    background-size:100%;
-    color:white;
-    padding:3vh 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition:background-size 1s ease;
-}
-
-.team .special {
-    font-style: italic;
-}
-
-.team .person:nth-child(5) {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url('robert.jpg');
-    background-repeat: no-repeat;
-    height:70vh;
-    background-position: center;
-    background-size:100%;
-    color:white;
-    padding:3vh 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition:background-size 1s ease;
-}
-
-.team .person div {
-    overflow:hidden;
-    display:block;
-}
-
-.team .person h1, .team .person p {
-    transform:translateY(100%);
-    transition:transform 0.3s ease;
-}
-
-.team .person:hover > div h1 {
-    transform:translateY(0);
-    transition:transform 0.3s ease;
-}
-
-.team .person:hover > div p {
-    transform:translateY(0);
-    transition:transform 0.3s ease;
-    transition-delay:0.05s;
-}
-
-.team .person:hover {
-    background-size:105%;
-    transition:background-size 1s ease;
+.scroll-container > img:hover {
+    object-fit: 110%;
 }
 
 .scroll-container > h2 {
     margin-top:10vh;
     padding-left:5vw;
+}
+
+.scroll-container > p {
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:1.5vh;
 }
 
 @media screen and (max-width:1710px) {
@@ -210,6 +122,10 @@
 
     .team .person {
         height:60vh !important;
+    }
+
+    .scroll-container > img {
+        height: none !important;
     }
 }
 

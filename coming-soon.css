@@ -1,0 +1,161 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url("parkes.jpg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 5vw;
+    padding-bottom:5vh;
+}
+
+.hero h1 {
+    font-size:7vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:6vw;
+}
+
+.hero a {
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    border-radius:100%;
+    width:max-content;
+    aspect-ratio:1/1;
+    margin-bottom:1vh;
+}
+
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    padding:10vh 1vw;
+    grid-column-gap:1vw;
+    grid-row-gap:1vh;
+}
+
+.team .person h1 {
+    font-size:var(--heading-font-size);
+}
+
+.team .person p {
+    font-size:var(--medium-font-size);
+}
+
+.instructions {
+    display:none;
+    text-align: center;
+    margin-top:1vh;
+    font-size:3vw;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .team .person h1, .team .person p {
+        transform:translateY(0%);
+        transition:transform 0.3s ease;
+    }
+
+    .instructions {
+        display:block;
+        font-size:var(--large-font-size-mobile);
+    }
+
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .team .person {
+        height:60vh !important;
+    }
+}
+
+@media screen and (max-width:1710px) {
+    .person {
+        background-size:cover !important;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+        height:70vh;
+    }
+
+    .hero h1 {
+        font-size:14vw;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .person h1 {
+        font-size:var(--large-font-size-mobile) !important;
+    }
+
+    .person p {
+        font-size:var(--medium-font-size-mobile) !important;
+    }
+
+    .person {
+        height:50vh !important;
+        padding:3vh 3vw !important;
+    }
+
+    .team {
+        padding-top:3vh;
+        padding-bottom:0;
+    }
+
+    .scroll-container > h2 {
+        margin-top:7vh;
+    }
+
+    .footer {
+        padding-top:7vh;
+    }
+}
+
+@media screen and (max-height:500px) {
+    .person {
+        height:200vh !important;
+    }
+}
