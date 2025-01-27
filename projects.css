@@ -82,7 +82,7 @@
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)), url('bhns.jpg');
     background-repeat: no-repeat;
-    height:90vh;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -96,9 +96,9 @@
 
 .team a:nth-child(2) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)), url('homepage-screenshot.jpg');
+    rgba(0, 0, 0, 0.4)), url('website-mockup.jpg');
     background-repeat: no-repeat;
-    height:90vh;
+    height:70vh;
     background-position: top;
     background-size:100%;
     color:white;
@@ -112,10 +112,74 @@
 
 .team a:nth-child(3) > div {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)), url('snrcalc.jpg');
+    rgba(0, 0, 0, 0.4)), url('snrcalc-mockup.jpg');
     background-repeat: no-repeat;
-    height:90vh;
+    height:70vh;
     background-position: top;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a:nth-child(4) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url('sun-bg.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a:nth-child(5) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url('astrotour-project.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a:nth-child(6) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url('galaxy.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
+.team a:nth-child(7) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)), url('unity-game.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
     background-size:100%;
     color:white;
     padding:3vh 1vw;
