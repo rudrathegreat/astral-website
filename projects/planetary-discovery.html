@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ASTRAL | ASTRAL's Planetary Discovery Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.S.T.R.A.L. | A.S.T.R.A.L.'s Planetary Discovery Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
@@ -15,17 +16,22 @@
     </div>
     <div class="blob"></div>
     <div class="navbar bg-nav">
-        <img src="../logo.svg" alt="" class="logo">
+        <a href="../index.html">
+            <img src="../logo.svg" alt="" class="logo">
+        </a>
         <div class="menu-icon">
-            <div class="text">
-                <p>menu</p>
-                <p>close</p>
-            </div>
-            <a onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
+            <a onclick="toggleMenu();">
+                <div class="text">
+                    <p>menu</p>
+                    <p>close</p>
+                </div>
+            </a>
+            <a class="img-icon" onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
         </div>
         <div class="menu">
             <div class="links">
-                <a href="../index.html">HOME</a>
+                <div class="categories">
+                    <a href="../index.html">HOME</a>
                     <a onclick="toggleOptions('about-options');">ABOUT</a>
                     <a onclick="toggleOptions('work-options');">WORK</a>
                     <a onclick="toggleOptions('cohort-options');">COHORT</a>
@@ -34,9 +40,25 @@
                     <a href="../support.html">SUPPORT</a>
                     <a href="../contact.html">CONTACT</a>
                     <a href="../faqs.html">FAQS</a>
+                </div>
+                <div class="options">
+                    <div class="about-options nav-options">
+                        <a href="../about.html">Vision and Mission</a>
+                        <a href="../team.html">Mentors</a>
+                        <a href="../code-of-conduct.html">Code of Conduct</a>
+                    </div>
+                    <div class="work-options nav-options">
+                        <a href="../projects.html">Projects</a>
+                        <a href="../tools.html">Online Tools</a>
+                    </div>
+                    <div class="cohort-options nav-options">
+                        <a href="../cohort.html">Current ASTRAL Cohort</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="scroll-container">
     <div class="scroll-container">
         <div class="hero">
             <div class="title-container">
