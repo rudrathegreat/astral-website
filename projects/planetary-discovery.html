@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ASTRAL | ASTRAL Case Study</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.S.T.R.A.L. | A.S.T.R.A.L.'s Planetary Discovery Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
@@ -15,17 +16,22 @@
     </div>
     <div class="blob"></div>
     <div class="navbar bg-nav">
-        <img src="../logo.svg" alt="" class="logo">
+        <a href="../index.html">
+            <img src="../logo.svg" alt="" class="logo">
+        </a>
         <div class="menu-icon">
-            <div class="text">
-                <p>menu</p>
-                <p>close</p>
-            </div>
-            <a onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
+            <a onclick="toggleMenu();">
+                <div class="text">
+                    <p>menu</p>
+                    <p>close</p>
+                </div>
+            </a>
+            <a class="img-icon" onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
         </div>
         <div class="menu">
             <div class="links">
-                <a href="../index.html">HOME</a>
+                <div class="categories">
+                    <a href="../index.html">HOME</a>
                     <a onclick="toggleOptions('about-options');">ABOUT</a>
                     <a onclick="toggleOptions('work-options');">WORK</a>
                     <a onclick="toggleOptions('cohort-options');">COHORT</a>
@@ -34,22 +40,38 @@
                     <a href="../support.html">SUPPORT</a>
                     <a href="../contact.html">CONTACT</a>
                     <a href="../faqs.html">FAQS</a>
+                </div>
+                <div class="options">
+                    <div class="about-options nav-options">
+                        <a href="../about.html">Vision and Mission</a>
+                        <a href="../team.html">Mentors</a>
+                        <a href="../code-of-conduct.html">Code of Conduct</a>
+                    </div>
+                    <div class="work-options nav-options">
+                        <a href="../projects.html">Projects</a>
+                        <a href="../tools.html">Online Tools</a>
+                    </div>
+                    <div class="cohort-options nav-options">
+                        <a href="../cohort.html">Current ASTRAL Cohort</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="scroll-container">
+    <div class="scroll-container">
         <div class="hero">
             <div class="title-container">
-                <h1>ASTRAL BRANDING AND WEBSITE CASE STUDY_</h1>
+                <h1>ASTRAL PLANETARY DISCOVERY GAME_</h1>
                 <div class="tags">
-                    <div class="tag">ui/ux design</div>
-                    <div class="tag">web development</div>
-                    <div class="tag">html, css, javascript</div>
+                    <div class="tag">unity c# development</div>
+                    <div class="tag">simulation</div>
+                    <div class="tag">public outreach</div>
                 </div>
             </div>
             <div class="image">
                 <div class="effect-container">
-                    <img src="../homepage-screenshot.jpg" alt="">
+                    <img src="../virtual-universe.jfif" alt="">
                     <div class="grid-effect"></div>
                 </div>
             </div>
@@ -66,66 +88,48 @@
                         <img src="../cflynn.png" alt="">
                         <h3>Dr. Chris Flynn</h3>
                     </div>
+                    <div class="person">
+                        <img src="../astral-website.jpg" alt="">
+                        <h3>Akhil Jaini</h3>
+                    </div>
                 </div>
             </div>
             <div class="section contributors">
                 <h2>Contributors</h2>
-                <div class="grid">
-                    <div class="person">
-                        <img src="../rudra.jpg" alt="">
-                        <h3>Rudra Sekhri</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../evie.jpg" alt="">
-                        <h3>Evie Spilias</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../hendrik_copy.png" alt="">
-                        <h3>Hendrik Combrinck</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../rebecca.png" alt="">
-                        <h3>Rebecca Koehne</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../robert.jpg" alt="">
-                        <h3>Ruoyao Ni</h3>
-                    </div>
-                </div>
+                <p>Tristan Than, Kim Yan</p>
             </div>
             <div class="section text credits">
                 <h2>Credits</h2>
-                <h3>Logo designed by Rudra Sekhri.</h3>
-                <h3>Website designed and developed by Rudra Sekhri.</h3>
-                <h3>Video (has not been uploaded yet) created by Evie Spilias.</h3>
-                <h3>REPORT WRITTEN BY RUDRA SEKHRI</h3>
+                <h3>Program developed by Tristan Than.</h3>
+                <h3>Night Sky texture map designed by Kim Yan.</h3>
+                <h3>Report written by Tristan Than and Kim Yan</h3>
+                
                 <p>
-                    Thank you to Hendrik Combrinck for his support in testing the website during the initial stages of
-                    deployment on the test environment. Thank you to Ruoyao, Evie, Rebecca and Hendrik for
-                    providing their reviews of the ASTRAL program to the website. Thank you to Dr. Chris Flynn and
-                    Prof. Matthew Bailes for supervising this project. This project is funded by ASTRAL.
+                Thank you to Kim Yan for his support in debugging and fixing numerous issues within the program, especially 
+                    the raycasting, orbital, and UI mechanics. Thank you to David Barnes for assisting us with textures and 
+                    lighting effects. Thank you to the 2025 ASTRAL team for playtesting the game while it was in development
+                    to provide feedback for updates and fixes. Thank you to Prof. Matthew Bailes for supervising this project,
+                    and Akhil Jaini for providing helpful suggestions for new features. This project is funded by A.S.T.R.A.L.
                 </p>
             </div>
             <div class="section text introduction">
                 <h2>Introduction</h2>
                 <p>
-                    The essential aim for this project is to create a brand for ASTRAL, which reflects its vision and
-                    modernity. The branding also needed to reflect S.T.E.M (science, technology, engineering and
-                    mathematics), either through text or through the logo itself, while also highlighting through
-                    symbolism that this is an Australian-based organisation, primarily (but not exclusively) targeted for
-                    Australian students.
-                </p>
-                <p>
-                    Moreover, it needed an element of astronomy, as the program does focus on astronomy, and the
-                    full name of ASTRAL (Astronomy, Supercomputing, Technology, Research, Analytics, Leadership)
-                    also has an element of astronomy. The definition for astral is also indicative of something related
-                    to the stars, and hence needs to be shown in some part of the branding. EFFECTIVE BRANDING CAN BE
-                    ACHIEVED WITH A HIGH QUALITY LOGO AND A WELL-THOUGHT-OUT WEBSITE.
+                    The main goal of this project is to create an interactive activity that can be used as an educational 
+                    tool for kids to learn astronomy through the lens of ancient astronomers such as Galileo, Kepler, and 
+                    Herschel. Using the Unity Game Engine and assets from numerous satellite databases and astrophysics 
+                    organisations, a closely accurate simulation of the night sky as seen from Melbourne was developed, 
+                    in which planets follow realistic movement patterns against a constantly moving backdrop of stars and 
+                    constellations. You can click on planets to "discover" them, and watch an animation of the planet 
+                    orbiting the sun and rotating on its axis, after which you get to name your discovery and have it 
+                    appear in the sky. The program is still in development with many more features on the way, but Mk. I
+                    is currently in use as part of the Astrotour with a large touchscreen display.
                 </p>
             </div>
             <div class="section download">
                 <h2>Download Full Report</h2>
-                <a href="pdf/ASTRAL-Case-Study.pdf">DOWNLOAD PDF</a>
+               <!-- <a href="pdf/ASTRAL-Case-Study.pdf">DOWNLOAD PDF</a> -->
+                <p>Full report coming soon.</p>
             </div>
         </div>
         <div class="footer">
@@ -139,7 +143,7 @@
                 <div class="final-info">
                     <div class="copyright">
                         <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (astral). all rights reserved. designed and developed by rudra sekhri</p>
+                        <p>&copy; 2025. astrophysics, supercomputing, technology, research analytics, technology program (astral). all rights reserved. designed and developed by rudra sekhri</p>
                     </div>
                     <div class="socials">
                         <h2>SOCIALS</h2>
