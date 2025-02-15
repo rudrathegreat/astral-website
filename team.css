@@ -216,7 +216,7 @@
     transition:background-size 1s ease;
 }
 
-.cflynn, .mbailes, .smishra, .ajaini {
+.cflynn, .mbailes, .smishra, .ajaini, .ecarli {
     position:fixed;
     top:55%;
     left:50%;
@@ -244,15 +244,15 @@
     transition:transform 0.5s ease, opacity 0.3s ease-in-out;
 }
 
-.cflynn .summary p, .mbailes .summary p, .smishra .summary p, .ajaini .summary p {
+.cflynn .summary p, .mbailes .summary p, .smishra .summary p, .ajaini .summary p, .ecarli .summary p {
     font-size:var(--large-font-size);
 }
 
-.cflynn p b, .mbailes p b, .smishra p b, .ajaini p b {
+.cflynn p b, .mbailes p b, .smishra p b, .ajaini p b, .ecarli p b {
     color:#6A6BF4;
 }
 
-.cflynn p, .mbailes p, .smishra p, .ajaini p {
+.cflynn p, .mbailes p, .smishra p, .ajaini p, .ecarli p {
     transform:translateY(5vh);
     transition:transform 0.3s ease, opacity 0.3s ease-in-out;
     opacity:0;
@@ -265,17 +265,17 @@
     transition-delay: 0.1s;
 }
 
-.cflynn > p, .mbailes > p, .smishra > p, .ajaini > p {
+.cflynn > p, .mbailes > p, .smishra > p, .ajaini > p, .ecarli > p {
     font-size:var(--small-font-size);
 }
 
-.cflynn .cross, .mbailes .cross, .smishra .cross, .ajaini .cross {
+.cflynn .cross, .mbailes .cross, .smishra .cross, .ajaini .cross, .ecarli .cross {
     position:absolute;
     right:3vw;
     top:5vh;
 }
 
-.cflynn .cross img, .mbailes .cross img, .smishra .cross img, .ajaini .cross img {
+.cflynn .cross img, .mbailes .cross img, .smishra .cross img, .ajaini .cross img, .ecarli .cross img {
     width:2vw;
 }
 
@@ -302,7 +302,7 @@
 }
 
 @media screen and (max-height:800px) {
-    .cflynn, .mbailes, .smishra, .ajaini {
+    .cflynn, .mbailes, .smishra, .ajaini, .ecarli {
         padding:10vh 10vw;
     }
 }
@@ -331,7 +331,7 @@
         height:70vh;
     }
 
-    .cflynn, .mbailes, .smishra, .ajaini {
+    .cflynn, .mbailes, .smishra, .ajaini, .ecarli {
         padding:7vh 10vw;
     }
 }
@@ -345,11 +345,11 @@
         padding-top:0;
     }
 
-    .cflynn .cross img, .mbailes .cross img, .smishra .cross img, .ajaini .cross img {
+    .cflynn .cross img, .mbailes .cross img, .smishra .cross img, .ajaini .cross img, .ecarli .cross img {
         width:5vw;
     }
 
-    .cflynn .cross, .mbailes .cross, .smishra .cross, .ajaini .cross {
+    .cflynn .cross, .mbailes .cross, .smishra .cross, .ajaini .cross, .ecarli .cross {
         right:5vw;
     }
 
@@ -370,7 +370,7 @@
         padding-top:7vh;
     }
 
-    .cflynn > p, .mbailes > p, .saurav > p, .ajaini > p {
+    .cflynn > p, .mbailes > p, .saurav > p, .ajaini > p, .ecarli > p {
         font-size:var(--ascii-font-size) !important;
     }
 }
