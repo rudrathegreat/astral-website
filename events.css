@@ -64,26 +64,30 @@
 
 .team {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding:10vh 1vw;
     grid-column-gap:1vw;
     grid-row-gap:1vh;
 }
 
-.team .person h1 {
-    font-size:var(--heading-font-size);
-}
-
-.team .person p {
-    font-size:var(--medium-font-size);
-}
-
-
-.team a:nth-child(1) > div {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)), url('lecture2024.png');
+.team .person:nth-child(1) {
+    background:url('lecture_serendipity2025.PNG');
     background-repeat: no-repeat;
-    height:90vh;
+    height:80vh;
+    background-position: top;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(2) {
+    background:url('cflynn.png');
+    background-repeat: no-repeat;
+    height:70vh;
     background-position: center;
     background-size:100%;
     color:white;
@@ -92,15 +96,13 @@
     flex-direction: column;
     justify-content: flex-end;
     transition:background-size 1s ease;
-    text-decoration:none;
 }
 
-.team a:nth-child(2) > div {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)), url('homepage-screenshot.jpg');
+.team .person:nth-child(3) {
+    background:url('saurav.jpg');
     background-repeat: no-repeat;
-    height:90vh;
-    background-position: top;
+    height:70vh;
+    background-position: center;
     background-size:100%;
     color:white;
     padding:3vh 1vw;
@@ -108,15 +110,13 @@
     flex-direction: column;
     justify-content: flex-end;
     transition:background-size 1s ease;
-    text-decoration:none;
 }
 
-.team a:nth-child(3) > div {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)), url('snrcalc.jpg');
+.team .person:nth-child(4) {
+    background:url('astrokirsten.jpg');
     background-repeat: no-repeat;
-    height:90vh;
-    background-position: top;
+    height:70vh;
+    background-position: center;
     background-size:100%;
     color:white;
     padding:3vh 1vw;
@@ -124,11 +124,62 @@
     flex-direction: column;
     justify-content: flex-end;
     transition:background-size 1s ease;
-    text-decoration:none;
 }
 
-.team a {
-    text-decoration:none !important;
+.team .person:nth-child(5) {
+    background:url('rudra.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(6) {
+    background:url('emma-carli.png');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(7) {
+    background:url('astral-website.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+}
+
+.team .person:nth-child(8) {
+    background:url('ajaini.jpg');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
 }
 
 .team .person div {
@@ -136,20 +187,12 @@
     display:block;
 }
 
-.team .person h1, .team .person p {
-    transform:translateY(100%);
-    transition:transform 0.3s ease;
+.team .person h1 {
+    font-size:var(--large-font-size);
 }
 
-.team .person:hover > div h1 {
-    transform:translateY(0);
-    transition:transform 0.3s ease;
-}
-
-.team .person:hover > div p {
-    transform:translateY(0);
-    transition:transform 0.3s ease;
-    transition-delay:0.05s;
+.team .person p {
+    font-size:var(--small-font-size);
 }
 
 .team .person:hover {
