@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASTRAL | Interactive Colour Magnitude Diagram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<link rel="icon" href="../logo.ico">
+</head>
+<body>
+    <div class="cursor">
+        <p></p>
+    </div>
+    <div class="blob"></div>
+    <div class="navbar bg-nav">
+        <a href="../index.html">
+            <img src="../logo.svg" alt="" class="logo">
+        </a>
+        <div class="menu-icon">
+            <a onclick="toggleMenu();">
+                <div class="text">
+                    <p>menu</p>
+                    <p>close</p>
+                </div>
+            </a>
+            <a class="img-icon" onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <div class="categories">
+                    <a href="../index.html">HOME</a>
+                    <a onclick="toggleOptions('about-options');">ABOUT</a>
+                    <a onclick="toggleOptions('work-options');">WORK</a>
+                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
+                    <a href="../apply.html">APPLY</a>
+                    <a href="../events.html">EVENTS</a>
+                    <a href="../support.html">SUPPORT</a>
+                    <a href="../contact.html">CONTACT</a>
+                    <a href="../faqs.html">FAQS</a>
+                </div>
+                <div class="options">
+                    <div class="about-options nav-options">
+                        <a href="../about.html">Vision and Mission</a>
+                        <a href="../team.html">Mentors</a>
+                        <a href="../code-of-conduct.html">Code of Conduct</a>
+                    </div>
+                    <div class="work-options nav-options">
+                        <a href="../projects.html">Projects</a>
+                        <a href="../tools.html">Online Tools</a>
+                    </div>
+                    <div class="cohort-options nav-options">
+                        <a href="../cohort.html">Current ASTRAL Cohort</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="hero">
+            <div class="title-container">
+                <h1>Interactive Colour Magnitude Diagram</h1>
+                <div class="tags">
+                    <div class="tag">astrophysics</div>
+                    <div class="tag">data visualisation</div>
+                    <div class="tag">ui/ux</div>
+                </div>
+            </div>
+            <div class="image">
+                <div class="effect-container">
+                    <img src="../cmd-interactive-mockup-landscape.jpg" alt="">
+                    <div class="grid-effect"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="section download">
+                <h2>View Tool</h2>
+                <a href="../tools/cmd-interactive/cmd_plot.html">View Tool</a>
+            </div>
+            <div class="section supervisors">
+                <h2>supervisors</h2>
+                <div class="grid">
+                    <div class="person">
+                        <img src="../mbailes.jpg" alt="">
+                        <h3>Prof. Matthew Bailes</h3>
+                    </div>
+                    <div class="person">
+                        <img src="../cflynn.png" alt="">
+                        <h3>Dr. Chris Flynn</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section contributors">
+                <h2>Contributors</h2>
+                <div class="grid">
+                    <div class="person">
+                        <img src="../rebecca.png" alt="">
+                        <h3>Rebecca Koehne</h3>
+                    </div>
+                    <div class="person">
+                        <img src="../evie.jpg" alt="">
+                        <h3>Evie Spilias</h3>
+                    </div>
+                    <div class="person">
+                        <img src="../2025-cohort-photos/sevryn-25.jpg" alt="">
+                        <h3>Sevryn Danilov</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section text credits">
+                <h2>Credits</h2>
+                <h3>Data collated by Sevryn Danilov.</h3>
+                <h3>Program developed by Rebecca Koehne and Evie Spilias.</h3>
+                <p>
+                    Thank you to Rudra Sekhri for converting the program into a compatible format and embedding it onto the ASTRAL website. Thank you to Nandini Vyas and Prof. Matthew Bailes for their assistance in utilising the GAIA database. Thank you to Prof. Chris Flynn for supervising this project and guiding our use of the SIMBAD database. This project is funded by A.S.T.R.A.L.
+                </p>
+            </div>
+            <div class="section text introduction">
+                <h2>Introduction</h2>
+                <p>
+                    This project sought to generate a colour-magnitude diagram from raw data in order to determine what star types exist in each area of the graph and, in the process, collate a cleaned dataset of stars and their attributes for use in further projects. To achieve this, information from two databases was combined: one much older, with stars categorised manually, and one more recent that was created with modern techniques. This allowed the expected positions of the old categorisations to be compared with the modern data points, enabling evaluation of the previous method's accuracy. The result is an interactive scatter plot, with star type visually represented by colour and shape, rollover data available for each data point, and the plotting of each star category able to be toggled on and off. The diagram can be viewed in the Online Tools page of this website.
+                </p>
+            </div>
+            <!-- <div class="section download">
+                <h2>Download Full Report</h2>
+                <a href="pdf/ASTRAL-Case-Study.pdf">DOWNLOAD PDF</a>
+            </div> -->
+        </div>
+        <div class="footer">
+            <div class="supporters">
+                <h2>A.S.T.R.A.L. is supported by</h2>
+                <div class="partners">
+                    <a href="https://www.swinburne.edu.au">
+                        <img src="../swin.jpg" alt="">
+                    </a>
+                    <a href="https://ozgrav.org" style="width: 25%;">
+                        <img src="../ozgrav.png" alt="">
+                    </a>
+                </div>
+            </div>
+                <div class="final-info">
+                    <div class="copyright">
+                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
+                        <p>&copy; 2025. astrophysics, supercomputing, technology, research analytics, technology program (A.S.T.R.A.L.). all rights reserved. designed and developed by rudra sekhri</p>
+                        <p>credit to carl knox from ozgrav, nasa</p>
+                        <a class="underline-button" href="../privacy-policy.html">
+                            <div>
+                                <div class="text-indicator">
+                                    <p>PRIVACY POLICY</p>
+                                    <p>PRIVACY POLICY</p>
+                                </div>
+                                <div class="img-indicator">
+                                    <img src="../arrow-link.svg" alt="">
+                                    <img src="../arrow-link.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials">
+                        <h2>SOCIALS</h2>
+                        <div class="links">
+                            <a href="https://www.linkedin.com/company/astral-institute" class="footer-link">LINKEDIN</a>
+                            <a href="https://www.instagram.com/astral.institute/" class="footer-link">INSTAGRAM</a>
+                            <a href="mailto:mbailes@swin.edu.au" class="footer-link">EMAIL</a>
+                        </div>
+                    </div>
+                    <div class="sitemap">
+                        <h2>SITEMAP</h2>
+                        <div class="links">
+                            <a href="../index.html" class="footer-link">HOME</a>
+                            <a href="../about.html" class="footer-link">ABOUT</a>
+                            <a href="../projects.html" class="footer-link">PROJECTS</a>
+                            <a href="../tools.html" class="footer-link">TOOLS</a>
+                            <a href="../cohort.html" class="footer-link">COHORT</a>
+                            <a href="../team.html" class="footer-link">MENTORS</a>
+                            <a href="../apply.html" class="footer-link">APPLY</a>
+                            <a href="../events.html" class="footer-link">EVENTS</a>
+                            <a href="../support.html" class="footer-link">SUPPORT</a>
+                            <a href="../contact.html" class="footer-link">CONTACT</a>
+                            <a href="../faqs.html" class="footer-link">FAQS</a>
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="../smooth-scroll.js"></script>
+    <script src="../cursor.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="article-grid-effect.js"></script>
+</body>
+</html>
