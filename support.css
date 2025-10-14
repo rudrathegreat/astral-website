@@ -24,6 +24,26 @@
     padding-bottom: 3vh;
     text-align:left;
 }
+
+.round-button {
+    margin-top:1.5vh;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    padding:1vh 1.5vw;
+    border-radius: 1000px;
+    border: 2px solid black;
+    font-size: var(--small-font-size);
+    width:max-content;
+    transition: background 0.3s ease, color 0.3s ease-in-out;
+}
+
+.round-button:hover {
+    color:white;
+    background:black;
+    transition: background 0.3s ease, color 0.3s ease-in-out;
+}
+
 /* .panel div > p {
     margin:1.5vh 0 !important;
 } */

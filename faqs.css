@@ -17,6 +17,10 @@
     padding-bottom:5vh;
 }
 
+h2 {
+    margin-bottom:3vh;
+}
+
 .hero h1 {
     font-size:7vw;
     font-weight:400;
@@ -67,6 +71,25 @@
 
 .panel a p {
     margin:0 !important;
+}
+
+.round-button {
+    margin-top:3vh;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    padding:1vh 1.5vw;
+    border-radius: 1000px;
+    border: 2px solid black;
+    font-size: var(--small-font-size);
+    width:max-content;
+    transition: background 0.3s ease, color 0.3s ease-in-out;
+}
+
+.round-button:hover {
+    color:white;
+    background:black;
+    transition: background 0.3s ease, color 0.3s ease-in-out;
 }
 
 @media screen and (max-width:1300px) {
