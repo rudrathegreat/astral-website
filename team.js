@@ -5,7 +5,7 @@ people.forEach(person => {
         cursor.style.width = '10vw';
         cursor.style.height = '10vw';
         cursor.style.background = 'white';
-        cursor.querySelector('p').innerHTML = 'CLICK';
+        cursor.querySelector('p').innerHTML = 'Click';
         cursor.querySelector('p').style.opacity = 1;
     })
     

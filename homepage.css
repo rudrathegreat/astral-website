@@ -42,8 +42,25 @@ overflow: hidden;
     width:0;
 }
 
-p {
+p, ul li {
     font-size:var(--small-font-size);
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial !important;
+    line-height:1.5;
+}
+
+ul li {
+    font-size:1em;
+}
+
+.ascii {
+    font-family: 'Space Mono', monospace !important;
+    text-transform: uppercase !important;
+}
+
+a {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial;
 }
 
 h2 {
@@ -213,7 +230,7 @@ body {
     flex-direction: column;
     pointer-events: none;
     position: absolute;
-    top:15vh;
+    top:12vh;
     left:5vw;
     gap:1.5vh;
     transition: opacity 0.3s ease-in-out;
@@ -228,9 +245,9 @@ body {
 .menu .categories, .menu .options {
     display:flex;
     flex-direction: column;
-    padding:7.5vh 0;
+    padding:5vh 0;
     height:100%;
-    padding-top:15vh;
+    padding-top:12vh;
     justify-content: space-between;
     border-right:2px solid black;
     width:max-content;
@@ -282,6 +299,8 @@ body {
     margin-right:5vw;
     position:relative;
     width:max-content;
+    font-family: 'Space Mono', sans-serif;
+    text-transform: uppercase;
 }
 
 .menu .links {
@@ -311,7 +330,7 @@ body {
     position:absolute;
     width:100%;
     bottom:0;
-    height:5px;
+    height:3px;
     left:0;
     background:black;
     transform:scaleX(0);
@@ -337,6 +356,10 @@ body {
     margin-bottom:5vh;
     color:white;
     background:rgba(0,0,0,0.1);
+    /* Hero visual variables (updated by JS for parallax) */
+    background-size: var(--hero-bg-size, 100%);
+    background-position: var(--hero-bg-pos, 50% 30%);
+    filter: var(--hero-blur, none);
     display:flex;
 }
 
@@ -834,7 +857,6 @@ h3 {
   font-family: 'Space Mono', sans-serif;
   background:none;
   color:black;
-  text-transform:uppercase;
 }
 
 .services .accordion::before {
@@ -938,6 +960,7 @@ h3 {
     overflow:hidden;
     pointer-events: none;
     transition:background 0.2s ease-in-out, opacity 1s ease;
+    filter:blur(100px);
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
@@ -1099,7 +1122,8 @@ h3 {
 
 .projects .project {
     background:url('bg.jpg');
-    background-position: 100% center;
+    /* use a CSS variable for horizontal background offset controlled by JS */
+    background-position: var(--track-left, 100%) center;
     background-size:150%;
     background-repeat: no-repeat;
     height:90vh;
@@ -1108,7 +1132,7 @@ h3 {
 
 .projects .project:nth-child(2) {
     background:url('website-mockup-horizontal.jpg');
-    background-position: 100% center;
+    background-position: var(--track-left, 100%) center;
     background-size:150%;
     background-repeat: no-repeat;
 }
@@ -1116,7 +1140,7 @@ h3 {
 .projects .project:nth-child(3) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)),url('snrcalc-mockup-horizontal.jpg');
-    background-position: 100% center;
+    background-position: var(--track-left, 100%) center;
     background-size:150%;
     background-repeat: no-repeat;
 }
@@ -1645,4 +1669,17 @@ h3 {
     .menu .nav-options a {
         width:40vw;
     }
+}
+
+/* When JS disables effects, provide a static fallback for glitch headers */
+.glitch-disabled .glitch-header {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+    opacity: 1 !important;
+}
+
+/* Provide a conservative appearance for disabled devices */
+.glitch-disabled .glitch-header {
+    color: inherit;
 }

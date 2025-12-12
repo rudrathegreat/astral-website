@@ -1,3 +1,7 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
 .hero {
     height:90vh;
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),
@@ -12,6 +16,55 @@
     padding: 0 5vw;
     padding-bottom:5vh;
 }
+
+.hero h1 {
+    font-size:7vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:6vw;
+}
+
+.hero a {
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    border-radius:100%;
+    width:max-content;
+    aspect-ratio:1/1;
+    margin-bottom:1vh;
+}
+
+.navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero a {
+    z-index:2;
+    margin-bottom:1.5vh;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+/* .panel div > p {
+    margin:1.5vh 0 !important;
+} */
 
 .contact-info {
     width: 80vw;
@@ -43,7 +96,3 @@
     background:black;
     transition: background 0.3s ease, color 0.3s ease-in-out;
 }
-
-/* .panel div > p {
-    margin:1.5vh 0 !important;
-} */

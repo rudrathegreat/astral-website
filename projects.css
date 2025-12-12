@@ -71,10 +71,12 @@
 
 .team .person h1 {
     font-size:var(--heading-font-size);
+    font-family: 'Space Mono', sans-serif;
+    text-transform: uppercase;
 }
 
 .team .person p {
-    font-size:var(--medium-font-size);
+    font-size:var(--small-font-size);
 }
 
 

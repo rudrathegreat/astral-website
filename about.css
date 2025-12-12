@@ -179,11 +179,7 @@
     display:block;
 }
 
-.footer {
-    padding-top:0;
-}
-
-.scroll-container .project:nth-child(2) {
+.scroll-container .projects .project:nth-child(2) {
     background:url('parkes.jpg');
     background-position: 100% center;
     background-size:150%;
@@ -192,7 +188,7 @@
     width:100vw;
 }
 
-.scroll-container .project:nth-child(3) {
+.scroll-container .projects .project:nth-child(3) {
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)), url("research.jpg");
     background-position: 100% center;
@@ -202,9 +198,21 @@
     width:100vw;
 }
 
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+        height:70vh;
+    }
 
-@media screen and (max-width:1710px) {
-    .projects {
+    .hero h1 {
+        font-size:14vw;
+    }
+
+        .projects {
         display:none;
     }
 
@@ -223,21 +231,6 @@
         background-size:cover !important;
         background-position: center !important;
         padding:2vh 2.5vw;
-    }
-}
-
-@media screen and (max-width:1300px) {
-    .hero a {
-        margin-bottom:0;
-        display:none;
-    }
-    .hero {
-        background-size:cover !important;
-        height:70vh;
-    }
-
-    .hero h1 {
-        font-size:14vw;
     }
 }
 
