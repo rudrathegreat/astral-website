@@ -208,6 +208,22 @@
     text-decoration:none;
 }
 
+.team a:nth-child(9) > div {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('sun_interference.png');
+    background-repeat: no-repeat;
+    height:70vh;
+    background-position: center;
+    background-size:100%;
+    color:white;
+    padding:3vh 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition:background-size 1s ease;
+    text-decoration:none;
+}
+
 .team a {
     text-decoration:none !important;
 }
