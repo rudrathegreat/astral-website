@@ -44,6 +44,9 @@ overflow: hidden;
 
 p {
     font-size:var(--small-font-size);
+    font-family: 'DM Sans', sans-serif;
+    line-height:1.6;
+    text-transform:initial !important
 }
 
 h2 {
@@ -141,7 +144,7 @@ body {
     flex-direction: column;
     pointer-events: none;
     position: absolute;
-    top:15vh;
+    top:12vh;
     left:5vw;
     gap:1.5vh;
     transition: opacity 0.3s ease-in-out;
@@ -156,9 +159,9 @@ body {
 .menu .categories, .menu .options {
     display:flex;
     flex-direction: column;
-    padding:7.5vh 0;
+    padding:5vh 0;
     height:100%;
-    padding-top:15vh;
+    padding-top:12vh;
     justify-content: space-between;
     border-right:2px solid black;
     width:max-content;
@@ -210,6 +213,8 @@ body {
     margin-right:5vw;
     position:relative;
     width:max-content;
+    font-family: 'Space Mono', sans-serif;
+    text-transform: uppercase;
 }
 
 .menu .links {
@@ -239,7 +244,7 @@ body {
     position:absolute;
     width:100%;
     bottom:0;
-    height:5px;
+    height:3px;
     left:0;
     background:black;
     transform:scaleX(0);
@@ -250,6 +255,16 @@ body {
 .menu a:hover::before {
     transform:scaleX(1);
     transform-origin:left;
+    transition:transform 0.3s ease;
+}
+
+.navbar .menu-icon > .img-icon img {
+    transform:rotate(0deg);
+    transition:transform 0.3s ease;
+}
+
+.navbar .menu-icon > .img-icon:hover > img {
+    transform:rotate(45deg);
     transition:transform 0.3s ease;
 }
 
@@ -532,19 +547,31 @@ body {
     justify-content: space-between;
 }
 
+a {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial;
+}
+
+.navbar a {
+    font-family: 'Space Mono', sans-serif;
+    text-transform: uppercase;
+}
+
 .hero .tag, .section a {
     font-size:var(--small-font-size);
     display: inline-block;
     padding:1vh 1vw;
     border:2px solid black;
     border-radius:1000px;
-    margin-right:1vw;
+    margin-right:0.25vw;
     overflow:hidden;
     position:relative;
     z-index:3;
     color:black;
     text-decoration: none;
     transition:color 0.3s ease-in-out;
+    text-transform: initial;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .hero .tag::before, .section a::before {
@@ -612,8 +639,17 @@ body {
     object-fit: cover;
 }
 
-h3 {
+.credits h3 {
     font-size:var(--small-font-size);
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial !important;
+    line-height:1.6;
+}
+
+h3 {
+    font-family: 'Space Mono', sans-serif;
+    font-size:var(--small-font-size);
+    text-transform: uppercase;
 }
 
 .text h3 {
@@ -675,6 +711,7 @@ h3 {
     overflow:hidden;
     pointer-events: none;
     transition:background 0.2s ease-in-out, opacity 1s ease;
+    filter: blur(100px);
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
