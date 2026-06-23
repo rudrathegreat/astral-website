@@ -180,7 +180,7 @@ function styleNavbar() {
             <div class="final-info">
                 <div class="copyright">
                     <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                    <p>&copy; 2026. Astrophysics, Supercomputing, Technology, Research, Analytics, Leadership Institute (ASTRAL). All Rights Reserved. Designed and Developed by Rudra Sekhri.</p>
+                    <p>&copy; 2026. Astrophysics, Supercomputing, Technology, Research, Analytics, Leadership Institute (ASTRAL). All Rights Reserved. Website designed and developed by Rudra Sekhri.</p>
                     <p>Photo Credit to Carl Knox from OzGrav, NASA and ESA.</p>
                     <a class="underline-button" href="${rootPath('privacy-policy.html')}">
                         <div>
