@@ -3,200 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S.T.R.A.L. | Cohorts</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>ASTRAL | Cohorts</title>
+    <link rel="stylesheet" href="assets/css/global_integrated.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="cohort.css">
-<link rel="icon" href="logo.ico">
+<link rel="stylesheet" href="assets/css/pages/projects_copy.css">
+<link rel="stylesheet" href="assets/css/transitions.css">
+<link rel="icon" href="assets/icons/logo.ico">
 </head>
-<body>
+<body data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="cohort">
     <div class="cursor">
         <p></p>
     </div>
     <div class="blob"></div>
-    <div class="navbar bg-nav">
-        <a href="index.html">
-            <img src="logo.svg" alt="" class="logo">
-        </a>
-        <div class="menu-icon">
-            <a onclick="toggleMenu();">
-                <div class="text">
-                    <p>Menu</p>
-                    <p>Close</p>
-                </div>
-            </a>
-            <a class="img-icon" onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
-        </div>
-        <div class="menu">
-            <div class="links">
-                <div class="categories">
-                    <a href="index.html">HOME</a>
-                    <a onclick="toggleOptions('about-options');">ABOUT</a>
-                    <a onclick="toggleOptions('work-options');">WORK</a>
-                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
-                    <a href="apply.html">APPLY</a>
-                    <a href="events.html">EVENTS</a>
-                    <a href="support.html">SUPPORT</a>
-                    <a href="contact.html">CONTACT</a>
-                    <a href="faqs.html">FAQS</a>
-                </div>
-                <div class="options">
-                    <div class="about-options nav-options">
-                        <a href="about.html">Vision and Mission</a>
-                        <a href="team.html">Mentors</a>
-                        <a href="code-of-conduct.html">Code of Conduct</a>
-                    </div>
-                    <div class="work-options nav-options">
-                        <a href="projects.html">Projects</a>
-                        <a href="tools.html">Online Tools</a>
-                    </div>
-                    <div class="cohort-options nav-options">
-                        <a onclick="goTo('.hero');">Current ASTRAL Cohort</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            </div>
-        </div>
-    </div>
+        <div data-site-nav data-nav-class="bg-nav"></div>
     <div class="scroll-container">
-        <div class="hero with-bg">
+        <div class="hero with-bg cohort-bg">
             <div class="title-container">
-                <h1 class="glitch-header" data-value="Cohorts_">Cohorts_</h1>
-                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+                <h1 class="glitch-header" data-value="CURRENT COHORT">CURRENT COHORT</h1>
+                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="assets/icons/circle_arrow_white.svg" alt=""></a>
             </div>
         </div>
-        <h2 class="start">2025 Astralites</h2>
 
-        <div class="2025-team team">
-            <div class="person" onclick="toggleDescription('mbailes');">
-                <div><h1>Agatha Beare</h1></div>
+        <!-- 2026 Cohort -->
+        <div class="main-content">
+            <div class="sidebar">
+                <h2>2026 Cohort</h2>
             </div>
-            <div class="person" onclick="toggleDescription('cflynn');">
-                <div><h1>Aaron Choi</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('smishra');">
-                <div><h1>Sevryn Danilov</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('kbanks');">
-                <div><h1>Rhea Fernandez</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('rsekhri');">
-                <div><h1>Annabelle Leung</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ecarli');">
-                <div><h1>Lucy O'Shea</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('bwolfe');">
-                <div><h1>Henryk Przychodzen</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Daniel Rosina</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Tristan Than</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Evie Vale</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Nandini Vyas</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Kim Yan</h1></div>
-            </div>
-        </div>
-        <img src="astral2025.jpg" alt="">
-        <h2 id="past-cohort"> 2024 Astralites </h2>
-        <div class="first-year-team team">
-            <div class="person" onclick="toggleDescription('mbailes');">
-                <div><h1>Hendrick Combrinck</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('cflynn');">
-                <div><h1>Rebecca Koehne</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('smishra');">
-                <div><h1>Ruoyao Ni</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('kbanks');">
-                <div><h1>Rudra Sekhri</h1></div>
-            </div>
-            <div class="person" onclick="toggleDescription('rsekhri');">
-                <div><h1>Evie Spilias</h1></div>
-            </div>
-        </div>
-        <img src="Supercomputer.jpg" alt="">
-        <div class="footer">
-            <div class="supporters">
-                <h2>A.S.T.R.A.L. is supported by</h2>
-                <div class="partners">
-                    <a href="https://www.swinburne.edu.au">
-                        <img src="swin.jpg" alt="">
-                    </a>
-                    <a href="https://ozgrav.org", style="width:25%;">
-                        <img src="ozgrav.png" alt="">
-                    </a>
+            <div class="cohort">
+                <div class="student">
+                    <img src="assets/images/cohort/ASTRAL 2026/0F7A1143.jpg" alt=""   >
+                    <h1>Amber McCabe</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1149.jpg" alt=""   >
+                    </picture>
+                    <h1>Syeda Fatima Zehra</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1160.jpg" alt=""   >
+                    </picture>
+                    <h1>Fatimah Adnan</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1164.jpg" alt=""   >
+                    </picture>
+                    <h1>Surraya Ibrahim</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1170.jpg" alt=""   >
+                    </picture>
+                    <h1>Jana Azzam</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1172.jpg" alt=""   >
+                    </picture>
+                    <h1>Blake Hutton</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1173.jpg" alt=""   >
+                    </picture>
+                    <h1>Ethan Ajeesh</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1179.jpg" alt=""   >
+                    </picture>
+                    <h1>Ramidu Jayathilaka</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1184.jpg" alt=""   >
+                    </picture>
+                    <h1>Eliza Stephenson</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1186.jpg" alt=""   >
+                    </picture>
+                    <h1>Esme James</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1190.jpg" alt=""   >
+                    </picture>
+                    <h1>Shruthi Sunnoju</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1196.jpg" alt=""   >
+                    </picture>
+                    <h1>Eshal Punjani</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1198.jpg" alt=""   >
+                    </picture>
+                    <h1>Mihajlo Gavrilovic</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1200.jpg" alt=""   >
+                    </picture>
+                    <h1>Eve Cumming</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1203.jpg" alt=""   >
+                    </picture>
+                    <h1>Felix Waters</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1208.jpg" alt=""   >
+                    </picture>
+                    <h1>Rosie Gao</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1210.jpg" alt=""   >
+                    </picture>
+                    <h1>Paul Shen</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1211.jpg" alt=""   >
+                    </picture>
+                    <h1>Andy Zeng</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1214.jpg" alt=""   >
+                    </picture>
+                    <h1>Chloe Papoutsis</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1225.jpg" alt=""   >
+                    </picture>
+                    <h1>Adithya Shyam</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1229.jpg" alt=""   >
+                    </picture>
+                    <h1>Adil Jibu</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1262.jpg" alt=""   >
+                    </picture>
+                    <h1>Bariyah Batool</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/cohort/ASTRAL 2026/0F7A1266.jpg" alt=""   >
+                    </picture>
+                    <h1>Anabelle Dib</h1>
+                </div>
+                <div class="student">
+                    <picture>
+                        <img src="assets/images/Miscellaneous/Placeholders/astral-website.jpg" alt=""   >
+                    </picture>
+                    <h1>Prabhjeevan Singh</h1>
                 </div>
             </div>
-                <div class="final-info">
-                    <div class="copyright">
-                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                        <p>&copy; 2025. Astrophysics, Supercomputing, Technology, Research, Analytics, Technology Institute (ASTRAL). All Rights Reserved. Designed and Developed by Rudra Sekhri</p>
-                        <p>Credit to Carl Knox from OzGrav, NASA</p>
-                        <a class="underline-button" href="privacy-policy.html">
-                            <div>
-                                <div class="text-indicator">
-                                    <p>Privacy Policy</p>
-                                    <p>Privacy Policy</p>
-                                </div>
-                                <div class="img-indicator">
-                                    <img src="arrow-link.svg" alt="">
-                                    <img src="arrow-link.svg" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="socials">
-                        <h2>Socials</h2>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/company/astral-institute" class="footer-link">LinkedIn</a>
-                            <a href="https://www.instagram.com/astral.institute/" class="footer-link">Instagram</a>
-                            <a href="mailto:mbailes@swin.edu.au" class="footer-link">Email</a>
-                        </div>
-                    </div>
-                    <div class="sitemap">
-                        <h2>Sitemap</h2>
-                        <div class="links">
-                            <a href="index.html" class="footer-link">Home</a>
-                            <a href="about.html" class="footer-link">About</a>
-                            <a href="projects.html" class="footer-link">Projects</a>
-                            <a href="tools.html" class="footer-link">Tools</a>
-                            <a onclick="lenis.scrollTo('.hero');" class="footer-link">Cohort</a>
-                            <a href="team.html" class="footer-link">Mentors</a>
-                            <a href="apply.html" class="footer-link">Apply</a>
-                            <a href="events.html" class="footer-link">Events</a>
-                            <a href="support.html" class="footer-link">Support</a>
-                            <a href="contact.html" class="footer-link">Contact</a>
-                            <a href="faqs.html" class="footer-link">FAQs</a>
-                        </div>
-                    </div>
-                    <div class="back-to-top">
-                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
         </div>
+        <div class="all-mentors-parallax" style="background-image: url('assets/images/cohort/ASTRAL 2026/0F7A1075.jpg');"></div>
+
+        <div data-site-footer></div>
     </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-    <script src="smooth-scroll.js"></script>
-    <script src="cursor.js"></script>
-    <script src="glitch_effect.js"></script>
-    <script src="navbar.js"></script>
-    <script src="parallax_bg.js"></script>
-    <script src="white-cursor-bg.js"></script>
+    <script src="assets/js/core/layout.js"></script>
+    <script src="assets/js/core/smooth-scroll.js"></script>
+    <script src="assets/js/core/cursor.js"></script>
+    <script src="assets/js/effects/glitch_effect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.js"></script>
+    <script src="assets/js/effects/scroll-reveal.js"></script>
+    <script src="assets/js/core/navbar_new.js"></script>
+    <script src="assets/js/effects/parallax_bg.js"></script>
+    <script src="assets/js/core/white-cursor-bg.js"></script>
+    <!--
+    <script src="assets/js/pages/team.js"></script> -->
+    <script src="assets/js/core/page-transitions.js"></script>
 </body>
 </html>
