@@ -1,0 +1,360 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Miscellaneous/Placeholders/bg.jpg');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 5vw;
+    padding-bottom:5vh;
+}
+
+.cohort-bg {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/cohort/ASTRAL 2026/0F7A1077.jpg');
+    background-position: 50% 10%;
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+.event-bg {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Events/SVU-opening.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+.tools-bg {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Projects/cmd-interactive-mockup-landscape.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+.hero h1 {
+    font-size:7vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+    font-family: 'Space Mono', monospace;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:6vw;
+}
+
+.hero a {
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    border-radius:100%;
+    width:max-content;
+    aspect-ratio:1/1;
+    margin-bottom:1vh;
+}
+
+/* .navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+} */
+
+.hero a {
+    z-index:2;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.main-content {
+    padding:10vh 5vw;
+    display:flex;
+    gap:3vw;
+    width:100%;
+}
+
+.main-content .project-list, .main-content .events-list {
+    display: flex;
+    flex-direction: column;
+    gap:8vh;
+    width:90%;
+}
+
+.main-content .sidebar {
+    width:10%;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    z-index: 5;
+}
+
+.project {
+    display:flex;
+    justify-content: flex-end;
+    gap:5vw;
+    border-top:2px solid rgba(0,0,0,0.2);
+    padding-top:4vh;
+}
+
+.project > div {
+    width:max-content;
+}
+
+.project .right-column {
+    width:40%;
+}
+
+.project .left-column {
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    gap:2vh;
+    justify-content: space-between
+}
+
+.project .right-column img {
+    width:100%;
+    border-radius:7px;
+    height:50vh;
+    object-fit:cover;
+}
+
+.project .tags {
+    display:flex;
+    gap:1vw;
+    flex-wrap:wrap;
+    margin-top:3vh;
+}
+
+.tags span {
+    display:inline-block;
+    padding:0.75vh 1vw;
+    border:2px solid rgba(0,0,0,0.2);
+    border-radius:1000px;
+    transition:background 0.3s ease, border-color 0.3s ease-out, color 0.3s ease-in-out;
+}
+
+.tags span:hover {
+    background:rgba(0,0,0,1);
+    border-color:rgba(0,0,0,1);
+    color:white;
+    transition:background 0.3s ease, border-color 0.3s ease-out, color 0.3s ease-in-out;
+}
+
+.more-details {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:3vw;
+}
+
+.more-details .year {
+    font-size:var(--new-main-text-size);
+    font-family:'Space Mono', monospace;
+}
+
+.cohort img {
+    width:100%;
+    border-radius:5px;
+    /* aspect-ratio: 1 / 2; */
+    object-fit: cover;
+    contain: layout style paint;
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    height:50vh;
+}
+
+.cohort {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 5vh;
+    grid-column-gap:1vw;
+    width:100%;
+    contain: layout;
+}
+
+.student {
+    content-visibility: auto;
+    contain: layout style paint;
+}
+
+.all-mentors-parallax {
+    width: 98vw;
+    height: 98vh;
+    margin:0 1vw;
+    background-image: url('../../images/Mentors/all-mentors.jpg');
+    background-size: 120%; /* Increased size to allow for movement */
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event {
+    display:flex;
+    flex-direction:column;
+    background: #eee;
+    padding:5vh 3vw;
+    border-radius:7px;
+    gap:3vh;
+}
+
+.event .left-column {
+    display:flex;
+    flex-direction: column;
+    gap:3vh;
+    justify-content: space-between;
+    width:60%;
+}
+
+.event .left-column .row {
+    display:flex;
+    gap:3vw;
+    width:100%;
+}
+
+.event .left-column .details-cell {
+    width:50%;
+}
+
+.event .grid {
+    display:flex;
+    gap:5vw;
+}
+
+.event .right-column {
+    width:40%;
+}
+
+.event .right-column img {
+    width:100%;
+    border-radius:7px;
+    height:40vh;
+    object-fit:cover;
+}
+
+.event .title {
+    display:flex;
+    gap:5vw;
+    padding-bottom:3vh;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.event h1 {
+    width:60%;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-size:cover !important;
+        height:90vh;
+    }
+
+    .hero h1 {
+        font-size:14vw;
+    }
+
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+
+    .main-content {
+        flex-direction: column;
+        gap:3vh;
+        padding-bottom:0vh;
+    }
+
+    .main-content .sidebar {
+        width:100%;
+    }
+
+    .project {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-content .project-list, .main-content .events-list {
+        width:100%;
+    }
+
+    .project .tags span {
+        padding:0.5vh 5vw;
+    }
+
+    .project .tags {
+        margin-bottom:1.5vh;
+    }
+
+    .project .right-column, .project .left-column {
+        width:100%;
+    }
+
+    .project .right-column img {
+        height:40vh;
+    }
+
+    .event .left-column, .event .right-column {
+        width:100%;
+    }
+
+    .event .grid {
+        flex-direction: column;
+        gap:3vh;
+    }
+
+    .event {
+        padding:4vh 5vw;
+    }
+
+    .event .right-column img {
+        height:40vh;
+    }
+
+    .event .title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap:3vh;
+        padding-bottom: 0;
+    }
+
+    .event h1 {
+        width:100%;
+    }
+
+    .all-mentors-parallax {
+        background-size: cover !important;
+        height:40vh;
+        margin-top:5vh;
+        width:100vw;
+        margin-left:0;
+        margin-right:0;
+        border-radius:0;
+    }
+
+    .student img {
+        height:40vh;
+    }
+}

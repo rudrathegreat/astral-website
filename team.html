@@ -3,259 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S.T.R.A.L. | Mentors</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>ASTRAL | Mentors</title>
+    <link rel="stylesheet" href="assets/css/global_integrated.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="team.css">
-<link rel="icon" href="logo.ico">
+<link rel="stylesheet" href="assets/css/pages/team.css">
+<link rel="stylesheet" href="assets/css/transitions.css">
+<link rel="icon" href="assets/icons/logo.ico">
 </head>
-<body>
+<body data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="team">
     <div class="cursor">
         <p></p>
     </div>
     <div class="blob"></div>
-    <div class="navbar bg-nav">
-        <a href="index.html">
-            <img src="logo.svg" alt="" class="logo">
-        </a>
-        <div class="menu-icon">
-            <a onclick="toggleMenu();">
-                <div class="text">
-                    <p>Menu</p>
-                    <p>Close</p>
-                </div>
-            </a>
-            <a class="img-icon" onclick="toggleMenu();"><img src="menu-icon.svg" alt="" class="menu-img"></a>
-        </div>
-        <div class="menu">
-            <div class="links">
-                <div class="categories">
-                    <a href="index.html">HOME</a>
-                    <a onclick="toggleOptions('about-options');">ABOUT</a>
-                    <a onclick="toggleOptions('work-options');">WORK</a>
-                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
-                    <a href="apply.html">APPLY</a>
-                    <a href="events.html">EVENTS</a>
-                    <a href="support.html">SUPPORT</a>
-                    <a href="contact.html">CONTACT</a>
-                    <a href="faqs.html">FAQS</a>
-                </div>
-                <div class="options">
-                    <div class="about-options nav-options">
-                        <a href="about.html">Vision and Mission</a>
-                        <a onclick="goTo('.hero');">Mentors</a>
-                        <a href="code-of-conduct.html">Code of Conduct</a>
-                    </div>
-                    <div class="work-options nav-options">
-                        <a href="projects.html">Projects</a>
-                        <a href="tools.html">Online Tools</a>
-                    </div>
-                    <div class="cohort-options nav-options">
-                        <a href="cohort.html">Current ASTRAL Cohort</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cflynn">
-        <a class="cross" onclick="toggleDescription('cflynn');"><img src="cross.svg" alt=""></a>
-        <div class="summary">
-            <p><b>Field:</b> Astrophysics</p>
-            <p><b>PhD:</b> Australian National University 1989</p>
-            <p><b>Experience:</b> 30 years</p>
-            <p><b>Expertise:</b> Galaxies, stars, pulsars and fast radio bursts</p>
-        </div>
-        <p class="long-description">DR. Chris Flynn has over 30 years experience working in optical and radio astronomy, with
-            an emphasis on measuring the matter content of the universe. He obtained his PhD in 1989 from Mount Stromlo Observatory
-            at the Australian National University, has worked in Heidelberg Germany, Copenhagen Denmark, in Princeton and Columbus
-            in the US and at the Tuorla Observatory in Finland. During this period he worked primarily with space-based optical
-            observatories, such as Hipparcos,the Hubble Space Telescope, and Gaia. He has been a senior researcher in the Centre
-            for Astrophysics and Supercomputing at Swinburne University of Technology for the last decade, working on Fast Radio
-            Bursts and pulsars.</p>
-    </div>
-    <div class="mbailes">
-        <a class="cross" onclick="toggleDescription('mbailes');"><img src="cross.svg" alt=""></a>
-        <div class="summary">
-            <p><b>Field:</b> Astrophysics</p>
-            <p><b>PhD:</b> Australian National University</p>
-            <p><b>Experience:</b> 30+ years</p>
-            <p><b>Expertise:</b> Pulsars, gravitational waves, fast radio bursts</p>
-        </div>
-        <p class="long-description">Professor Matthew Bailes is known for his pioneering work on millisecond pulsars
-            and fast radio bursts and is the founder of the A.S.T.R.A.L. program.
-            His PhD on at ANU was awarded the Crawford Prize in 1990, and he won the CSIRO medal for his work that unveiled
-            many of the brightest millisecond pulsars in the Southern hemisphere. He was awarded the Australian Research
-            Council's Endeavour, QEII, Senior and Laureate Fellowships, and has led two
-            successful Centre of Excellence bids on gravitational wave discovery. He is
-            currently the Director of the OzGrav Centre of Excellence.
-            In 1998 he founded the Swinburne Centre for Astrophysics and Supercomputing, now one
-            of Australia's major astronomical research centres.</p>
-    </div>
-
-    <div class="ajaini">
-        <a class="cross" onclick="toggleDescription('ajaini');"><img src="cross.svg" alt=""></a>
-        <div class="summary">
-            <p><b>Field:</b> Astrophysics</p>
-            <p><b>Masters:</b> Indian Institute of Astrophysics</p>
-            <p>Undertaking <b>PhD</b></p>
-            <p><b>Expertise:</b> Fast radio bursts, astrometry, instrumentation</p>
-        </div>
-        <p class="long-description">Akhil Jaini is currently pursuing his PhD at the Centre for Astrophysics and Supercomputing, Swinburne University 
-            of Technology, specialising in detecting and analysing Fast Radio Bursts (FRBs) and improving the astrometric accuracy of interferometric 
-            radio telescopes like the Australian Square Kilometre Array Pathfinder (ASKAP). With a background in electrical engineering, he started 
-            his journey in astrophysics through radio instrumentation before delving deeper into the physics. He has experience in designing a wide 
-            range of astronomical instruments from radio antennas to space-grade ultraviolet spectrographs. He also has experience in modelling and 
-            simulations, data analysis, algorithm development, and machine learning. Outside work, Akhil enjoys photography, writing, or just 
-            exploring new places.
-        </p>
-    </div>
-
-    <div class="smishra">
-        <a class="cross" onclick="toggleDescription('smishra');"><img src="cross.svg" alt=""></a>
-        <div class="summary">
-            <p><b>Field:</b> Astrophysics</p>
-            <p><b>Masters:</b> Macquarie University</p>
-            <p>Undertaking <b>PhD</b></p>
-            <p><b>Expertise:</b> Pulsars, supercomputing, pipelines</p>
-        </div>
-            <p class="long-description">Saurav Mishra is a current PhD student at Swinburne University of Technology, specializing
-            in pulsar searching and timing. He recently completed his Masters in Research at Macquarie University, with a focus on pulsar
-            searching. Before his current role, he served as a research technician at CSIRO, contributing to the development of
-            a pulsar data processing pipeline for the upcoming Parkes cryoPAF data processing pipeline.</p>
-    </div>
-    <div class="ecarli">
-        <a class="cross" onclick="toggleDescription('ecarli');"><img src="cross.svg" alt=""></a>
-        <div class="summary">
-            <p><b>Field:</b> Astrophysics</p>
-            <p><b>PhD:</b> The University of Manchester</p>
-            <p>Experience: <b>4+ years</b></p>
-            <p><b>Expertise:</b> Pulsars, data processing, pipelines</p>
-        </div>
-        <p class="long-description">Emma is a Postdoctoral Research fellow of OzGrav 2.0, at the Centre for Astrophysics and Supercomputing, Swinburne University 
-            of Technology. Her PhD was on finding (very rare) radio-emitting neutron stars/pulsars outside our galaxy, with the MeerKAT telescope, a state-of-the art telescope in South Africa that is a precursor of the future Square Kilometre Array observatory
-            Emma is currently working on database/data pipelines for MeerKAT pulsar timing.
-        </p>
-    </div>
+        <div data-site-nav data-nav-class="bg-nav"></div>
     <div class="scroll-container">
-        <div class="hero with-bg">
+        <div class="hero with-bg mentors-bg">
             <div class="title-container">
-                <h1 class="glitch-header" data-value="MENTORS">Mentors</h1>
-                <a onclick="lenis.scrollTo('.start');"><img class="hero-button" src="circle_arrow_white.svg" alt=""></a>
+                <h1 class="glitch-header" data-value="MENTORS">MENTORS</h1>
+                <a onclick="lenis.scrollTo('.main-content');"><img class="hero-button" src="assets/icons/circle_arrow_white.svg" alt=""></a>
             </div>
         </div>
-        <h2 class="start">Meet the Mentors</h2>
-        <p class="instructions">Click on the person to learn more about them.</p>
-        <div class="team">
-            <div class="person" onclick="toggleDescription('mbailes');">
-                <div><h1>Prof. Matthew Bailes</h1></div>
-                <div><p>Founder and A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('cflynn');">
-                <div><h1>Dr. Chris Flynn</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('smishra');">
-                <div><h1>Saurav Mishra</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('kbanks');">
-                <div><h1>Dr. Kirsten Banks</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('rsekhri');">
-                <div><h1>Rudra Sekhri</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ecarli');">
-                <div><h1>Dr. Emma Carli</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('bwolfe');">
-                <div><h1>Bailee Wolfe</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-            <div class="person" onclick="toggleDescription('ajaini');">
-                <div><h1>Akhil Jaini</h1></div>
-                <div><p>A.S.T.R.A.L. Mentor</p></div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="supporters">
-                <h2>A.S.T.R.A.L. is supported by</h2>
-                <div class="partners">
-                    <a href="https://www.swinburne.edu.au">
-                        <img src="swin.jpg" alt="">
-                    </a>
-                    <a href="https://ozgrav.org" style="width: 25%;">
-                        <img src="ozgrav.png" alt="">
-                    </a>
-                </div>
-            </div>
-                <div class="final-info">
-                    <div class="copyright">
-                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                        <p>&copy; 2024. astrophysics, supercomputing, technology, research analytics, technology program (A.S.T.R.A.L.). all rights reserved. designed and developed by rudra sekhri</p>
-                        <p>Credit to Carl Knox from OzGrav, NASA</p>
-                        <a class="underline-button" href="privacy-policy.html">
-                            <div>
-                                <div class="text-indicator">
-                                    <p>Privacy Policy</p>
-                                    <p>Privacy Policy</p>
-                                </div>
-                                <div class="img-indicator">
-                                    <img src="arrow-link.svg" alt="">
-                                    <img src="arrow-link.svg" alt="">
-                                </div>
+        <div class="main-content">
+            <div class="main-mentors">
+                <div class="main-mentor">
+                    <div class="left-column">
+                        <div class="main-info">
+                            <h1>Prof. Matthew Bailes</h1>
+                            <div class="roles">
+                                <p>Founder</p>
+                                <p>ASTRAL Director</p>
+                                <p>30+ Years Experience</p>
                             </div>
-                        </a>
-                    </div>
-                    <div class="socials">
-                        <h2>Socials</h2>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/company/astral-institute" class="footer-link">LinkedIn</a>
-                            <a href="https://discord.gg/Yp6v8xcrT9" class="footer-link">Discord</a>
-                            <a href="https://www.instagram.com/astral.institute/" class="footer-link">Instagram</a>
-                            <a href="mailto:mbailes@swin.edu.au" class="footer-link">Email</a>
+                            <div class="expertise">
+                                <p>Pulsars</p>
+                                <p>Gravitational Waves</p>
+                                <p>Fast Radio Bursts</p>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Professor Matthew Bailes is known for his pioneering work on millisecond pulsars and fast radio bursts and is the founder of the ASTRAL program. His PhD on at ANU was awarded the Crawford Prize in 1990, and he won the CSIRO medal for his work that unveiled many of the brightest millisecond pulsars in the Southern hemisphere. He was awarded the Australian Research Council's Endeavour, QEII, Senior and Laureate Fellowships, and has led two successful Centre of Excellence bids on gravitational wave discovery. He is currently the Director of the OzGrav Centre of Excellence. In 1998 he founded the Swinburne Centre for Astrophysics and Supercomputing, now one of Australia's major astronomical research centres.</p>
                         </div>
                     </div>
-                    <div class="sitemap">
-                        <h2>Sitemap</h2>
-                        <div class="links">
-                            <a href="index.html" class="footer-link">Home</a>
-                            <a href="about.html" class="footer-link">About</a>
-                            <a href="projects.html" class="footer-link">Projects</a>
-                            <a href="tools.html" class="footer-link">Tools</a>
-                            <a href="cohort.html" class="footer-link">Cohort</a>
-                            <a onclick="lenis.scrollTo('.hero')" class="footer-link">Mentors</a>
-                            <a href="apply.html" class="footer-link">Apply</a>
-                            <a href="events.html" class="footer-link">Events</a>
-                            <a href="support.html" class="footer-link">Support</a>
-                            <a href="contact.html" class="footer-link">Contact</a>
-                            <a href="faqs.html" class="footer-link">FAQs</a>
+                    <div class="right-column">
+                        <img src="assets/images/Mentors/matthew-26.jpg" alt="">
+                    </div>
+                </div>
+                <div class="main-mentor">
+                    <div class="left-column">
+                        <div class="main-info">
+                            <h1>Dr. Chris Flynn</h1>
+                            <div class="roles">
+                                <p>Researcher</p>
+                                <p>ASTRAL Coordinator</p>
+                                <p>30+ Years Experience</p>
+                            </div>
+                            <div class="expertise">
+                                <p>Stellar Photometry</p>
+                                <p>Astrometry</p>
+                                <p>Optical Astronomy</p>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Dr. Chris Flynn has over 30 years experience working in optical and radio astronomy, with an emphasis on measuring the matter content of the universe. He obtained his PhD in 1989 from Mount Stromlo Observatory at the Australian National University, has worked in Heidelberg Germany, Copenhagen Denmark, in Princeton and Columbus in the US and at the Tuorla Observatory in Finland. During this period he worked primarily with space-based optical observatories, such as Hipparcos,the Hubble Space Telescope, and Gaia. He has been a senior researcher in the Centre for Astrophysics and Supercomputing at Swinburne University of Technology for the last decade, working on Fast Radio Bursts and pulsars.</p>
                         </div>
                     </div>
-                    <div class="back-to-top">
-                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
+                    <div class="right-column">
+                        <img src="assets/images/Mentors/chris-26.jpg" alt="">
+                    </div>
+                </div>
+                <div class="main-mentor">
+                    <div class="left-column">
+                        <div class="main-info">
+                            <h1>Dr. Kirsten Banks</h1>
+                            <div class="roles">
+                                <p>Content Creator</p>
+                                <p>Science Communicator</p>
+                                <p>ASTRAL Mentor</p>
+                            </div>
+                            <div class="expertise">
+                                <p>Stellar Astrophysics</p>
+                                <p>Indigenous Astronomy</p>
+                                <p>Science Communication</p>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Dr. Kirsten Banks is a Wiradjuri woman, astrophysicist, and science communicator. She is well known for her work in stellar astrophysics and her advocacy for Indigenous Australian astronomy. Kirsten is a lecturer at Swinburne University and serves as a Science Communicator for OzGrav. She is widely recognized for making complex space concepts accessible through digital media, with a massive following on platforms like TikTok where she shares her passion for space.</p>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <img src="assets/images/Mentors/kirsten-26.jpg" alt="">
+                    </div>
+                </div>
+                <div class="main-mentor">
+                    <div class="left-column">
+                        <div class="main-info">
+                            <h1>Dr. Emma Carli</h1>
+                            <div class="roles">
+                                <p>Researcher</p>
+                                <p>Postdoctoral Fellow</p>
+                                <p>ASTRAL Mentor</p>
+                            </div>
+                            <div class="expertise">
+                                <p>Pulsar Timing</p>
+                                <p>Extragalactic Pulsars</p>
+                                <p>Neutron Stars</p>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Dr. Emma Carli is an OzGrav Postdoctoral Research Fellow at Swinburne University. Her research primarily focuses on radio astronomy, specifically the study of pulsars and neutron stars. She currently manages pulsar timing data from the MeerKAT radio telescope and is a pioneer in extragalactic pulsar searches, having significantly increased the known population of these objects during her doctoral studies.</p>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <img src="assets/images/Mentors/emma-carli.png" alt="">
                     </div>
                 </div>
             </div>
+            <div class="other-mentors">
+                <div class="other-mentor">
+                    <img src="assets/images/Mentors/saurav.jpg" alt="">
+                    <h1>Saurav Mishra</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2024/rudra-26.jpg" alt="">
+                    <h1>Rudra Sekhri</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Miscellaneous/Placeholders/astral-website.jpg" alt="">
+                    <h1>Bailee Wolfe</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Mentors/ajaini.jpg" alt="">
+                    <h1>Akhil Jaini</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2025/daniel-26.jpg" alt="">
+                    <h1>Daniel Rosina</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2025/tristan-26.jpg" alt="">
+                    <h1>Tristan Than</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2024/evie.jpg" alt="">
+                    <h1>Evie Spilias</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2024/rebecca-26.jpg" alt="">
+                    <h1>Rebecca Koehne</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2025/nandini-26.jpg" alt="">
+                    <h1>Nandini Vyas</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2025/evie-26.jpg" alt="">
+                    <h1>Evie Vale</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Mentors/rahul-26.jpg" alt="">
+                    <h1>Dr. Rahul Sengar</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Mentors/vivek-26.jpg" alt="">
+                    <h1>Dr. Vivek Venkatraman Krishnan</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Miscellaneous/Placeholders/astral-website.jpg" alt="">
+                    <h1>Carl Knox</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/cohort/ASTRAL 2024/hendrick-26.jpg" alt="">
+                    <h1>Hendrick Combrinck</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+                <div class="other-mentor">
+                    <img src="assets/images/Mentors/madeleine-26.jpg" alt="">
+                    <h1>Madeleine Willshire</h1>
+                    <p>ASTRAL Mentor</p>
+                </div>
+            </div>
+            <div class="all-mentors-parallax"></div>
         </div>
+                <div data-site-footer></div>
     </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-    <script src="smooth-scroll.js"></script>
-    <script src="cursor.js"></script>
-    <script src="glitch_effect.js"></script>
-    <script src="navbar.js"></script>
-    <script src="parallax_bg.js"></script>
-    <script src="white-cursor-bg.js"></script>
-    <script src="team.js"></script>
+    <script src="assets/js/core/layout.js"></script>
+    <script src="assets/js/core/smooth-scroll.js"></script>
+    <script src="assets/js/core/cursor.js"></script>
+    <script src="assets/js/effects/glitch_effect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.js"></script>
+    <script src="assets/js/effects/scroll-reveal.js"></script>
+    <script src="assets/js/core/navbar_new.js"></script>
+    <script src="assets/js/effects/parallax_bg.js"></script>
+    <script src="assets/js/core/white-cursor-bg.js"></script>
+    <script src="assets/js/pages/team.js"></script>
     <script>
         function toggleDescription(person) {
             document.querySelector('.' + person).classList.toggle('card-activated');
         }
     </script>
+    <script src="assets/js/core/page-transitions.js"></script>
 </body>
 </html>

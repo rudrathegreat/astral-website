@@ -1,0 +1,113 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
+/* .navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+} */
+
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Classroom-shots/0F7A1141.jpg');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 5vw;
+    padding-bottom:5vh;
+}
+
+.hero h1 {
+    font-size:7vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+    font-family:'Space Mono', monospace;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:6vw;
+}
+
+.hero a {
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    border-radius:100%;
+    width:max-content;
+    aspect-ratio:1/1;
+    margin-bottom:1vh;
+}
+
+
+.apply-section {
+    display:flex;
+    flex-direction: column;
+    gap:3vh;
+    width:100%;
+    padding:0 5vw;
+    padding-top:10vh;
+}
+
+.apply-section .section {
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+}
+
+form input {
+    outline:none;
+    border:2px solid black;
+    font-family: 'Space Mono', sans-serif;
+    font-weight:400;
+    text-transform:initial;
+    background:none;
+    padding:1.5vh 1vw;
+    font-size:1.25em;
+}
+
+.scroll-container > h2 {
+    margin-top:10vh;
+    text-align:center
+}
+
+@media screen and (max-width:1300px) {
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    .hero {
+        background-size:cover !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .hero h1 {
+        font-size:14vw;
+    }
+
+    .hero {
+        background-size:cover !important;
+        height:90vh;
+    }
+
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+    
+}

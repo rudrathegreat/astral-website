@@ -1,0 +1,237 @@
+.navbar .menu-icon {
+    background:#6A6BF4 !important;
+}
+
+.hero {
+    height:90vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Mentors/all-mentors.jpg');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding: 0 5vw;
+    padding-bottom:5vh;
+}
+
+.student-reviews-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Classroom-shots/0F7A1112.jpg');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size:7vw;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-5px;
+    margin-top:10vh;
+    font-family: 'Space Mono', monospace;
+}
+
+.hero .title-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:90vw;
+}
+
+.hero a img {
+    height:6vw;
+}
+
+.hero a {
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    border-radius:100%;
+    width:max-content;
+    aspect-ratio:1/1;
+    margin-bottom:1vh;
+}
+
+/* .navbar {
+    background:rgba(255,255,255,0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.15);
+} */
+
+.hero a {
+    z-index:2;
+    margin-bottom:1.5vh;
+}
+
+.hero a::before {
+    z-index:-1;
+    background:white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap:8vh;
+    padding: 10vh 0;
+    width:100vw;
+    padding-bottom:5vh;
+}
+
+.main-content .main-mentors {
+    display:flex;
+    flex-direction: column;
+    gap:8vh;
+}
+
+.main-mentor {
+    display: flex;
+    gap:5vw;
+    justify-content: space-between;
+    border-top:2px solid rgba(0, 0, 0, 0.2);
+    padding:0 5vw;
+    padding-top:4vh;
+}
+
+.main-mentor .right-column {
+    width:30%;
+}
+
+.right-column img {
+    width:100%;
+    border-radius:7px;
+    height:50vh;
+    object-fit:cover;
+}
+
+.left-column {
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    gap:3vh;
+    justify-content: space-between;
+}
+
+.left-column .main-info {
+    display: flex;
+    gap:5vw;
+}
+
+.left-column .main-info div p {
+    font-size:var(--image-caption-text-size);
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase !important;
+}
+
+.main-content h1 {
+    font-size:var(--new-heading-text-size);
+    font-family:'DM Sans', sans-serif;
+}
+
+.left-column .description p {
+    font-size:var(--image-caption-text-size);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.5;
+}
+
+.other-mentors img {
+    width:100%;
+    border-radius:5px;
+    height:50vh;
+    object-fit: cover;
+}
+
+.other-mentors {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 5vh;
+    grid-column-gap:1vw;
+    padding:10vh 5vw;
+}
+
+.all-mentors-parallax {
+    width: 98vw;
+    height: 98vh;
+    margin:0 1vw;
+    background-image: url('../../images/Mentors/all-mentors.jpg');
+    background-size: 120%; /* Increased size to allow for movement */
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.student-reviews .main-mentor .description p {
+    font-size:var(--new-main-text-size);
+}
+
+.student-reviews .main-mentor .right-column img {
+    height:40vh;
+}
+
+.student-reviews .main-mentor .main-info {
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    .main-mentor {
+        flex-direction: column-reverse;
+        gap:3vh;
+    }
+
+    .hero {
+        background-size:cover !important;
+        height:90vh;
+    }
+
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+
+    .hero h1 {
+        font-size:14vw;
+    }
+
+    .main-mentor .right-column,
+    .left-column {
+        width:100%;
+    }
+
+    .other-mentors {
+        grid-template-columns: 1fr;
+    }
+
+    .main-mentor .main-info {
+        flex-direction: column;
+        gap:1vh;
+    }
+
+    .main-mentor .right-column img {
+        height:40vh;
+    }
+
+    .other-mentors img {
+        height:40vh;
+    }
+
+    .all-mentors-parallax {
+        background-size: cover !important;
+        height:32vh;
+        width:100vw;
+        margin-left:0;
+        margin-right:0;
+        border-radius:0;
+    }
+
+    .other-mentors {
+        padding-bottom:0;
+    }
+
+    .main-content {
+        padding-bottom:0;
+    }
+}

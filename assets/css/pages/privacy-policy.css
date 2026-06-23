@@ -1,0 +1,20 @@
+.hero {
+    width:100%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('../../images/Classroom-shots/0F7A1299.jpg');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    display: flex;
+}
+
+@media screen and (max-width:768px) {
+    .content {
+        padding:7vh 5vw;
+    }
+
+    .content a {
+        padding:1vh 4vw;
+    }
+}

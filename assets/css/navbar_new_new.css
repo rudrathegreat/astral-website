@@ -1,0 +1,491 @@
+/* CSS Variables */
+:root {
+    --ascii-font-size: 1em;
+    --small-font-size: 1.25em;
+    --heading-font-size: 1.75em;
+    --large-font-size: 2em;
+    --extreme-font-size: 4em;
+    --width-between-img-text: 3vh;
+    --heading-text-padding: 1.5vh;
+    --new-main-text-size: 1.25em;
+    --new-heading-text-size: 2em;
+    --image-caption-size: 1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+body {
+    background: white;
+    font-family: 'Space Mono', sans-serif;
+    overflow-x: hidden;
+    text-transform: uppercase;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial;
+}
+
+p,
+ul li {
+    font-size: var(--new-main-text-size);
+    font-family: 'DM Sans', sans-serif;
+    text-transform: initial !important;
+    line-height: 1.5;
+}
+
+ul li {
+    font-size: 1em;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 2vh 5vw;
+    padding-bottom: 0vh;
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.3s ease-out, backdrop-filter 0.3s ease-in-out, border 0.3s ease;
+}
+
+.navbar.activated {
+    background: none;
+    backdrop-filter: none;
+    transition: background 0.3s ease-out, backdrop-filter 0.3s ease-in-out, border 0.3s ease;
+}
+
+.menu-icon {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    background: #6A6BF4;
+    backdrop-filter: none;
+    height: 100%;
+    padding: 1vh 1vw;
+    transform: translateY(-1vh);
+    border-radius: 0.5vw;
+    transition: background 0.5s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar img {
+    height: 6vh;
+}
+
+.navbar .menu-icon>.img-icon {
+    height: 100%;
+    display: inline-block;
+}
+
+.menu {
+    position: fixed;
+    z-index: -1;
+    height: auto;
+    width: 100%;
+    background: #fff;
+    top: 0vh;
+    left: 0;
+    padding: 0 5vw;
+    transform: scaleY(0);
+    transform-origin: top;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+    transition-delay: 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
+}
+
+.menu .links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    flex: 1;
+    gap:5vh;
+}
+
+.submenu-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 1;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.menu .options {
+    border: none !important;
+    position: relative;
+    flex: 0 0 40%;
+}
+
+.options-image-display {
+    /* flex: 1; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
+    padding-right: 0;
+    height:max-content;
+    border-radius: 7px;
+    background:#eee;
+}
+
+.options-image {
+    width: 25vw !important;
+    height: 30vh !important;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #ddd;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.options-image.active {
+    opacity: 1;
+}
+
+.menu .nav-options {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    position: absolute;
+    gap: 1.5vh;
+    transition: opacity 0.3s ease-in-out;
+    top:0;
+    left:0;
+    padding-top:0;
+}
+
+.menu .options-activated {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu .categories,
+.menu .options {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0;
+    justify-content: space-between;
+    border-right: 2px solid black;
+    width: max-content;
+}
+
+.menu  .categories {
+    flex-direction: row;
+    border-right: none;
+    justify-content: space-between;
+    width:100%;
+    padding-top:15vh;
+    padding-bottom:0;
+}
+
+.menu .options a {
+    font-size: 1.25em;
+}
+
+.menu .links {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .categories a {
+    font-size: 1.25em;
+    display: inline-block;
+}
+.navbar .text {
+    width: max-content;
+    height: var(--ascii-font-size);
+    overflow: hidden;
+    color: white;
+}
+
+.navbar .purple {
+    background: #6A6BF4;
+    transition: color 0.5s ease;
+}
+
+.navbar .text p {
+    font-size: var(--ascii-font-size);
+    line-height: 1;
+}
+
+.navbar .text p {
+    transform: translateY(0%);
+    transition: transform 0.3s ease;
+}
+
+.activated .text p {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.activated .menu {
+    transform: scaleY(1);
+    transform-origin: top;
+    pointer-events: all;
+    transition: transform 0.5s ease;
+}
+
+.activated .menu-icon>.img-icon img {
+    transform: rotate(225deg) !important;
+    transition: transform 0.5s ease;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 0vw !important;
+    position: relative;
+    width: max-content;
+    font-family: 'Space Mono', sans-serif;
+    text-transform: uppercase;
+}
+
+.menu .links {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu a::before {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.activated .menu .links {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.activated .menu a::before {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    transition-delay: 0.3s;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar .menu-icon>.img-icon img {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.navbar .menu-icon>.img-icon:hover>img {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Submenu link hover effects */
+.nav-options a {
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-options a::before {
+    display: none !important;
+}
+
+.nav-options a::after {
+    content: '';
+    position: absolute;
+    right: -3vw;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    background: url('../icons/rainbow-star.svg') center / contain no-repeat;
+    width: 2vw;
+    height: 2vw;
+    transition: transform 0.3s ease;
+}
+
+.nav-options a.hovered {
+    color: #6A6BF4;
+}
+
+.nav-options a.hovered::after {
+    transform: translateY(-50%) scale(1);
+}
+
+/* Social Media Section */
+.social-media-section {
+    display: flex;
+    gap: 3vw;
+    padding: 0 5vw 2vh;
+    border-top: 1px solid black;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0s;
+    position:absolute;
+    bottom: 3vh;
+    left:0;
+    width:100vw;
+    padding-top:4vh;
+}
+
+.activated .social-media-section {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.social-link {
+    color: black;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #6A6BF4;
+}
+
+/* Application Status Pill */
+.application-status {
+    margin-left: auto;
+    background: #F46969;
+    padding: 1.5vh 1.5vw;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    align-self: center;
+    font-size:var(--ascii-font-size);
+}
+
+.application-status p {
+    color: white !important;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase !important;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Underline Button Styles */
+.navbar .underline-button {
+    text-decoration: none !important;
+    color: black !important;
+    display: inline-block !important;
+    position: relative !important;
+    margin-top: 0vh !important;
+    width: max-content !important;
+    padding-bottom: 1vh !important;
+    text-transform: initial !important;
+}
+
+.navbar .underline-button div {
+    /* display: flex !important; */
+    gap: 1vw !important;
+    align-items: center !important;
+    height:calc(var(--ascii-font-size)*1.25);
+}
+
+.navbar .underline-button::before {
+    content: '' !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: black !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+}
+
+.navbar .underline-button p {
+    width: max-content !important;
+    line-height: 1.25 !important;
+    font-size: var(--ascii-font-size) !important;
+}
+
+body .projects .underline-button p {
+    line-height: 1.25 !important;
+}
+
+.navbar .underline-button > div p {
+    transform: translateY(0%) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button:hover > div p {
+    transform: translateY(-100%) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button > div img:first-child {
+    transform: translate(0%, 0%) !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button:hover > div img:first-child {
+    transform: translate(100%, -100%) !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button > div img:last-child {
+    transform: translate(-100%, 0%) !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button:hover > div img:last-child {
+    transform: translate(0%, -100%) !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .underline-button img {
+    height: var(--ascii-font-size) !important;
+}
+
+.navbar .underline-button .img-indicator {
+    height:1em !important;
+}

@@ -3,63 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S.T.R.A.L. | A.S.T.R.A.L.'s Planetary Discovery Game</title>
+    <title>ASTRAL | ASTRAL's Planetary Discovery Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="article.css">
-<link rel="icon" href="../logo.ico">
+<link rel="stylesheet" href="../assets/css/global_integrated.css">
+<link rel="stylesheet" href="../assets/css/pages/projects_copy.css">
+<link rel="stylesheet" href="../assets/css/pages/article.css">
+<link rel="stylesheet" href="../assets/css/transitions.css">
+<link rel="icon" href="../assets/icons/logo.ico">
 </head>
-<body>
+<body data-barba="wrapper" class="no-bg-page">
+    <main data-barba="container" data-barba-namespace="project-article">
     <div class="cursor">
         <p></p>
     </div>
     <div class="blob"></div>
-    <div class="navbar bg-nav">
-        <a href="../index.html">
-            <img src="../logo.svg" alt="" class="logo">
-        </a>
-        <div class="menu-icon">
-            <a onclick="toggleMenu();">
-                <div class="text">
-                    <p>Menu</p>
-                    <p>Close</p>
-                </div>
-            </a>
-            <a class="img-icon" onclick="toggleMenu();"><img src="../menu-icon.svg" alt="" class="menu-img"></a>
-        </div>
-        <div class="menu">
-            <div class="links">
-                <div class="categories">
-                    <a href="../index.html">HOME</a>
-                    <a onclick="toggleOptions('about-options');">ABOUT</a>
-                    <a onclick="toggleOptions('work-options');">WORK</a>
-                    <a onclick="toggleOptions('cohort-options');">COHORT</a>
-                    <a href="../apply.html">APPLY</a>
-                    <a href="../events.html">EVENTS</a>
-                    <a href="../support.html">SUPPORT</a>
-                    <a href="../contact.html">CONTACT</a>
-                    <a href="../faqs.html">FAQS</a>
-                </div>
-                <div class="options">
-                    <div class="about-options nav-options">
-                        <a href="../about.html">Vision and Mission</a>
-                        <a href="../team.html">Mentors</a>
-                        <a href="../code-of-conduct.html">Code of Conduct</a>
-                    </div>
-                    <div class="work-options nav-options">
-                        <a href="../projects.html">Projects</a>
-                        <a href="../tools.html">Online Tools</a>
-                    </div>
-                    <div class="cohort-options nav-options">
-                        <a href="../cohort.html">Current ASTRAL Cohort</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="scroll-container">
+        <div data-site-nav></div>
     <div class="scroll-container">
         <div class="hero">
             <div class="title-container">
@@ -72,56 +33,45 @@
             </div>
             <div class="image">
                 <div class="effect-container">
-                    <img src="../virtual-universe.jfif" alt="">
+                    <img src="../assets/images/Miscellaneous/Carl-images/virtual-universe.jfif" alt="">
                     <div class="grid-effect"></div>
                 </div>
             </div>
         </div>
-        <div class="content">
-            <div class="section supervisors">
-                <h2>supervisors</h2>
-                <div class="grid">
-                    <div class="person">
-                        <img src="../mbailes.jpg" alt="">
-                        <h3>Prof. Matthew Bailes</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../cflynn.png" alt="">
-                        <h3>Dr. Chris Flynn</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../ajaini.jpg" alt="">
-                        <h3>Akhil Jaini</h3>
-                    </div>
+        <div class="main-content">
+            <div class="sidebar">
+                <h2>Mentors</h2>
+            </div>
+            <div class="cohort">
+                <div class="student">
+                    <img src="../assets/images/Mentors/matthew-26.jpg" alt="">
+                    <h1>Prof. Matthew Bailes</h1>
+                </div>
+                <div class="student">
+                    <img src="../assets/images/Mentors/chris-26.jpg" alt="">
+                    <h1>Dr. Chris Flynn</h1>
+                </div>
+                <div class="student">
+                    <img src="../assets/images/Mentors/ajaini.jpg" alt="">
+                    <h1>Akhil Jaini</h1>
                 </div>
             </div>
-            <div class="section contributors">
+        </div>
+        <div class="main-content">
+            <div class="sidebar">
                 <h2>Contributors</h2>
-                <div class="grid">
-                    <div class="person">
-                        <img src="../2025-cohort-photos/kim-25.jpg" alt="">
-                        <h3>Kim Yan</h3>
-                    </div>
-                    <div class="person">
-                        <img src="../2025-cohort-photos/tristan-25.jpg" alt="">
-                        <h3>Tristan Than</h3>
-                    </div>
+            </div>
+            <div class="cohort">
+                <div class="student">
+                    <img src="../assets/images/cohort/ASTRAL 2025/kim-25.jpg" alt="">
+                    <h1>Kim Yan</h1>
+                </div>
+                <div class="student">
+                    <img src="../assets/images/cohort/ASTRAL 2025/tristan-25.jpg" alt="">
+                    <h1>Tristan Than</h1>
                 </div>
             </div>
-            <div class="section text credits">
-                <h2>Credits</h2>
-                <h3>Program developed by Tristan Than.</h3>
-                <h3>Night Sky texture map designed by Kim Yan.</h3>
-                <h3>Report written by Tristan Than and Kim Yan</h3>
-                
-                <p>
-                Thank you to Kim Yan for his support in debugging and fixing numerous issues within the program, especially 
-                    the raycasting, orbital, and UI mechanics. Thank you to David Barnes for assisting us with textures and 
-                    lighting effects. Thank you to the 2025 ASTRAL team for playtesting the game while it was in development
-                    to provide feedback for updates and fixes. Thank you to Prof. Matthew Bailes for supervising this project,
-                    and Akhil Jaini for providing helpful suggestions for new features. This project is funded by A.S.T.R.A.L.
-                </p>
-            </div>
+        </div>
             <div class="section text introduction">
                 <h2>Introduction</h2>
                 <p>
@@ -136,78 +86,39 @@
                     is currently in use as part of the Astrotour with a large touchscreen display.
                 </p>
             </div>
+            <div class="section text credits">
+                <h2>Credits</h2>
+                <h3>Program developed by Tristan Than.</h3>
+                <h3>Night Sky texture map designed by Kim Yan.</h3>
+                <h3>Report written by Tristan Than and Kim Yan</h3>
+                
+                <p>
+                Thank you to Kim Yan for his support in debugging and fixing numerous issues within the program, especially 
+                    the raycasting, orbital, and UI mechanics. Thank you to David Barnes for assisting us with textures and 
+                    lighting effects. Thank you to the 2025 ASTRAL team for playtesting the game while it was in development
+                    to provide feedback for updates and fixes. Thank you to Prof. Matthew Bailes for supervising this project,
+                    and Akhil Jaini for providing helpful suggestions for new features. This project is funded by ASTRAL
+                </p>
+            </div>
             <div class="section download">
                 <h2>Download Full Report</h2>
-               <!-- <a href="pdf/ASTRAL-Case-Study.pdf">DOWNLOAD PDF</a> -->
+               <!-- <a href="../assets/docs/projects/ASTRAL-Case-Study.pdf">DOWNLOAD PDF</a> -->
                 <p>Full report coming soon.</p>
             </div>
         </div>
-        <div class="footer">
-            <div class="supporters">
-                <h2>A.S.T.R.A.L. is supported by</h2>
-                <div class="partners">
-                    <a href="https://www.swinburne.edu.au">
-                        <img src="../swin.jpg" alt="">
-                    </a>
-                    <a href="https://ozgrav.org" style="width: 25%;">
-                        <img src="../ozgrav.png" alt="">
-                    </a>
-                </div>
-            </div>
-                <div class="final-info">
-                    <div class="copyright">
-                        <p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our program runs.</p>
-                        <p>&copy; 2025. Astrophysics, Supercomputing, Technology, Research, Analytics, Technology Institute (ASTRAL). All Rights Reserved. Designed and Developed by Rudra Sekhri</p>
-                        <p>Credit to Carl Knox from OzGrav, NASA</p>
-                        <a class="underline-button" href="../privacy-policy.html">
-                            <div>
-                                <div class="text-indicator">
-                                    <p>Privacy Policy</p>
-                                    <p>Privacy Policy</p>
-                                </div>
-                                <div class="img-indicator">
-                                    <img src="../arrow-link.svg" alt="">
-                                    <img src="../arrow-link.svg" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="socials">
-                        <h2>Socials</h2>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/company/astral-institute" class="footer-link">LinkedIn</a>
-                            <a href="https://discord.gg/Yp6v8xcrT9" class="footer-link">Discord</a>
-                            <a href="https://www.instagram.com/astral.institute/" class="footer-link">Instagram</a>
-                            <a href="mailto:mbailes@swin.edu.au" class="footer-link">Email</a>
-                        </div>
-                    </div>
-                    <div class="sitemap">
-                        <h2>Sitemap</h2>
-                        <div class="links">
-                            <a href="../index.html" class="footer-link">Home</a>
-                            <a href="../about.html" class="footer-link">About</a>
-                            <a href="../projects.html" class="footer-link">Projects</a>
-                            <a href="../tools.html" class="footer-link">Tools</a>
-                            <a href="../cohort.html" class="footer-link">Cohort</a>
-                            <a href="../team.html" class="footer-link">Mentors</a>
-                            <a href="../apply.html" class="footer-link">Apply</a>
-                            <a href="../events.html" class="footer-link">Events</a>
-                            <a href="../support.html" class="footer-link">Support</a>
-                            <a href="../contact.html" class="footer-link">Contact</a>
-                            <a href="../faqs.html" class="footer-link">FAQs</a>
-                        </div>
-                    </div>
-                    <div class="back-to-top">
-                        <a onclick="lenis.scrollTo('.hero')"><img src="circle_arrow.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <div data-site-footer></div>
     </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-    <script src="../smooth-scroll.js"></script>
-    <script src="../cursor.js"></script>
-    <script src="../navbar.js"></script>
-    <script src="article-grid-effect.js"></script>
+    <script src="../assets/js/core/layout.js"></script>
+    <script src="../assets/js/core/smooth-scroll.js"></script>
+    <script src="../assets/js/core/cursor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.js"></script>
+    <script src="../assets/js/effects/scroll-reveal.js"></script>
+    <script src="../assets/js/core/navbar_new.js"></script>
+    <script src="../assets/js/effects/article-grid-effect.js"></script>
+    <script src="../assets/js/core/page-transitions.js"></script>
 </body>
 </html>
