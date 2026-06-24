@@ -27,6 +27,7 @@ h2 {
     line-height:1;
     letter-spacing:-5px;
     margin-top:10vh;
+    font-family:'Space Mono', monospace;
 }
 
 .hero .title-container {
