@@ -60,6 +60,7 @@ body.loading-active {
     animation: spin 5s linear infinite;
     position: relative;
     z-index: 1;
+    pointer-events:none;
 }
 
 .loading-content .white-background {
