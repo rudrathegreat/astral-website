@@ -1653,10 +1653,6 @@ h3 {
         align-items: flex-start;
     }
 
-    .projects .controls .round-button img {
-        width:8vh;
-    }
-
     .projects .controls {
         gap:3vw;
     }
