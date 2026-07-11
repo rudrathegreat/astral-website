@@ -307,12 +307,14 @@
         height:70vh;
     }
 
-    .hero h1 {
-        font-size:14vw;
-    }
+    
 }
 
 @media screen and (max-width:1000px) {
+    .hero h1 {
+        font-size:14vw;
+    }
+    
     .person h1 {
         font-size:var(--large-font-size-mobile) !important;
     }

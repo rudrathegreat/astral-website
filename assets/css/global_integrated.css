@@ -485,6 +485,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2vh;
+    gap:3vw;
 }
 
 .who-we-are .title-section h2 {

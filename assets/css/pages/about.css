@@ -240,9 +240,7 @@
         height:90vh;
     }
 
-    .hero h1 {
-        font-size:14vw;
-    }
+    
 
         .projects {
         display:none;
@@ -250,6 +248,10 @@
 }
 
 @media screen and (max-width:768px) {
+    .hero h1 {
+        font-size:14vw;
+    }
+
     .main-content, .about-description {
         flex-direction: column;
     }

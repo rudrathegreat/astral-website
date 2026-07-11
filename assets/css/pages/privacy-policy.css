@@ -10,6 +10,10 @@
 }
 
 @media screen and (max-width:768px) {
+    .hero h1 {
+        font-size:14vw;
+    }
+    
     .content {
         padding:7vh 5vw;
     }
