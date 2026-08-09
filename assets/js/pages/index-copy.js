@@ -52,7 +52,7 @@ const projectSlides = [
         alt: 'Pulsar timing project preview'
     },
     {
-        title: 'A.S.T.R.A.L. Branding, Logo Design and Website Development',
+        title: 'ASTRAL Branding, Logo Design and Website Development',
         year: 'Year: 2024',
         image: 'assets/images/Projects/website-mockup-horizontal.jpg',
         link: 'projects/astral-case-study.html',
