@@ -38,10 +38,12 @@
                             <option value="" selected disabled>Select telescope / receiver</option>
                             <option value="manual">Custom telescope</option>
                         </select>
-                        <div id="telescope-summary" class="selection-summary" aria-live="polite">
+                        <div id="telescope-summary" class="visually-hidden" aria-live="polite">
                             <span class="selection-title">No telescope selected</span>
                         </div>
-                        <button type="button" class="text-button" id="open-values-telescope">Edit values</button>
+                        <div class="control-actions">
+                            <button type="button" class="text-button" id="open-values-telescope">Edit values</button>
+                        </div>
                     </section>
 
                     <section class="control-block" aria-labelledby="pulsar-heading">
@@ -85,10 +87,7 @@
                     </section>
                 </div>
 
-                <div class="calculate-row">
-                    <p id="override-count" class="override-count" hidden></p>
-                    <button type="submit" class="calculate-button">Calculate S/N</button>
-                </div>
+                <p id="override-count" class="override-count" hidden></p>
 
                 <div id="form-status" class="form-status" role="alert" aria-live="assertive" hidden></div>
             </form>
@@ -97,7 +96,8 @@
                 <p class="result-label" id="result-heading">Signal to noise ratio</p>
                 <p id="result-announcement" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
                 <output id="result-value" class="result-value" for="area efficiency centre-frequency bandwidth flux flux-frequency time tsys polarisations period width">&mdash;</output>
-                <p id="result-context" class="result-context">Select inputs, then calculate.</p>
+                <button type="submit" class="calculate-button" form="snr-form">Calculate S/N</button>
+                <p id="result-context" class="result-context"></p>
 
                 <details id="result-warnings" class="result-disclosure" hidden>
                     <summary>Warnings</summary>
@@ -109,7 +109,6 @@
                     <dl id="result-summary" class="result-summary"></dl>
                 </details>
 
-                <p class="research-caveat">Ideal estimate: beta = 1; Tsys must include all on-source noise.</p>
             </section>
         </div>
 

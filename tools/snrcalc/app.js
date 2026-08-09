@@ -6073,7 +6073,7 @@
         }
 
         function clearResult(message, announce) {
-            const context = message || "Select inputs, then calculate.";
+            const context = message || "";
             state.resultIsCurrent = false;
             dom.resultValue.textContent = "—";
             dom.resultContext.textContent = context;
