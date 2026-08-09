@@ -2,98 +2,338 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../assets/icons/logo.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate the signal-to-noise ratio of a pulsar observation with telescope presets and a searchable pulsar catalogue.">
     <title>ASTRAL | SNRCalc</title>
-    <link rel="stylesheet" href="../../assets/css/tools/snrcalc.css">
-    <link rel="stylesheet" href="../../assets/css/global_integrated.css">
+    <link rel="icon" href="../../assets/icons/logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/global_integrated.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
 </head>
-<body>
-    <div class="blob"></div>
-        <div data-site-nav ></div>
-    <div class="main">
-        <h2 class="title">SNRCalc</h2>
-        <div class="container">
-            <div class="form">
-                <div class="form-names">
-                    <div class="field">
-                        <h1>Area (m<sup>2</sup>)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Efficiency (%)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Bandwidth (MHz)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Flux (Jy)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Time (s)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>System Temperature (K)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Number of Polarisations</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Period (s)</h1>
-                    </div>
-                    <div class="field">
-                        <h1>Width (s)</h1>
-                    </div>
-                </div>
-                <div class="inputs">
-                    <input type="text" id="area">
-                    <input type="text" id="efficiency">
-                    <input type="text" id="bandwidth">
-                    <input type="text" id="flux">
-                    <input type="text" id="time">
-                    <input type="text" id="tsys">
-                    <input type="text" id="np">
-                    <input type="text" id="period">
-                    <input type="text" id="width">
-                </div>
+<body class="snr-page">
+    <div data-site-nav></div>
+
+    <main class="snr-main" id="main-content">
+        <header class="tool-header">
+            <p class="tool-kicker">ASTRAL / RESEARCH TOOLS</p>
+            <div class="tool-heading-row">
+                <h1>SNRCalc</h1>
+                <p class="tool-intro">Estimate the signal-to-noise ratio of a pulsar observation using the pulsed radiometer equation.</p>
             </div>
-            <div class="side">
-                    <h2>The SNR will be</h2>
-                    <h3 id="answer">None</h3>
-                <a onclick="calculateSNR();" class="normal">Calculate</a>
-            </div>
+        </header>
+
+        <div id="storage-notice" class="notice notice-warning" role="status" hidden></div>
+
+        <div class="calculator-layout">
+            <form id="snr-form" class="calculator-form" novalidate>
+                <div class="primary-controls">
+                    <section class="control-block" aria-labelledby="telescope-heading">
+                        <h2 id="telescope-heading">Telescope</h2>
+                        <label for="telescope-select">Telescope / receiver</label>
+                        <select id="telescope-select" name="telescope">
+                            <option value="" selected disabled>Select telescope / receiver</option>
+                            <option value="manual">Custom / manual telescope</option>
+                        </select>
+                        <div id="telescope-summary" class="selection-summary" aria-live="polite">
+                            <span class="selection-title">No telescope selected</span>
+                            <span>Choose a published preset or custom telescope.</span>
+                        </div>
+                        <button type="button" class="text-button" id="open-values-telescope">Edit values</button>
+                    </section>
+
+                    <section class="control-block" aria-labelledby="pulsar-heading">
+                        <h2 id="pulsar-heading">Pulsar</h2>
+                        <label for="pulsar-search">Pulsar name</label>
+                        <div class="combobox-wrap">
+                            <input
+                                id="pulsar-search"
+                                name="pulsarSearch"
+                                type="search"
+                                role="combobox"
+                                aria-autocomplete="list"
+                                aria-controls="pulsar-suggestions"
+                                aria-expanded="false"
+                                aria-describedby="pulsar-search-help"
+                                autocomplete="off"
+                                spellcheck="false"
+                                placeholder="Try J0437-4715 or B0833-45"
+                            >
+                            <ul id="pulsar-suggestions" class="suggestions" role="listbox" hidden></ul>
+                        </div>
+                        <p id="pulsar-search-help" class="field-help" role="status" aria-live="polite">Suggestions appear after two characters.</p>
+                        <div id="pulsar-summary" class="selection-summary" aria-live="polite">
+                            <span class="selection-title">Custom / unlisted pulsar</span>
+                            <span>Enter the source properties in the popup.</span>
+                        </div>
+                        <div class="control-actions">
+                            <button type="button" class="text-button" id="manual-pulsar">Custom / unlisted</button>
+                            <button type="button" class="text-button" id="open-values-pulsar">Edit values</button>
+                        </div>
+                    </section>
+
+                    <section class="control-block time-block" aria-labelledby="observation-heading">
+                        <h2 id="observation-heading">Observation</h2>
+                        <div class="field-control time-control" data-field="time">
+                            <div class="label-row">
+                                <label for="time">Observing time <span class="unit">seconds</span></label>
+                            </div>
+                            <input id="time" name="time" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="time-help time-error">
+                            <p id="time-help" class="field-help">Total on-source integration time.</p>
+                            <p id="time-error" class="field-error"></p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="calculate-row">
+                    <p id="override-count" class="override-count">No overrides</p>
+                    <button type="submit" class="calculate-button">Calculate S/N</button>
+                </div>
+
+                <div id="form-status" class="form-status" role="alert" aria-live="assertive" hidden></div>
+            </form>
+
+            <section class="result-panel" aria-labelledby="result-heading">
+                <p class="result-label" id="result-heading">Signal to noise ratio</p>
+                <p id="result-announcement" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+                <output id="result-value" class="result-value" for="area efficiency centre-frequency bandwidth flux flux-frequency time tsys polarisations period width">&mdash;</output>
+                <p id="result-context" class="result-context">Choose a telescope and pulsar, enter observing time, then calculate.</p>
+
+                <details id="result-warnings" class="result-disclosure" hidden>
+                    <summary>Warnings</summary>
+                    <ul id="result-warning-list"></ul>
+                </details>
+
+                <details id="result-details" class="result-disclosure" hidden>
+                    <summary>Calculation summary</summary>
+                    <dl id="result-summary" class="result-summary"></dl>
+                </details>
+
+                <p class="research-caveat">Ideal estimate with a degradation factor of 1. Confirm total system temperature, preset assumptions and source values before research use.</p>
+            </section>
         </div>
-    </div>
-    <script>
-        function calculateSNR() {
-            var area = document.getElementById("area").value;
-            var efficiency = document.getElementById("efficiency").value;
-            var bandwidth = document.getElementById("bandwidth").value;
-            var flux = document.getElementById("flux").value;
-            var time = document.getElementById("time").value;
-            var tsys = document.getElementById("tsys").value;
-            var np = document.getElementById("np").value;
-            var period = document.getElementById("period").value;
-            var width = document.getElementById("width").value;
-            if (area != "nothing" && efficiency != "nothing" && bandwidth != "nothing" && flux != "nothing" && time != "nothing" && tsys != "nothing" && np != "nothing"){
-                var k = 1.38064852e-23;
-                var g = (((parseFloat(efficiency) * parseFloat(area)) / 100) / (2 * parseFloat(k))) * (10**-26);
-                var snr = ((parseFloat(flux) * parseFloat(g)) / parseFloat(tsys)) * Math.sqrt((parseFloat(time)*parseFloat(bandwidth)*1000000*parseFloat(np)));
-                var dutyCycleFactor = Math.sqrt((period - width) / (width));
-                var final_answer = snr * dutyCycleFactor;
-                var answer = document.getElementById("answer");
-                answer.innerHTML = final_answer.toFixed(1);
-            }
-        }
-    </script>
-    <script src="../../assets/js/core/layout.js"></script>
+
+        <details class="data-sources">
+            <summary>Data sources, assumptions and acknowledgement</summary>
+            <div class="data-sources-content">
+                <section>
+                    <h2>Telescope presets</h2>
+                    <p>Receiver values are representative published configurations, not live observatory status.</p>
+                    <ul id="telescope-source-list"></ul>
+                </section>
+                <section>
+                    <h2>Pulsar catalogue</h2>
+                    <p id="catalogue-disclosure"></p>
+                    <p id="catalogue-acknowledgement"></p>
+                    <details class="catalogue-license">
+                        <summary>CSIRO licence and disclaimer</summary>
+                        <pre id="catalogue-license"></pre>
+                    </details>
+                </section>
+                <section>
+                    <h2>Equation scope</h2>
+                    <p>S/N = (S G / Tsys) sqrt(npol t bandwidth) sqrt((P - W) / W), where G = efficiency x area / (2 kB).</p>
+                    <p>This is the standard pulsed radiometer equation with the degradation factor fixed to 1. Enter the total on-source system temperature; SNRCalc does not separately add sky noise, elevation-dependent gain, scattering losses or spectral-index scaling.</p>
+                </section>
+            </div>
+        </details>
+
+        <dialog id="telescope-values-dialog" class="value-dialog" aria-labelledby="telescope-dialog-heading">
+            <div class="dialog-shell">
+                <header class="dialog-header">
+                    <div>
+                        <p class="dialog-kicker">Instrument values</p>
+                        <h2 id="telescope-dialog-heading">Telescope setup</h2>
+                    </div>
+                    <button type="button" class="icon-button" id="close-telescope-dialog" aria-label="Close telescope values" title="Close">&times;</button>
+                </header>
+
+                <div class="dialog-meta">
+                    <span id="instrument-source-badge">Manual</span>
+                    <p>Preset values are editable. Changed fields are marked as overrides.</p>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-control" data-field="area">
+                        <div class="label-row">
+                            <label for="area">Collecting area <span class="unit">m<sup>2</sup></span></label>
+                            <span id="area-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="area-help area-error">
+                        <p id="area-help" class="field-help">Physical collecting area before aperture efficiency.</p>
+                        <p id="area-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="efficiency">
+                        <div class="label-row">
+                            <label for="efficiency">Aperture efficiency <span class="unit">%</span></label>
+                            <span id="efficiency-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="efficiency" name="efficiency" type="number" inputmode="decimal" min="0" max="100" step="any" autocomplete="off" required aria-describedby="efficiency-help efficiency-error">
+                        <p id="efficiency-help" class="field-help">Converted to a fraction for the equation.</p>
+                        <p id="efficiency-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="centreFrequency">
+                        <div class="label-row">
+                            <label for="centre-frequency">Centre / reference frequency <span class="unit">MHz</span></label>
+                            <span id="centreFrequency-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="centre-frequency" name="centreFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="centre-frequency-help centreFrequency-error">
+                        <p id="centre-frequency-help" class="field-help">Used to identify flux-frequency mismatches.</p>
+                        <p id="centreFrequency-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="bandwidth">
+                        <div class="label-row">
+                            <label for="bandwidth">Usable bandwidth <span class="unit">MHz</span></label>
+                            <span id="bandwidth-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="bandwidth" name="bandwidth" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="bandwidth-help bandwidth-error">
+                        <p id="bandwidth-help" class="field-help">Converted to hertz for the equation.</p>
+                        <p id="bandwidth-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="tsys">
+                        <div class="label-row">
+                            <label for="tsys">Total system temperature <span class="unit">K</span></label>
+                            <span id="tsys-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="tsys" name="tsys" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="tsys-help tsys-error">
+                        <p id="tsys-help" class="field-help">Include the relevant receiver, sky and other on-source noise contributions.</p>
+                        <p id="tsys-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="polarisations">
+                        <div class="label-row">
+                            <label for="polarisations">Summed polarisations</label>
+                            <span id="polarisations-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <select id="polarisations" name="polarisations" required aria-describedby="polarisations-help polarisations-error">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <p id="polarisations-help" class="field-help">The equation accepts one or two summed polarisations.</p>
+                        <p id="polarisations-error" class="field-error"></p>
+                    </div>
+                </div>
+
+                <p id="telescope-provenance" class="provenance">No built-in telescope configuration selected.</p>
+                <p id="telescope-dialog-status" class="dialog-status" role="alert" hidden></p>
+
+                <div class="dialog-tools">
+                    <button type="button" class="text-button" id="reset-telescope" disabled>Reset to published values</button>
+                    <button type="button" class="text-button" id="save-custom-telescope">Save as custom telescope</button>
+                    <button type="button" class="text-button danger-button" id="delete-custom-telescope" hidden>Delete custom preset</button>
+                </div>
+
+                <div id="custom-telescope-panel" class="custom-save-panel" hidden>
+                    <label for="custom-telescope-name">Custom preset name</label>
+                    <input id="custom-telescope-name" name="customTelescopeName" type="text" maxlength="80" autocomplete="off" placeholder="e.g. My L-band setup">
+                    <p class="field-help">Saved only in this browser. Clearing browser data removes custom presets.</p>
+                    <p id="custom-telescope-error" class="field-error" role="alert"></p>
+                    <div class="inline-actions">
+                        <button type="button" class="small-button" id="confirm-save-custom">Save preset</button>
+                        <button type="button" class="text-button" id="cancel-save-custom">Cancel</button>
+                    </div>
+                </div>
+
+                <footer class="dialog-footer">
+                    <button type="button" class="text-button" id="cancel-telescope-values">Cancel</button>
+                    <button type="button" class="small-button" id="apply-telescope-values">Apply values</button>
+                </footer>
+            </div>
+        </dialog>
+
+        <dialog id="pulsar-values-dialog" class="value-dialog" aria-labelledby="pulsar-dialog-heading">
+            <div class="dialog-shell">
+                <header class="dialog-header">
+                    <div>
+                        <p class="dialog-kicker">Source values</p>
+                        <h2 id="pulsar-dialog-heading">Pulsar setup</h2>
+                    </div>
+                    <button type="button" class="icon-button" id="close-pulsar-dialog" aria-label="Close pulsar values" title="Close">&times;</button>
+                </header>
+
+                <div class="dialog-meta">
+                    <span id="pulsar-source-badge">Manual</span>
+                    <p>Catalogue widths are converted from milliseconds to seconds.</p>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-control" data-field="period">
+                        <div class="label-row">
+                            <label for="period">Pulse period <span class="unit">seconds</span></label>
+                            <span id="period-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="period" name="period" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="period-help period-error">
+                        <p id="period-help" class="field-help">Catalogue parameter P0 when available.</p>
+                        <p id="period-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="width">
+                        <div class="label-row">
+                            <label for="width">Pulse width W50 <span class="unit">seconds</span></label>
+                            <span id="width-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="width" name="width" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="width-help width-error">
+                        <p id="width-help" class="field-help">You may replace W50 with a documented manual width.</p>
+                        <p id="width-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control field-span" data-field="fluxMeasurement">
+                        <div class="label-row">
+                            <label for="flux-measurement">Flux measurement used</label>
+                        </div>
+                        <select id="flux-measurement" name="fluxMeasurement" aria-describedby="flux-measurement-help">
+                            <option value="manual">Manual flux density</option>
+                        </select>
+                        <p id="flux-measurement-help" class="field-help">Catalogue measurements are not scaled to the telescope frequency.</p>
+                    </div>
+
+                    <div class="field-control" data-field="flux">
+                        <div class="label-row">
+                            <label for="flux">Mean flux density <span class="unit">Jy</span></label>
+                            <span id="flux-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="flux" name="flux" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="flux-help flux-error">
+                        <p id="flux-help" class="field-help">Catalogue mJy values are converted to Jy.</p>
+                        <p id="flux-error" class="field-error"></p>
+                    </div>
+
+                    <div class="field-control" data-field="fluxFrequency">
+                        <div class="label-row">
+                            <label for="flux-frequency">Flux measurement frequency <span class="unit">MHz</span></label>
+                            <span id="fluxFrequency-override" class="override-indicator" hidden>Override</span>
+                        </div>
+                        <input id="flux-frequency" name="fluxFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="flux-frequency-help fluxFrequency-error">
+                        <p id="flux-frequency-help" class="field-help">The actual frequency of the flux value above.</p>
+                        <p id="fluxFrequency-error" class="field-error"></p>
+                    </div>
+                </div>
+
+                <p id="pulsar-provenance" class="provenance">No catalogue pulsar selected.</p>
+                <p id="pulsar-dialog-status" class="dialog-status" role="alert" hidden></p>
+
+                <footer class="dialog-footer">
+                    <button type="button" class="text-button" id="cancel-pulsar-values">Cancel</button>
+                    <button type="button" class="small-button" id="apply-pulsar-values">Apply values</button>
+                </footer>
+            </div>
+        </dialog>
+    </main>
+
+    <noscript>
+        <p class="noscript-message">SNRCalc requires JavaScript to validate inputs and perform the calculation.</p>
+    </noscript>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../assets/js/core/layout.js"></script>
     <script src="../../assets/js/effects/scroll-reveal.js"></script>
     <script src="../../assets/js/core/navbar_new.js"></script>
 </body>
