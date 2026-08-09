@@ -13,6 +13,7 @@
         Object.freeze({
             id: "meerkat-l-64-tied-array",
             telescopeName: "MeerKAT",
+            displayName: "MeerKAT L-Band",
             configurationName: "L-band / 64-dish tied array",
             collectingAreaM2: 9802.84,
             efficiencyPercent: 78.9,
@@ -34,6 +35,7 @@
         Object.freeze({
             id: "murriyang-uwl-sb5",
             telescopeName: "Parkes / Murriyang",
+            displayName: "Parkes",
             configurationName: "UWL 20-cm sub-band 5",
             collectingAreaM2: 3217,
             efficiencyPercent: 70,
@@ -49,6 +51,7 @@
         Object.freeze({
             id: "fast-gpps-l-band",
             telescopeName: "FAST",
+            displayName: "FAST",
             configurationName: "GPPS L-band / full gain",
             collectingAreaM2: 70685.83,
             efficiencyPercent: 60,
@@ -64,6 +67,7 @@
         Object.freeze({
             id: "chime-pulsar-tied-array",
             telescopeName: "CHIME",
+            displayName: "CHIME",
             configurationName: "CHIME/Pulsar tied array / near transit",
             collectingAreaM2: 6400,
             efficiencyPercent: 50,
@@ -4805,7 +4809,7 @@
     }
 
     function configurationLabel(configuration) {
-        return configuration.telescopeName + " — " + configuration.configurationName;
+        return configuration.displayName || configuration.telescopeName;
     }
 
     function isPositiveFinite(value) {
@@ -5024,24 +5028,16 @@
         function renderTelescopeOptions(selectedId) {
             const placeholderOption = createOption("", "Select telescope / receiver");
             placeholderOption.disabled = true;
-            const manualOption = createOption("manual", "Custom / manual telescope...");
-            const publishedGroup = document.createElement("optgroup");
-            publishedGroup.label = "Published presets";
+            const manualOption = createOption("manual", "Custom telescope");
 
+            dom.telescopeSelect.replaceChildren(placeholderOption);
             BUILT_IN_TELESCOPES.forEach(function (configuration) {
-                publishedGroup.appendChild(createOption(configuration.id, configurationLabel(configuration)));
+                dom.telescopeSelect.appendChild(createOption(configuration.id, configurationLabel(configuration)));
             });
 
-            dom.telescopeSelect.replaceChildren(placeholderOption, publishedGroup);
-
-            if (state.customTelescopes.length) {
-                const customGroup = document.createElement("optgroup");
-                customGroup.label = "Saved on this device";
-                state.customTelescopes.forEach(function (configuration) {
-                    customGroup.appendChild(createOption(configuration.id, configurationLabel(configuration)));
-                });
-                dom.telescopeSelect.appendChild(customGroup);
-            }
+            state.customTelescopes.forEach(function (configuration) {
+                dom.telescopeSelect.appendChild(createOption(configuration.id, configurationLabel(configuration)));
+            });
 
             dom.telescopeSelect.appendChild(manualOption);
 
@@ -5050,21 +5046,18 @@
                 : selectedId === "manual" ? "manual" : "";
         }
 
-        function setSelectionSummary(container, title, description) {
+        function setSelectionSummary(container, title) {
             const strong = document.createElement("span");
-            const span = document.createElement("span");
             strong.className = "selection-title";
             strong.textContent = title;
-            span.textContent = description;
-            container.replaceChildren(strong, span);
+            container.replaceChildren(strong);
         }
 
         function showNoTelescopeSelection() {
             dom.telescopeSelect.value = "";
             setSelectionSummary(
                 dom.telescopeSummary,
-                "No telescope selected",
-                "Choose a published preset or custom telescope."
+                "No telescope selected"
             );
         }
 
@@ -5174,7 +5167,8 @@
                 }
             });
 
-            dom.overrideCount.textContent = count ? count + (count === 1 ? " override" : " overrides") : "No overrides";
+            dom.overrideCount.textContent = count ? count + (count === 1 ? " override" : " overrides") : "";
+            dom.overrideCount.hidden = count === 0;
             dom.overrideCount.classList.toggle("has-overrides", count > 0);
         }
 
@@ -5241,22 +5235,21 @@
         function setTelescopeProvenance(configuration) {
             dom.telescopeProvenance.replaceChildren();
             if (!configuration) {
-                dom.telescopeProvenance.textContent = "No built-in telescope configuration selected.";
+                dom.telescopeProvenance.hidden = true;
                 return;
             }
+            dom.telescopeProvenance.hidden = false;
 
             if (configuration.isCustom) {
-                dom.telescopeProvenance.textContent = "Custom preset saved locally" +
-                    (configuration.savedOn ? " on " + configuration.savedOn : "") + ". " +
-                    configuration.notes;
+                dom.telescopeProvenance.textContent = "Saved in this browser" +
+                    (configuration.savedOn ? " on " + configuration.savedOn : "") + ".";
                 return;
             }
 
             dom.telescopeProvenance.appendChild(document.createTextNode("Sources: "));
             appendTelescopeSourceLinks(dom.telescopeProvenance, configuration);
 
-            const suffix = (configuration.lastVerified ? ". Last verified " + configuration.lastVerified + "." : ".") +
-                (configuration.notes ? " " + configuration.notes : "");
+            const suffix = configuration.lastVerified ? ". Verified " + configuration.lastVerified + "." : ".";
             dom.telescopeProvenance.appendChild(document.createTextNode(suffix));
         }
 
@@ -5293,12 +5286,11 @@
 
                 setSelectionSummary(
                     dom.telescopeSummary,
-                    "Custom / manual telescope",
-                    "Enter the instrument properties in the popup."
+                    "Custom telescope"
                 );
                 dom.instrumentSourceBadge.textContent = "Manual";
                 dom.resetTelescope.disabled = true;
-                dom.resetTelescope.textContent = "Reset to published values";
+                dom.resetTelescope.hidden = true;
                 dom.deleteCustomTelescope.hidden = true;
                 setTelescopeProvenance(null);
                 state.preferences.selectedTelescopeId = "manual";
@@ -5309,14 +5301,12 @@
                 fillTelescopeValues(configuration);
                 setSelectionSummary(
                     dom.telescopeSummary,
-                    configurationLabel(configuration),
-                    (configuration.isCustom
-                        ? "Saved on this device" + (configuration.savedOn ? " · saved " + configuration.savedOn : "")
-                        : "Published planning preset" + (configuration.lastVerified ? " · verified " + configuration.lastVerified : ""))
+                    configurationLabel(configuration)
                 );
                 dom.instrumentSourceBadge.textContent = configuration.isCustom ? "Custom" : "Published";
                 dom.resetTelescope.disabled = false;
-                dom.resetTelescope.textContent = configuration.isCustom ? "Reset to saved values" : "Reset to published values";
+                dom.resetTelescope.hidden = false;
+                dom.resetTelescope.textContent = configuration.isCustom ? "Reset saved preset" : "Reset preset";
                 dom.deleteCustomTelescope.hidden = !configuration.isCustom;
                 setTelescopeProvenance(configuration);
                 state.preferences.selectedTelescopeId = configuration.id;
@@ -5549,14 +5539,12 @@
                 savePreferences();
                 setSelectionSummary(
                     dom.telescopeSummary,
-                    "Custom / manual telescope",
-                    "Custom instrument values applied for this session."
+                    "Custom telescope"
                 );
             } else {
                 setSelectionSummary(
                     dom.telescopeSummary,
-                    configurationLabel(state.selectedTelescope),
-                    "Preset values reviewed; any edits are marked as overrides."
+                    configurationLabel(state.selectedTelescope)
                 );
             }
             dom.customPanel.hidden = true;
@@ -5575,14 +5563,12 @@
             if (state.selectedPulsar) {
                 setSelectionSummary(
                     dom.pulsarSummary,
-                    state.selectedPulsar.jName + (state.selectedPulsar.bName ? " / " + state.selectedPulsar.bName : ""),
-                    "Catalogue values reviewed; any edits are marked as overrides."
+                    state.selectedPulsar.jName + (state.selectedPulsar.bName ? " / " + state.selectedPulsar.bName : "")
                 );
             } else {
                 setSelectionSummary(
                     dom.pulsarSummary,
-                    "Custom / unlisted pulsar",
-                    "Custom source values applied for this session."
+                    "Custom pulsar"
                 );
             }
             finishDialog("pulsar");
@@ -5807,9 +5793,10 @@
         function setPulsarProvenance(entry) {
             dom.pulsarProvenance.replaceChildren();
             if (!entry) {
-                dom.pulsarProvenance.textContent = "No catalogue pulsar selected.";
+                dom.pulsarProvenance.hidden = true;
                 return;
             }
+            dom.pulsarProvenance.hidden = false;
 
             dom.pulsarProvenance.appendChild(document.createTextNode("Source: "));
             const link = document.createElement("a");
@@ -5819,8 +5806,7 @@
             link.textContent = PULSAR_CATALOGUE.source + " v" + PULSAR_CATALOGUE.version;
             dom.pulsarProvenance.appendChild(link);
             dom.pulsarProvenance.appendChild(document.createTextNode(
-                ". Snapshot retrieved " + PULSAR_CATALOGUE.retrievedOn +
-                ". W50 is frequency and time-resolution dependent; catalogue fluxes are not spectrally scaled."
+                ". W50 depends on frequency and resolution; flux is not spectrally scaled."
             ));
         }
 
@@ -5889,8 +5875,8 @@
             dom.pulsarSuggestions.hidden = matches.length === 0;
             dom.pulsarSearch.setAttribute("aria-expanded", matches.length ? "true" : "false");
             dom.pulsarSearchHelp.textContent = matches.length
-                ? matches.length + " matching catalogue suggestion" + (matches.length === 1 ? "" : "s") + ". Use arrow keys and Enter to select."
-                : "No matching catalogue names. Use manual / unlisted pulsar.";
+                ? matches.length + " match" + (matches.length === 1 ? "" : "es") + ". Use arrow keys and Enter."
+                : "No matches. Use Custom pulsar.";
         }
 
         function clearPulsarSelection(clearSearch) {
@@ -5913,12 +5899,11 @@
             dom.pulsarSourceBadge.textContent = "Manual";
             setSelectionSummary(
                 dom.pulsarSummary,
-                "Custom / unlisted pulsar",
-                "Enter period, width, flux density and flux frequency in the popup."
+                "Custom pulsar"
             );
             setPulsarProvenance(null);
             dom.pulsarSearchHelp.textContent = PULSAR_CATALOGUE.mode === "embedded-snapshot"
-                ? "Suggestions appear after two characters. Catalogue records with missing values remain searchable."
+                ? "Type 2+ characters."
                 : "Manual pulsar entry is active.";
             closeSuggestions();
             updateOverrideStates();
@@ -5941,7 +5926,7 @@
             clearFormStatus();
             state.selectedPulsar = entry;
             dom.pulsarSearch.value = entry.jName + (entry.bName ? " / " + entry.bName : "");
-            dom.pulsarSearchHelp.textContent = "Catalogue match selected. Search again to choose a different pulsar.";
+            dom.pulsarSearchHelp.textContent = "Selected. Search again to change.";
 
             const period = entry.periodSeconds;
             const width = entry.width50Milliseconds === null
@@ -5977,10 +5962,7 @@
             dom.pulsarSourceBadge.textContent = "ATNF v" + PULSAR_CATALOGUE.version;
             setSelectionSummary(
                 dom.pulsarSummary,
-                entry.jName + (entry.bName ? " / " + entry.bName : ""),
-                missing.length
-                    ? "Catalogue selected. Manual " + missing.join(", ") + " required before calculation."
-                    : "Catalogue period, W50 and nearest available flux measurement loaded."
+                entry.jName + (entry.bName ? " / " + entry.bName : "")
             );
             setPulsarProvenance(entry);
             closeSuggestions();
@@ -6091,7 +6073,7 @@
         }
 
         function clearResult(message, announce) {
-            const context = message || "Choose a telescope and pulsar, enter observing time, then calculate.";
+            const context = message || "Select inputs, then calculate.";
             state.resultIsCurrent = false;
             dom.resultValue.textContent = "—";
             dom.resultContext.textContent = context;
@@ -6156,9 +6138,8 @@
             const fragment = document.createDocumentFragment();
             BUILT_IN_TELESCOPES.forEach(function (configuration) {
                 const item = document.createElement("li");
-                item.appendChild(document.createTextNode(configurationLabel(configuration) + " — "));
+                item.appendChild(document.createTextNode(configurationLabel(configuration) + ": "));
                 appendTelescopeSourceLinks(item, configuration);
-                item.appendChild(document.createTextNode(" — verified " + configuration.lastVerified + "."));
                 fragment.appendChild(item);
             });
             dom.telescopeSourceList.replaceChildren(fragment);
@@ -6334,7 +6315,7 @@
                 const query = dom.pulsarSearch.value;
                 if (normalisePulsarQuery(query).length < 2) {
                     closeSuggestions();
-                    dom.pulsarSearchHelp.textContent = "Suggestions appear after two characters. Catalogue records with missing values remain searchable.";
+                    dom.pulsarSearchHelp.textContent = "Type 2+ characters.";
                     return;
                 }
                 renderSuggestions(searchPulsars(query, 8));

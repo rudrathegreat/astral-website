@@ -98,7 +98,7 @@ body.snr-page {
 
 .tool-header h1 {
     margin: 0;
-    color: var(--snr-ink);
+    color: var(--snr-accent);
     font-family: "Space Mono", monospace;
     font-size: 5.5rem;
     font-weight: 400;
@@ -148,7 +148,7 @@ body.snr-page {
 .data-sources h2,
 .dialog-header h2 {
     margin: 0 0 1.75rem;
-    color: var(--snr-ink);
+    color: var(--snr-accent);
     font-family: "Space Mono", monospace;
     font-size: 1.05rem;
     font-weight: 400;
@@ -179,7 +179,7 @@ body.snr-page {
     min-height: var(--snr-control-height);
     padding: 0.75rem 0.85rem;
     border: 1.5px solid var(--snr-ink);
-    border-radius: 0;
+    border-radius: 4px;
     outline: 0;
     background: transparent;
     color: var(--snr-ink);
@@ -239,12 +239,11 @@ body.snr-page {
 .selection-summary {
     display: grid;
     gap: 0.15rem;
-    min-height: 3.2rem;
     margin-top: 0.9rem;
 }
 
 .selection-summary .selection-title {
-    color: var(--snr-ink);
+    color: var(--snr-accent);
     font-family: "Space Mono", monospace;
     font-size: 0.82rem;
     font-weight: 400;
@@ -268,6 +267,12 @@ body.snr-page {
     flex-wrap: wrap;
     gap: 0.75rem 1.25rem;
     align-items: center;
+}
+
+.control-actions,
+.control-block > .text-button,
+.inline-actions {
+    margin-top: 1rem;
 }
 
 .text-button,
@@ -314,7 +319,7 @@ body.snr-page {
     align-items: flex-end;
     justify-content: space-between;
     gap: 2rem;
-    margin-top: 3.5rem;
+    margin-top: 4rem;
     padding-top: 0;
 }
 
@@ -345,8 +350,10 @@ body.snr-page {
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    border: 1.5px solid var(--snr-ink);
+    border: 0;
+    border-radius: 4px;
     background: var(--snr-paper);
+    box-shadow: 0 8px 24px rgba(16, 16, 16, 0.16);
     list-style: none;
 }
 
@@ -499,7 +506,7 @@ body.snr-page {
 }
 
 .data-sources {
-    padding-top: 0;
+    padding-top: 1rem;
 }
 
 .data-sources > summary {
@@ -517,6 +524,7 @@ body.snr-page {
     text-transform: none;
     list-style: none;
     transition: background 0.3s ease, color 0.3s ease;
+    margin: 1rem 0;
 }
 
 .data-sources > summary:hover {
@@ -566,6 +574,11 @@ body.snr-page {
     text-transform: none !important;
 }
 
+.data-sources p {
+    margin: 0 0 0.5rem;
+    padding: 0.75rem;
+}
+
 .data-sources a,
 .provenance a {
     color: var(--snr-accent);
@@ -596,6 +609,7 @@ body.snr-page {
     font-size: 0.82rem;
     text-transform: none;
     transition: background 0.3s ease, color 0.3s ease;
+    margin: 0.5rem 0;
 }
 
 .catalogue-license > summary:hover,
@@ -623,9 +637,10 @@ body.snr-page {
     margin: auto;
     padding: 0;
     overflow: hidden;
-    border: 2px solid var(--snr-ink);
-    border-radius: 0;
+    border: 0;
+    border-radius: 6px;
     background: var(--snr-paper);
+    box-shadow: 0 18px 56px rgba(16, 16, 16, 0.2);
     color: var(--snr-ink);
 }
 
@@ -634,7 +649,7 @@ body.snr-page {
 }
 
 .dialog-shell {
-    max-height: calc(88dvh - 4px);
+    max-height: 88dvh;
     padding: 2rem;
     overflow-y: auto;
 }
@@ -682,7 +697,7 @@ body.snr-page {
     align-items: baseline;
     justify-content: space-between;
     gap: 2rem;
-    padding: 1rem 0 2rem;
+    padding: 0.5rem 0 2rem;
 }
 
 .dialog-meta span {
@@ -750,7 +765,7 @@ body.snr-page {
 .dialog-tools,
 .dialog-footer,
 .custom-save-panel {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .custom-save-panel > input {

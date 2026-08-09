@@ -22,7 +22,7 @@
             <p class="tool-kicker">ASTRAL / RESEARCH TOOLS</p>
             <div class="tool-heading-row">
                 <h1>SNRCalc</h1>
-                <p class="tool-intro">Estimate the signal-to-noise ratio of a pulsar observation using the pulsed radiometer equation.</p>
+                <p class="tool-intro">Estimate pulsar observation signal-to-noise.</p>
             </div>
         </header>
 
@@ -36,11 +36,10 @@
                         <label for="telescope-select">Telescope / receiver</label>
                         <select id="telescope-select" name="telescope">
                             <option value="" selected disabled>Select telescope / receiver</option>
-                            <option value="manual">Custom / manual telescope</option>
+                            <option value="manual">Custom telescope</option>
                         </select>
                         <div id="telescope-summary" class="selection-summary" aria-live="polite">
                             <span class="selection-title">No telescope selected</span>
-                            <span>Choose a published preset or custom telescope.</span>
                         </div>
                         <button type="button" class="text-button" id="open-values-telescope">Edit values</button>
                     </section>
@@ -64,13 +63,12 @@
                             >
                             <ul id="pulsar-suggestions" class="suggestions" role="listbox" hidden></ul>
                         </div>
-                        <p id="pulsar-search-help" class="field-help" role="status" aria-live="polite">Suggestions appear after two characters.</p>
+                        <p id="pulsar-search-help" class="field-help" role="status" aria-live="polite">Type 2+ characters.</p>
                         <div id="pulsar-summary" class="selection-summary" aria-live="polite">
-                            <span class="selection-title">Custom / unlisted pulsar</span>
-                            <span>Enter the source properties in the popup.</span>
+                            <span class="selection-title">Custom pulsar</span>
                         </div>
                         <div class="control-actions">
-                            <button type="button" class="text-button" id="manual-pulsar">Custom / unlisted</button>
+                            <button type="button" class="text-button" id="manual-pulsar">Custom pulsar</button>
                             <button type="button" class="text-button" id="open-values-pulsar">Edit values</button>
                         </div>
                     </section>
@@ -81,15 +79,14 @@
                             <div class="label-row">
                                 <label for="time">Observing time <span class="unit">seconds</span></label>
                             </div>
-                            <input id="time" name="time" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="time-help time-error">
-                            <p id="time-help" class="field-help">Total on-source integration time.</p>
+                            <input id="time" name="time" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="time-error">
                             <p id="time-error" class="field-error"></p>
                         </div>
                     </section>
                 </div>
 
                 <div class="calculate-row">
-                    <p id="override-count" class="override-count">No overrides</p>
+                    <p id="override-count" class="override-count" hidden></p>
                     <button type="submit" class="calculate-button">Calculate S/N</button>
                 </div>
 
@@ -100,7 +97,7 @@
                 <p class="result-label" id="result-heading">Signal to noise ratio</p>
                 <p id="result-announcement" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
                 <output id="result-value" class="result-value" for="area efficiency centre-frequency bandwidth flux flux-frequency time tsys polarisations period width">&mdash;</output>
-                <p id="result-context" class="result-context">Choose a telescope and pulsar, enter observing time, then calculate.</p>
+                <p id="result-context" class="result-context">Select inputs, then calculate.</p>
 
                 <details id="result-warnings" class="result-disclosure" hidden>
                     <summary>Warnings</summary>
@@ -112,16 +109,16 @@
                     <dl id="result-summary" class="result-summary"></dl>
                 </details>
 
-                <p class="research-caveat">Ideal estimate with a degradation factor of 1. Confirm total system temperature, preset assumptions and source values before research use.</p>
+                <p class="research-caveat">Ideal estimate: beta = 1; Tsys must include all on-source noise.</p>
             </section>
         </div>
 
         <details class="data-sources">
-            <summary>Data sources, assumptions and acknowledgement</summary>
+            <summary>Sources and assumptions</summary>
             <div class="data-sources-content">
                 <section>
                     <h2>Telescope presets</h2>
-                    <p>Receiver values are representative published configurations, not live observatory status.</p>
+                    <p>Preset values are approximate. Verify them before research use.</p>
                     <ul id="telescope-source-list"></ul>
                 </section>
                 <section>
@@ -135,8 +132,7 @@
                 </section>
                 <section>
                     <h2>Equation scope</h2>
-                    <p>S/N = (S G / Tsys) sqrt(npol t bandwidth) sqrt((P - W) / W), where G = efficiency x area / (2 kB).</p>
-                    <p>This is the standard pulsed radiometer equation with the degradation factor fixed to 1. Enter the total on-source system temperature; SNRCalc does not separately add sky noise, elevation-dependent gain, scattering losses or spectral-index scaling.</p>
+                    <p>S/N = (S G / Tsys) sqrt(npol t bandwidth) sqrt((P - W) / W). The degradation factor is 1; no spectral scaling or additional loss correction is applied.</p>
                 </section>
             </div>
         </details>
@@ -145,7 +141,6 @@
             <div class="dialog-shell">
                 <header class="dialog-header">
                     <div>
-                        <p class="dialog-kicker">Instrument values</p>
                         <h2 id="telescope-dialog-heading">Telescope setup</h2>
                     </div>
                     <button type="button" class="icon-button" id="close-telescope-dialog" aria-label="Close telescope values" title="Close">&times;</button>
@@ -153,7 +148,6 @@
 
                 <div class="dialog-meta">
                     <span id="instrument-source-badge">Manual</span>
-                    <p>Preset values are editable. Changed fields are marked as overrides.</p>
                 </div>
 
                 <div class="field-grid">
@@ -162,8 +156,7 @@
                             <label for="area">Collecting area <span class="unit">m<sup>2</sup></span></label>
                             <span id="area-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="area-help area-error">
-                        <p id="area-help" class="field-help">Physical collecting area before aperture efficiency.</p>
+                        <input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="area-error">
                         <p id="area-error" class="field-error"></p>
                     </div>
 
@@ -172,8 +165,7 @@
                             <label for="efficiency">Aperture efficiency <span class="unit">%</span></label>
                             <span id="efficiency-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="efficiency" name="efficiency" type="number" inputmode="decimal" min="0" max="100" step="any" autocomplete="off" required aria-describedby="efficiency-help efficiency-error">
-                        <p id="efficiency-help" class="field-help">Converted to a fraction for the equation.</p>
+                        <input id="efficiency" name="efficiency" type="number" inputmode="decimal" min="0" max="100" step="any" autocomplete="off" required aria-describedby="efficiency-error">
                         <p id="efficiency-error" class="field-error"></p>
                     </div>
 
@@ -182,8 +174,7 @@
                             <label for="centre-frequency">Centre / reference frequency <span class="unit">MHz</span></label>
                             <span id="centreFrequency-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="centre-frequency" name="centreFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="centre-frequency-help centreFrequency-error">
-                        <p id="centre-frequency-help" class="field-help">Used to identify flux-frequency mismatches.</p>
+                        <input id="centre-frequency" name="centreFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="centreFrequency-error">
                         <p id="centreFrequency-error" class="field-error"></p>
                     </div>
 
@@ -192,8 +183,7 @@
                             <label for="bandwidth">Usable bandwidth <span class="unit">MHz</span></label>
                             <span id="bandwidth-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="bandwidth" name="bandwidth" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="bandwidth-help bandwidth-error">
-                        <p id="bandwidth-help" class="field-help">Converted to hertz for the equation.</p>
+                        <input id="bandwidth" name="bandwidth" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="bandwidth-error">
                         <p id="bandwidth-error" class="field-error"></p>
                     </div>
 
@@ -203,7 +193,7 @@
                             <span id="tsys-override" class="override-indicator" hidden>Override</span>
                         </div>
                         <input id="tsys" name="tsys" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="tsys-help tsys-error">
-                        <p id="tsys-help" class="field-help">Include the relevant receiver, sky and other on-source noise contributions.</p>
+                        <p id="tsys-help" class="field-help">Include receiver, sky and on-source noise.</p>
                         <p id="tsys-error" class="field-error"></p>
                     </div>
 
@@ -212,21 +202,20 @@
                             <label for="polarisations">Summed polarisations</label>
                             <span id="polarisations-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <select id="polarisations" name="polarisations" required aria-describedby="polarisations-help polarisations-error">
+                        <select id="polarisations" name="polarisations" required aria-describedby="polarisations-error">
                             <option value="">Select</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                         </select>
-                        <p id="polarisations-help" class="field-help">The equation accepts one or two summed polarisations.</p>
                         <p id="polarisations-error" class="field-error"></p>
                     </div>
                 </div>
 
-                <p id="telescope-provenance" class="provenance">No built-in telescope configuration selected.</p>
+                <p id="telescope-provenance" class="provenance" hidden></p>
                 <p id="telescope-dialog-status" class="dialog-status" role="alert" hidden></p>
 
                 <div class="dialog-tools">
-                    <button type="button" class="text-button" id="reset-telescope" disabled>Reset to published values</button>
+                    <button type="button" class="text-button" id="reset-telescope" hidden>Reset preset</button>
                     <button type="button" class="text-button" id="save-custom-telescope">Save as custom telescope</button>
                     <button type="button" class="text-button danger-button" id="delete-custom-telescope" hidden>Delete custom preset</button>
                 </div>
@@ -234,7 +223,7 @@
                 <div id="custom-telescope-panel" class="custom-save-panel" hidden>
                     <label for="custom-telescope-name">Custom preset name</label>
                     <input id="custom-telescope-name" name="customTelescopeName" type="text" maxlength="80" autocomplete="off" placeholder="e.g. My L-band setup">
-                    <p class="field-help">Saved only in this browser. Clearing browser data removes custom presets.</p>
+                    <p class="field-help">Stored in this browser.</p>
                     <p id="custom-telescope-error" class="field-error" role="alert"></p>
                     <div class="inline-actions">
                         <button type="button" class="small-button" id="confirm-save-custom">Save preset</button>
@@ -253,7 +242,6 @@
             <div class="dialog-shell">
                 <header class="dialog-header">
                     <div>
-                        <p class="dialog-kicker">Source values</p>
                         <h2 id="pulsar-dialog-heading">Pulsar setup</h2>
                     </div>
                     <button type="button" class="icon-button" id="close-pulsar-dialog" aria-label="Close pulsar values" title="Close">&times;</button>
@@ -261,7 +249,6 @@
 
                 <div class="dialog-meta">
                     <span id="pulsar-source-badge">Manual</span>
-                    <p>Catalogue widths are converted from milliseconds to seconds.</p>
                 </div>
 
                 <div class="field-grid">
@@ -270,8 +257,7 @@
                             <label for="period">Pulse period <span class="unit">seconds</span></label>
                             <span id="period-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="period" name="period" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="period-help period-error">
-                        <p id="period-help" class="field-help">Catalogue parameter P0 when available.</p>
+                        <input id="period" name="period" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="period-error">
                         <p id="period-error" class="field-error"></p>
                     </div>
 
@@ -281,7 +267,7 @@
                             <span id="width-override" class="override-indicator" hidden>Override</span>
                         </div>
                         <input id="width" name="width" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="width-help width-error">
-                        <p id="width-help" class="field-help">You may replace W50 with a documented manual width.</p>
+                        <p id="width-help" class="field-help">Use a documented width if W50 is unsuitable.</p>
                         <p id="width-error" class="field-error"></p>
                     </div>
 
@@ -292,7 +278,7 @@
                         <select id="flux-measurement" name="fluxMeasurement" aria-describedby="flux-measurement-help">
                             <option value="manual">Manual flux density</option>
                         </select>
-                        <p id="flux-measurement-help" class="field-help">Catalogue measurements are not scaled to the telescope frequency.</p>
+                        <p id="flux-measurement-help" class="field-help">No frequency scaling is applied.</p>
                     </div>
 
                     <div class="field-control" data-field="flux">
@@ -300,8 +286,7 @@
                             <label for="flux">Mean flux density <span class="unit">Jy</span></label>
                             <span id="flux-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="flux" name="flux" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="flux-help flux-error">
-                        <p id="flux-help" class="field-help">Catalogue mJy values are converted to Jy.</p>
+                        <input id="flux" name="flux" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="flux-error">
                         <p id="flux-error" class="field-error"></p>
                     </div>
 
@@ -310,13 +295,12 @@
                             <label for="flux-frequency">Flux measurement frequency <span class="unit">MHz</span></label>
                             <span id="fluxFrequency-override" class="override-indicator" hidden>Override</span>
                         </div>
-                        <input id="flux-frequency" name="fluxFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="flux-frequency-help fluxFrequency-error">
-                        <p id="flux-frequency-help" class="field-help">The actual frequency of the flux value above.</p>
+                        <input id="flux-frequency" name="fluxFrequency" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" required aria-describedby="fluxFrequency-error">
                         <p id="fluxFrequency-error" class="field-error"></p>
                     </div>
                 </div>
 
-                <p id="pulsar-provenance" class="provenance">No catalogue pulsar selected.</p>
+                <p id="pulsar-provenance" class="provenance" hidden></p>
                 <p id="pulsar-dialog-status" class="dialog-status" role="alert" hidden></p>
 
                 <footer class="dialog-footer">
