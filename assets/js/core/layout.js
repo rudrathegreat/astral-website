@@ -85,6 +85,7 @@ function styleNavbar() {
                     <div class="options">
                         <div class="about-options nav-options">
                             <a href="${rootPath('about.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text-single">Vision and Mission</a>
+                            <a href="${rootPath('programs.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text-single">Programs</a>
                             <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
                             <a href="${rootPath('student-reviews.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1112.jpg')}" class="reveal-text-single">Student Reviews</a>
                             <a href="${rootPath('code-of-conduct.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1132.jpg')}" class="reveal-text-single">Code of Conduct</a>
@@ -209,14 +210,13 @@ function styleNavbar() {
                     <div class="links">
                         ${footerLink('index.html', 'Home', '.hero')}
                         ${footerLink('about.html', 'About', '.hero')}
+                        ${footerLink('programs.html', 'Programs', '.hero')}
                         ${footerLink('projects.html', 'Projects', '.hero')}
-                        ${footerLink('tools.html', 'Tools', '.hero')}
                         ${footerLink('cohort.html', 'Cohort', '.hero')}
                         ${footerLink('team.html', 'Mentors', '.hero')}
                         ${footerLink('apply.html', 'Apply', '.hero')}
                         ${footerLink('events.html', 'Events', '.hero')}
                         ${footerLink('support.html', 'Support', '.hero')}
-                        ${footerLink('contact.html', 'Contact', '.hero')}
                         ${footerLink('faqs.html', 'FAQs', '.hero')}
                     </div>
                 </div>
