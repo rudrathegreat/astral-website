@@ -73,9 +73,9 @@ function styleNavbar() {
                 <div class="categories">
                     ${samePageLink('index.html', 'HOME', '.hero')}
                     <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
+                    ${samePageLink('programs.html', 'PROGRAMS', '.hero')}
                     <a onclick="toggleOptions('work-options');" class="reveal-text">WORK</a>
                     <a onclick="toggleOptions('cohort-options');" class="reveal-text">COHORT</a>
-                    ${samePageLink('apply.html', 'APPLY', '.hero')}
                     ${samePageLink('events.html', 'EVENTS', '.hero')}
                     ${samePageLink('support.html', 'SUPPORT', '.hero')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero')}
@@ -85,7 +85,6 @@ function styleNavbar() {
                     <div class="options">
                         <div class="about-options nav-options">
                             <a href="${rootPath('about.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text-single">Vision and Mission</a>
-                            <a href="${rootPath('programs.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text-single">Programs</a>
                             <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
                             <a href="${rootPath('student-reviews.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1112.jpg')}" class="reveal-text-single">Student Reviews</a>
                             <a href="${rootPath('code-of-conduct.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1132.jpg')}" class="reveal-text-single">Code of Conduct</a>
@@ -153,8 +152,20 @@ function styleNavbar() {
                         </div>
                     </div>
                 </a>
+                <a href="https://astralinstitute.fillout.com/astral-2027-application-form" class="social-link underline-button reveal-image">
+                    <div>
+                        <div class="text-indicator">
+                            <p>Apply Now</p>
+                            <p>Apply Now</p>
+                        </div>
+                        <div class="img-indicator">
+                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                        </div>
+                    </div>
+                </a>
                 <div class="application-status reveal-image">
-                    <p>Applications Closed</p>
+                    <p>Applications Open</p>
                 </div>
             </div>
         </div>

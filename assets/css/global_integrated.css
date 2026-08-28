@@ -2219,6 +2219,7 @@ ul li {
     left:0;
     width:100vw;
     padding-top:4vh;
+    align-items: center;
 }
 
 .activated .social-media-section {
@@ -2242,7 +2243,7 @@ ul li {
 /* Application Status Pill */
 .application-status {
     margin-left: auto;
-    background: #F46969;
+    background: #52D380;
     padding: 1.5vh 1.5vw;
     border-radius: 100px;
     display: flex;
