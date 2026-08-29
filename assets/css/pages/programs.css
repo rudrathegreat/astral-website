@@ -69,6 +69,14 @@
 
 }
 
+.program-title {
+    width:100%;
+    display:flex;
+    gap:3vw;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .statistics-grid .cell-stat {
     font-size:var(--new-heading-text-size);
     font-family:'DM Sans', sans-serif;
