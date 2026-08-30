@@ -479,6 +479,33 @@ body {
     background: white;
 }
 
+.hero .hero-column-container {
+    display:flex;
+    gap:3vw;
+    width:100%;
+    margin-bottom:3vh;
+}
+
+.hero-column-container .right-column {
+    background:#eee;
+    border-radius:10px;
+    padding:5vh 2vw;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+    justify-content: space-between;
+}
+
+.hero-column-container .right-column .text p {
+    margin-top:1.5vh;
+    font-size:var(--new-heading-text-size);
+}
+
+.hero-column-container a {
+    border-bottom:2px solid black;
+}
+
 .title-section {
     width: 100%;
     display: flex;
