@@ -2604,4 +2604,19 @@ body .projects .underline-button p {
     .navbar .menu .social-media-section .underline-button .img-indicator {
         height: 0.8em !important;
     }
+
+    .hero .hero-column-container {
+        flex-direction: column;
+        gap:1vh;
+        align-items: flex-start;
+    }
+
+    .hero .hero-column-container .right-column {
+        padding:5vh 5vw;
+    }
+
+    .hero-column-container .right-column .text p {
+        font-size:var(--new-main-text-size);
+        margin-bottom:5vh;
+    }
 }
