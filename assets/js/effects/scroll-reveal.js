@@ -214,8 +214,17 @@ function initAnimations() {
     // 3. Hero Animation - Specific immediate trigger
     const hero = document.querySelector('.hero');
     if (hero) {
-        const hLines = hero.querySelectorAll('.word-content, .line-content');
+        const heroCard = hero.querySelector('.hero-column-container .right-column.reveal-image');
+        const hLines = Array.from(hero.querySelectorAll('.word-content, .line-content')).filter(unit => {
+            return !heroCard || !heroCard.contains(unit);
+        });
+        const heroCardLines = heroCard ? heroCard.querySelectorAll('.word-content, .line-content') : [];
+        const heroCardCta = heroCard?.querySelector('.hero-card-cta');
         const hImages = hero.querySelectorAll('.reveal-image');
+
+        if (heroCardCta) {
+            gsap.set(heroCardCta, { y: 15, opacity: 0 });
+        }
         
         const tl = gsap.timeline();
         tl.to(hLines, {
@@ -226,7 +235,18 @@ function initAnimations() {
             y: 0, opacity: 1,
             duration: 1.2, stagger: 0.1,
             onStart: () => hImages.forEach(img => img.classList.add('animated'))
-        }, "-=1.1");
+        }, "-=1.1")
+        .to(heroCardLines, {
+            y: 0, opacity: 1,
+            duration: 1.4, stagger: 0.035, ease: "power4.out"
+        }, "-=0.8");
+
+        if (heroCardCta) {
+            tl.to(heroCardCta, {
+                y: 0, opacity: 1,
+                duration: 0.8, ease: "power2.out"
+            }, "-=0.65");
+        }
     }
 
     // 4. Per-Element Scroll Triggers
