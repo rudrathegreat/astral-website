@@ -65,7 +65,7 @@
 .main-content {
     padding:15vh 0vw;
     width:100%;
-    padding-bottom:10vh;
+    padding-bottom:0vh;
 
 }
 
@@ -103,6 +103,7 @@
     width:100%;
     height:100%;
     object-fit:cover;
+    border-radius:7px;
 }
 
 .program-description {
@@ -132,4 +133,38 @@
 
 .student-reviews {
     padding-bottom:0;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-size:cover !important;
+        height:90vh;
+    }
+
+    .hero h1 {
+        font-size:14vw;
+    }
+
+    .hero a {
+        margin-bottom:0;
+        display:none;
+    }
+
+    .statistics-grid .cell {
+        min-height:40vh;
+    }
+
+    .program-description {
+        flex-direction: column;
+    }
+
+    .program-description .right-column img {
+        height:50vh;
+        margin-top:5vh;
+    }
+
+    .who-we-are .acronym-buttons {
+        border-bottom: 2px solid #ccc;
+        padding-bottom:5vh;
+    }
 }
