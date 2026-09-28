@@ -344,7 +344,7 @@ body {
 .activated .menu a::before {
     opacity: 1;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s, 0s;
 }
 
 .menu a::before {
@@ -2170,7 +2170,7 @@ ul li {
 .activated .menu a::before {
     opacity: 1;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s, 0s;
 }
 
 .menu a::before {
