@@ -73,7 +73,7 @@ function styleNavbar() {
                 <div class="categories">
                     ${samePageLink('index.html', 'HOME', '.hero')}
                     <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
-                    ${samePageLink('programs.html', 'PROGRAMS', '.hero')}
+                    <a onclick="toggleOptions('programs-options');" class="reveal-text">PROGRAMS</a>
                     <a onclick="toggleOptions('work-options');" class="reveal-text">WORK</a>
                     <a onclick="toggleOptions('people-options');" class="reveal-text">PEOPLE</a>
                     ${samePageLink('events.html', 'EVENTS', '.hero')}
@@ -91,6 +91,9 @@ function styleNavbar() {
                         <div class="work-options nav-options">
                             <a href="${rootPath('projects.html')}" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text-single">Projects</a>
                             <a href="${rootPath('tools.html')}" data-image="${assetPath('images/Projects/cmd-interactive-mockup-landscape.jpg')}" class="reveal-text-single">Online Tools</a>
+                        </div>
+                        <div class="programs-options nav-options">
+                            <a href="${rootPath('programs.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text-single">2027 MilliPheDe Program</a>
                         </div>
                         <div class="people-options nav-options">
                             <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
