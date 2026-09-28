@@ -97,7 +97,7 @@ function styleNavbar() {
                         <div class="people-options nav-options">
                             <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
                             <a href="${rootPath('cohort.html')}" data-image="${assetPath('images/cohort/ASTRAL 2026/0F7A1077.jpg')}" class="reveal-text-single">Current ASTRAL Cohort</a>
-                            <a href="${rootPath('past_cohorts.html')}" data-image="${assetPath('images/cohort/ASTRAL 2025/astral2025.jpg')}" class="reveal-text-single">Past ASTRAL Cohort</a>
+                            <a href="${rootPath('past_cohorts.html')}" data-image="${assetPath('images/cohort/ASTRAL 2025/astral2025.jpg')}" class="reveal-text-single">Past ASTRAL Cohorts</a>
                         </div>
                     </div>
                     <div class="options-image-display">
