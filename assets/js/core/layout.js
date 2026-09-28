@@ -29,12 +29,14 @@ function styleNavbar() {
     const isPage = (page) => currentPage === page.toLowerCase();
     const isSitePage = (page) => isPage(page) && !isNestedPage;
 
-    function samePageLink(page, label, selector, revealClass = 'reveal-text') {
+    function samePageLink(page, label, selector, revealClass = 'reveal-text', image) {
+        const imageAttribute = image ? ` data-image="${assetPath(image)}"` : '';
+
         if (selector && isSitePage(page)) {
-            return `<a class="${revealClass}" onclick="goTo('${selector}');">${label}</a>`;
+            return `<a class="${revealClass}"${imageAttribute} onclick="goTo('${selector}');">${label}</a>`;
         }
 
-        return `<a class="${revealClass}" href="${rootPath(page)}">${label}</a>`;
+        return `<a class="${revealClass}"${imageAttribute} href="${rootPath(page)}">${label}</a>`;
     }
 
     function footerLink(page, label, selector) {
@@ -71,14 +73,14 @@ function styleNavbar() {
         <div class="menu">
             <div class="links">
                 <div class="categories">
-                    ${samePageLink('index.html', 'HOME', '.hero')}
-                    <a onclick="toggleOptions('programs-options');" class="reveal-text">PROGRAMS</a>
-                    <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
-                    <a onclick="toggleOptions('people-options');" class="reveal-text">PEOPLE</a>
-                    <a onclick="toggleOptions('work-options');" class="reveal-text">STUDENT WORK</a>
-                    ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single')}
-                    ${samePageLink('contact.html', 'CONTACT', '.hero')}
-                    ${samePageLink('faqs.html', 'FAQS', '.hero')}
+                    ${samePageLink('index.html', 'HOME', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/homepage-photo.jpg')}
+                    <a onclick="toggleOptions('programs-options', this);" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text">PROGRAMS</a>
+                    <a onclick="toggleOptions('about-options', this);" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text">ABOUT</a>
+                    <a onclick="toggleOptions('people-options', this);" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text">PEOPLE</a>
+                    <a onclick="toggleOptions('work-options', this);" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text">STUDENT WORK</a>
+                    ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single', 'images/Classroom-shots/0F7A1311.jpg')}
+                    ${samePageLink('contact.html', 'CONTACT', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/ns.jpg')}
+                    ${samePageLink('faqs.html', 'FAQS', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/parkes.jpg')}
                 </div>
                 <div class="submenu-container">
                     <div class="options">
@@ -276,9 +278,10 @@ function styleNavbar() {
         }
     };
 
-    window.toggleOptions = function(optionsClass) {
+    window.toggleOptions = function(optionsClass, trigger) {
         const optionsDiv = document.querySelector(`.${optionsClass}`);
         const allOptions = document.querySelectorAll('.nav-options');
+        const imageUrl = trigger ? trigger.getAttribute('data-image') : '';
         
         if (optionsDiv && optionsDiv.classList.contains('options-activated')) {
             const units = optionsDiv.querySelectorAll('.line-content, .word-content');
@@ -307,8 +310,6 @@ function styleNavbar() {
             }
         });
         
-        window.changeImage('');
-        
         if (optionsDiv) {
             optionsDiv.classList.add('options-activated');
             const units = optionsDiv.querySelectorAll('.line-content, .word-content');
@@ -323,21 +324,37 @@ function styleNavbar() {
                     ease: "power3.out"
                 });
             }
+
+            window.changeImage(imageUrl);
         }
     };
+
+    let imageRequestId = 0;
+    let imageChangeTimeout;
 
     window.changeImage = function(imageUrl) {
         const imageDisplay = document.querySelector('.options-image');
         if (!imageDisplay) return;
 
+        const requestId = ++imageRequestId;
+        window.clearTimeout(imageChangeTimeout);
         imageDisplay.classList.remove('active');
 
-        setTimeout(() => {
+        imageChangeTimeout = window.setTimeout(() => {
+            if (requestId !== imageRequestId) return;
+
             if (imageUrl) {
                 const tempImg = new Image();
                 tempImg.onload = function() {
+                    if (requestId !== imageRequestId) return;
+
                     imageDisplay.src = imageUrl;
                     imageDisplay.classList.add('active');
+                };
+                tempImg.onerror = function() {
+                    if (requestId !== imageRequestId) return;
+
+                    imageDisplay.src = '';
                 };
                 tempImg.src = imageUrl;
             } else {
@@ -381,8 +398,8 @@ function styleNavbar() {
                     }, 0.6);
             }
 
-            // Handle image display and star animation on hover
-            document.querySelectorAll('.nav-options a').forEach(link => {
+            // Handle image display for primary and submenu links, plus submenu star animation.
+            document.querySelectorAll('.menu a[data-image]').forEach(link => {
                 link.addEventListener('mouseenter', function() {
                     const imageUrl = this.getAttribute('data-image');
                     window.changeImage(imageUrl);
