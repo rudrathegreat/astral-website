@@ -29,12 +29,12 @@ function styleNavbar() {
     const isPage = (page) => currentPage === page.toLowerCase();
     const isSitePage = (page) => isPage(page) && !isNestedPage;
 
-    function samePageLink(page, label, selector) {
+    function samePageLink(page, label, selector, revealClass = 'reveal-text') {
         if (selector && isSitePage(page)) {
-            return `<a class="reveal-text" onclick="goTo('${selector}');">${label}</a>`;
+            return `<a class="${revealClass}" onclick="goTo('${selector}');">${label}</a>`;
         }
 
-        return `<a class="reveal-text" href="${rootPath(page)}">${label}</a>`;
+        return `<a class="${revealClass}" href="${rootPath(page)}">${label}</a>`;
     }
 
     function footerLink(page, label, selector) {
@@ -76,7 +76,7 @@ function styleNavbar() {
                     <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
                     <a onclick="toggleOptions('people-options');" class="reveal-text">PEOPLE</a>
                     <a onclick="toggleOptions('work-options');" class="reveal-text">STUDENT WORK</a>
-                    ${samePageLink('support.html', 'SUPPORT US', '.hero')}
+                    ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero')}
                     ${samePageLink('faqs.html', 'FAQS', '.hero')}
                 </div>
@@ -351,7 +351,7 @@ function styleNavbar() {
         setTimeout(() => {
             if (window.gsap) {
                 const navbar = document.querySelector('.navbar');
-                const categories = document.querySelectorAll('.categories .reveal-text');
+                const categories = document.querySelectorAll('.categories .reveal-text, .categories .reveal-text-single');
                 const socials = document.querySelectorAll('.social-media-section .reveal-image');
                 
                 const categoryUnits = [];
