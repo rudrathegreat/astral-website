@@ -76,7 +76,6 @@ function styleNavbar() {
                     <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
                     <a onclick="toggleOptions('people-options');" class="reveal-text">PEOPLE</a>
                     <a onclick="toggleOptions('work-options');" class="reveal-text">STUDENT WORK</a>
-                    ${samePageLink('events.html', 'EVENTS', '.hero')}
                     ${samePageLink('support.html', 'SUPPORT US', '.hero')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero')}
                     ${samePageLink('faqs.html', 'FAQS', '.hero')}
