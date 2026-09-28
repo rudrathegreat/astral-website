@@ -75,7 +75,7 @@ function styleNavbar() {
                     <a onclick="toggleOptions('about-options');" class="reveal-text">ABOUT</a>
                     ${samePageLink('programs.html', 'PROGRAMS', '.hero')}
                     <a onclick="toggleOptions('work-options');" class="reveal-text">WORK</a>
-                    <a onclick="toggleOptions('cohort-options');" class="reveal-text">COHORT</a>
+                    <a onclick="toggleOptions('people-options');" class="reveal-text">PEOPLE</a>
                     ${samePageLink('events.html', 'EVENTS', '.hero')}
                     ${samePageLink('support.html', 'SUPPORT', '.hero')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero')}
@@ -85,7 +85,6 @@ function styleNavbar() {
                     <div class="options">
                         <div class="about-options nav-options">
                             <a href="${rootPath('about.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text-single">Vision and Mission</a>
-                            <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
                             <a href="${rootPath('student-reviews.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1112.jpg')}" class="reveal-text-single">Student Reviews</a>
                             <a href="${rootPath('code-of-conduct.html')}" data-image="${assetPath('images/Classroom-shots/0F7A1132.jpg')}" class="reveal-text-single">Code of Conduct</a>
                         </div>
@@ -93,7 +92,8 @@ function styleNavbar() {
                             <a href="${rootPath('projects.html')}" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text-single">Projects</a>
                             <a href="${rootPath('tools.html')}" data-image="${assetPath('images/Projects/cmd-interactive-mockup-landscape.jpg')}" class="reveal-text-single">Online Tools</a>
                         </div>
-                        <div class="cohort-options nav-options">
+                        <div class="people-options nav-options">
+                            <a href="${rootPath('team.html')}" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text-single">Mentors</a>
                             <a href="${rootPath('cohort.html')}" data-image="${assetPath('images/cohort/ASTRAL 2026/0F7A1077.jpg')}" class="reveal-text-single">Current ASTRAL Cohort</a>
                             <a href="${rootPath('past_cohorts.html')}" data-image="${assetPath('images/cohort/ASTRAL 2025/astral2025.jpg')}" class="reveal-text-single">Past ASTRAL Cohort</a>
                         </div>
