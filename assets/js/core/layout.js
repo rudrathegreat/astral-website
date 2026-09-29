@@ -74,10 +74,10 @@ function styleNavbar() {
             <div class="links">
                 <div class="categories">
                     ${samePageLink('index.html', 'HOME', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/homepage-photo.jpg')}
-                    <a onclick="toggleOptions('programs-options');" data-submenu-trigger class="reveal-text">PROGRAMS</a>
-                    <a onclick="toggleOptions('about-options');" data-submenu-trigger class="reveal-text">ABOUT</a>
-                    <a onclick="toggleOptions('people-options');" data-submenu-trigger class="reveal-text">PEOPLE</a>
-                    <a onclick="toggleOptions('work-options');" data-submenu-trigger class="reveal-text">STUDENT WORK</a>
+                    <a onclick="toggleOptions('programs-options');" data-submenu-trigger data-submenu-target="programs-options" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text">PROGRAMS</a>
+                    <a onclick="toggleOptions('about-options');" data-submenu-trigger data-submenu-target="about-options" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text">ABOUT</a>
+                    <a onclick="toggleOptions('people-options');" data-submenu-trigger data-submenu-target="people-options" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text">PEOPLE</a>
+                    <a onclick="toggleOptions('work-options');" data-submenu-trigger data-submenu-target="work-options" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text">STUDENT WORK</a>
                     ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single', 'images/Classroom-shots/0F7A1311.jpg')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/ns.jpg')}
                     ${samePageLink('faqs.html', 'FAQS', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/parkes.jpg')}
@@ -304,7 +304,10 @@ function styleNavbar() {
                         optionsDiv.classList.remove('options-activated');
                     }
                 });
+            } else {
+                optionsDiv.classList.remove('options-activated');
             }
+            setPreviewState('idle');
             return;
         }
 
@@ -520,11 +523,19 @@ function styleNavbar() {
                 }
             }
 
-            // Submenu openers share one reversible prompt timeline. Playing and reversing
-            // from the current progress keeps rapid movement between links smooth.
+            // Submenu openers show their representative image only after their own
+            // submenu is active. Otherwise, they share the reversible instruction prompt.
             document.querySelectorAll('.menu [data-submenu-trigger]').forEach(link => {
                 link.addEventListener('mouseenter', function() {
-                    setPreviewState('prompt');
+                    const submenuTarget = this.getAttribute('data-submenu-target');
+                    const submenu = submenuTarget ? document.querySelector(`.${submenuTarget}`) : null;
+                    const imageUrl = this.getAttribute('data-image');
+
+                    if (submenu?.classList.contains('options-activated') && imageUrl) {
+                        setPreviewState('image', imageUrl);
+                    } else {
+                        setPreviewState('prompt');
+                    }
                 });
                 link.addEventListener('mouseleave', function() {
                     if (previewMode === 'prompt') {
@@ -534,7 +545,7 @@ function styleNavbar() {
             });
 
             // Keep image previews for direct and submenu destination links.
-            document.querySelectorAll('.menu a[data-image]').forEach(link => {
+            document.querySelectorAll('.menu a[data-image]:not([data-submenu-trigger])').forEach(link => {
                 link.addEventListener('mouseenter', function() {
                     const imageUrl = this.getAttribute('data-image');
                     setPreviewState('image', imageUrl);
