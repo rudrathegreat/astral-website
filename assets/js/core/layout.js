@@ -137,6 +137,9 @@ function styleNavbar() {
                     </a>
                 </div>
             </div>
+            <div class="navigation-menu-star-entrance" aria-hidden="true">
+                <img class="navigation-menu-star" src="${assetPath('icons/rainbow-star-filled.svg')}" alt="">
+            </div>
         </div>
     </div>`;
     }
@@ -425,6 +428,7 @@ function styleNavbar() {
                 const navbar = document.querySelector('.navbar');
                 const categories = document.querySelectorAll('.categories .reveal-text, .categories .reveal-text-single');
                 const announcements = document.querySelectorAll('.navigation-announcement-section .reveal-image');
+                const navigationStars = document.querySelectorAll('.navigation-menu-star-entrance');
                 
                 const categoryUnits = [];
                 categories.forEach(cat => {
@@ -435,6 +439,7 @@ function styleNavbar() {
 
                 gsap.set(categoryUnits, { y: '130%', opacity: 0 });
                 gsap.set(announcements, { y: 10, opacity: 0 });
+                gsap.set(navigationStars, { y: 10, opacity: 0 });
 
                 window.menuTimeline
                     .to(categoryUnits, {
@@ -450,7 +455,13 @@ function styleNavbar() {
                         duration: 0.6,
                         stagger: 0.08,
                         ease: "power2.out"
-                    }, 0.6);
+                    }, 0.6)
+                    .to(navigationStars, {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    }, 0.8);
 
                 const promptBackground = document.querySelector('.submenu-prompt-background');
                 const promptWords = document.querySelectorAll('.submenu-prompt-text .word-content');

@@ -2305,7 +2305,11 @@ ul li {
     position: absolute;
     bottom: 3vh;
     left: 5vw;
-    width: 90vw;
+    width: max-content;
+    max-width: 90vw;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
 }
 
 .activated .navigation-announcement-section {
@@ -2318,10 +2322,41 @@ ul li {
     display: flex;
     align-items: baseline;
     gap: 2vw;
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
     padding: 2vh 2vw;
     background: #eee;
     border-radius: 5px;
+}
+
+.navbar .navigation-menu-star-entrance {
+    position: absolute;
+    right: 5vw;
+    bottom: 3vh;
+    width: clamp(3rem, 4vw, 4rem);
+}
+
+.navbar .navigation-menu-star {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: navigation-announcement-star-spin 5s linear infinite;
+}
+
+@keyframes navigation-announcement-star-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navigation-menu-star {
+        animation: none;
+    }
 }
 
 .navigation-announcement-text {
@@ -2599,11 +2634,13 @@ body .projects .underline-button p {
     }
 
     .menu .navigation-announcement-section {
-        width: 90vw;
+        width: 100%;
+        max-width: 100%;
         left: 0;
         position: relative !important;
         bottom: auto !important;
         margin-top: 0 !important;
+        gap: 4vw;
     }
 
     .menu .navigation-announcement {
@@ -2611,6 +2648,14 @@ body .projects .underline-button p {
         flex-wrap: wrap;
         gap: 1.5vh 4vw;
         padding: 2vh 4vw;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .navbar .navigation-menu-star-entrance {
+        width: 2.75rem;
+        right: 5vw;
+        bottom: 2vh;
     }
 
     .menu .links {
