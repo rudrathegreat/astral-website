@@ -151,12 +151,18 @@ function wrapAsSingleLine(element) {
 function prepareNavbarRevealText() {
     const navbar = document.querySelector('.navbar');
     if (!navbar || navbar.dataset.astralNavbarRevealPrepared === 'true') return;
+    const splitWrappedLines = window.matchMedia('(max-width: 768px)').matches;
 
     navbar.querySelectorAll('.reveal-text').forEach(element => {
         splitTextSurgically(element);
     });
 
     navbar.querySelectorAll('.reveal-text-single').forEach(element => {
+        if (splitWrappedLines) {
+            splitTextSurgically(element);
+            return;
+        }
+
         wrapAsSingleLine(element);
     });
 

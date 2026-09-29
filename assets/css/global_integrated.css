@@ -2623,14 +2623,88 @@ body .projects .underline-button p {
         padding-left:3vw;
         padding-right:3vw;
     }
+    .menu .links {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        align-items: start;
+        gap: 4vw;
+        width: 100%;
+        height: auto;
+        flex: 1 0 auto;
+    }
+
     .menu .links .categories {
-        flex-wrap:wrap;
-        border-bottom:2px solid rgba(0,0,0,0.2);
-        padding-bottom:2vh;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .menu .categories a.mobile-nav-wrap {
+        width: 7ch;
+        max-width: 7ch;
+        white-space: normal;
+    }
+
+    .menu .categories a.mobile-nav-wrap .line-mask {
+        white-space: normal !important;
+    }
+
+    .menu .submenu-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 18rem auto;
+        width: 100%;
+        min-width: 0;
+        flex: none;
+        align-items: stretch;
+        gap: 2vh;
+    }
+
+    .menu .options {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        flex: none;
+        padding-bottom: 0 !important;
+    }
+
+    .menu .nav-options {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        visibility: hidden;
+    }
+
+    .menu .nav-options.options-activated {
+        opacity: 1;
+        display: flex;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .menu .nav-options a {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .menu .nav-options .line-mask {
+        white-space: normal !important;
     }
 
     .menu .options-image-display {
-        display:none;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        flex: none;
     }
 
     .menu .navigation-announcement-section {
@@ -2639,8 +2713,9 @@ body .projects .underline-button p {
         left: 0;
         position: relative !important;
         bottom: auto !important;
-        margin-top: 0 !important;
+        margin-top: 3vh !important;
         gap: 4vw;
+        flex: none;
     }
 
     .menu .navigation-announcement {
@@ -2648,29 +2723,30 @@ body .projects .underline-button p {
         flex-wrap: wrap;
         gap: 1.5vh 4vw;
         padding: 2vh 4vw;
+        width: 100%;
         min-width: 0;
-        flex: 1 1 auto;
+        flex: none;
     }
 
     .navbar .navigation-menu-star-entrance {
         display: none;
     }
 
-    .menu .links {
-        gap:3vh;
-    }
-
     .menu {
-        min-height: auto !important;
+        min-height: 0 !important;
         height: auto !important;
+        max-height: 100vh;
+        max-height: 100dvh;
+        overflow-y: auto;
         padding-top: 12vh !important;
         padding-bottom: 2vh !important;
     }
 
     .menu .categories,
-    .menu .options {
+    .menu .options,
+    .menu .nav-options {
         padding-top: 0 !important;
-        gap: 1.5vh !important;
+        gap: 2.25vh !important;
     }
 
     .navbar .menu .navigation-announcement-section .underline-button p {

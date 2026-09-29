@@ -77,8 +77,8 @@ function styleNavbar() {
                     <a onclick="toggleOptions('programs-options');" data-submenu-trigger data-submenu-target="programs-options" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text">PROGRAMS</a>
                     <a onclick="toggleOptions('about-options');" data-submenu-trigger data-submenu-target="about-options" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text">ABOUT</a>
                     <a onclick="toggleOptions('people-options');" data-submenu-trigger data-submenu-target="people-options" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text">PEOPLE</a>
-                    <a onclick="toggleOptions('work-options');" data-submenu-trigger data-submenu-target="work-options" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text">STUDENT WORK</a>
-                    ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single', 'images/Classroom-shots/0F7A1311.jpg')}
+                    <a onclick="toggleOptions('work-options');" data-submenu-trigger data-submenu-target="work-options" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text mobile-nav-wrap">STUDENT WORK</a>
+                    ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single mobile-nav-wrap', 'images/Classroom-shots/0F7A1311.jpg')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/ns.jpg')}
                     ${samePageLink('faqs.html', 'FAQS', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/parkes.jpg')}
                 </div>
