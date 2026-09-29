@@ -1998,7 +1998,7 @@ ul li {
     transition-delay: 0.2s;
     display: flex;
     flex-direction: column;
-    min-height: 75vh;
+    min-height: 67vh;
 }
 
 .menu .links {
@@ -2297,62 +2297,39 @@ ul li {
     transform: translateY(-50%) scale(1);
 }
 
-/* Social Media Section */
-.social-media-section {
-    display: flex;
-    gap: 3vw;
-    padding: 0 5vw 2vh;
-    border-top: 1px solid black;
+/* Navigation application announcement */
+.navigation-announcement-section {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     transition-delay: 0s;
-    position:absolute;
+    position: absolute;
     bottom: 3vh;
-    left:0;
-    width:100vw;
-    padding-top:4vh;
-    align-items: center;
+    left: 5vw;
+    width: 90vw;
 }
 
-.activated .social-media-section {
+.activated .navigation-announcement-section {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     transition-delay: 0.3s;
 }
 
-.social-link {
-    color: black;
-    text-decoration: none;
-    font-family: 'Space Mono', sans-serif;
-    font-size: 0.9em;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    color: #6A6BF4;
-}
-
-/* Application Status Pill */
-.application-status {
-    margin-left: auto;
-    background: #52D380;
-    padding: 1.5vh 1.5vw;
-    border-radius: 100px;
+.navigation-announcement {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: max-content;
-    align-self: center;
-    font-size:var(--ascii-font-size);
+    align-items: baseline;
+    gap: 2vw;
+    width: 100%;
+    padding: 2vh 2vw;
+    background: #eee;
+    border-radius: 5px;
 }
 
-.application-status p {
-    color: white !important;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.9em;
-    text-transform: uppercase !important;
+.navigation-announcement-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--new-main-text-size);
+    line-height: 1.4;
     margin: 0;
-    line-height: 1;
+    text-transform: none;
 }
 
 /* Underline Button Styles */
@@ -2621,20 +2598,19 @@ body .projects .underline-button p {
         display:none;
     }
 
-    .menu .social-media-section {
-        flex-wrap:wrap;
-        width:90vw;
-        left:0vw;
-        padding-left:0;
-        border-top: 2px solid rgba(0,0,0,0.2);
-        padding-top:2vh;
+    .menu .navigation-announcement-section {
+        width: 90vw;
+        left: 0;
         position: relative !important;
         bottom: auto !important;
-        margin-top: 15vh !important;
+        margin-top: 0 !important;
     }
 
-    .menu .social-media-section .application-status {
-        display:none;
+    .menu .navigation-announcement {
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 1.5vh 4vw;
+        padding: 2vh 4vw;
     }
 
     .menu .links {
@@ -2654,19 +2630,19 @@ body .projects .underline-button p {
         gap: 1.5vh !important;
     }
 
-    .navbar .menu .social-media-section .underline-button p {
+    .navbar .menu .navigation-announcement-section .underline-button p {
         font-size:0.9em !important;
     }
 
-    .navbar .menu .social-media-section .underline-button img {
+    .navbar .menu .navigation-announcement-section .underline-button img {
         height: 0.8em !important;
     }
 
-    .navbar .menu .social-media-section .underline-button div {
+    .navbar .menu .navigation-announcement-section .underline-button div {
         height:calc(0.9em * 1.25) !important;
     }
 
-    .navbar .menu .social-media-section .underline-button .img-indicator {
+    .navbar .menu .navigation-announcement-section .underline-button .img-indicator {
         height: 0.8em !important;
     }
 

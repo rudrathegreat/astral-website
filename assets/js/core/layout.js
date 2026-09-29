@@ -120,69 +120,21 @@ function styleNavbar() {
                     </div>
                 </div>
             </div>
-            <div class="social-media-section">
-                <a href="https://www.linkedin.com/company/astral-institute" class="social-link underline-button reveal-image">
-                    <div>
-                        <div class="text-indicator">
-                            <p>LinkedIn</p>
-                            <p>LinkedIn</p>
+            <div class="navigation-announcement-section">
+                <div class="navigation-announcement reveal-image">
+                    <p class="navigation-announcement-text">Applications are now open for the 2027 MilliPheDe Program.</p>
+                    <a href="${rootPath('programs.html')}" class="announcement-link underline-button">
+                        <div>
+                            <div class="text-indicator">
+                                <p>Learn More</p>
+                                <p>Learn More</p>
+                            </div>
+                            <div class="img-indicator">
+                                <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                                <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                            </div>
                         </div>
-                        <div class="img-indicator">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                        </div>
-                    </div>
-                </a>
-                <a href="https://discord.gg/Yp6v8xcrT9" class="social-link underline-button reveal-image">
-                    <div>
-                        <div class="text-indicator">
-                            <p>Discord</p>
-                            <p>Discord</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/astral.institute/" class="social-link underline-button reveal-image">
-                    <div>
-                        <div class="text-indicator">
-                            <p>Instagram</p>
-                            <p>Instagram</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                        </div>
-                    </div>
-                </a>
-                <a href="mailto:mbailes@swin.edu.au" class="social-link underline-button reveal-image">
-                    <div>
-                        <div class="text-indicator">
-                            <p>Email</p>
-                            <p>Email</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                        </div>
-                    </div>
-                </a>
-                <a href="https://astralinstitute.fillout.com/astral-2027-application-form" class="social-link underline-button reveal-image">
-                    <div>
-                        <div class="text-indicator">
-                            <p>Apply Now</p>
-                            <p>Apply Now</p>
-                        </div>
-                        <div class="img-indicator">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                        </div>
-                    </div>
-                </a>
-                <div class="application-status reveal-image">
-                    <p>Applications Open</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -472,7 +424,7 @@ function styleNavbar() {
             if (window.gsap) {
                 const navbar = document.querySelector('.navbar');
                 const categories = document.querySelectorAll('.categories .reveal-text, .categories .reveal-text-single');
-                const socials = document.querySelectorAll('.social-media-section .reveal-image');
+                const announcements = document.querySelectorAll('.navigation-announcement-section .reveal-image');
                 
                 const categoryUnits = [];
                 categories.forEach(cat => {
@@ -482,7 +434,7 @@ function styleNavbar() {
                 window.menuTimeline = gsap.timeline({ paused: true });
 
                 gsap.set(categoryUnits, { y: '130%', opacity: 0 });
-                gsap.set(socials, { y: 10, opacity: 0 });
+                gsap.set(announcements, { y: 10, opacity: 0 });
 
                 window.menuTimeline
                     .to(categoryUnits, {
@@ -492,7 +444,7 @@ function styleNavbar() {
                         stagger: 0.05,
                         ease: "power3.out"
                     }, 0.35)
-                    .to(socials, {
+                    .to(announcements, {
                         y: 0,
                         opacity: 1,
                         duration: 0.6,
