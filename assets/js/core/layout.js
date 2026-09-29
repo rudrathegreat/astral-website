@@ -74,10 +74,10 @@ function styleNavbar() {
             <div class="links">
                 <div class="categories">
                     ${samePageLink('index.html', 'HOME', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/homepage-photo.jpg')}
-                    <a onclick="toggleOptions('programs-options', this);" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text">PROGRAMS</a>
-                    <a onclick="toggleOptions('about-options', this);" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text">ABOUT</a>
-                    <a onclick="toggleOptions('people-options', this);" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text">PEOPLE</a>
-                    <a onclick="toggleOptions('work-options', this);" data-image="${assetPath('images/Projects/gravitational-waves.jpg')}" class="reveal-text">STUDENT WORK</a>
+                    <a onclick="toggleOptions('programs-options');" data-submenu-trigger class="reveal-text">PROGRAMS</a>
+                    <a onclick="toggleOptions('about-options');" data-submenu-trigger class="reveal-text">ABOUT</a>
+                    <a onclick="toggleOptions('people-options');" data-submenu-trigger class="reveal-text">PEOPLE</a>
+                    <a onclick="toggleOptions('work-options');" data-submenu-trigger class="reveal-text">STUDENT WORK</a>
                     ${samePageLink('support.html', 'SUPPORT US', '.hero', 'reveal-text-single', 'images/Classroom-shots/0F7A1311.jpg')}
                     ${samePageLink('contact.html', 'CONTACT', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/ns.jpg')}
                     ${samePageLink('faqs.html', 'FAQS', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/parkes.jpg')}
@@ -102,8 +102,18 @@ function styleNavbar() {
                             <a href="${rootPath('past_cohorts.html')}" data-image="${assetPath('images/cohort/ASTRAL 2025/astral2025.jpg')}" class="reveal-text-single">Past ASTRAL Cohorts</a>
                         </div>
                     </div>
-                    <div class="options-image-display">
+                    <div class="options-image-display" aria-hidden="true">
                         <img src="" alt="" class="options-image">
+                        <div class="submenu-hover-prompt">
+                            <div class="submenu-prompt-background"></div>
+                            <p class="submenu-prompt-text">
+                                <span class="word-mask"><span class="word-content">Click</span></span>
+                                <span class="word-mask"><span class="word-content">link</span></span>
+                                <span class="word-mask"><span class="word-content">to</span></span>
+                                <span class="word-mask"><span class="word-content">open</span></span>
+                                <span class="word-mask"><span class="word-content">submenu.</span></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,14 +284,13 @@ function styleNavbar() {
             if (window.gsap) {
                 gsap.set(subUnits, { y: '130%', opacity: 0 });
             }
-            window.changeImage('');
+            resetPreviewState();
         }
     };
 
-    window.toggleOptions = function(optionsClass, trigger) {
+    window.toggleOptions = function(optionsClass) {
         const optionsDiv = document.querySelector(`.${optionsClass}`);
         const allOptions = document.querySelectorAll('.nav-options');
-        const imageUrl = trigger ? trigger.getAttribute('data-image') : '';
         
         if (optionsDiv && optionsDiv.classList.contains('options-activated')) {
             const units = optionsDiv.querySelectorAll('.line-content, .word-content');
@@ -296,7 +305,6 @@ function styleNavbar() {
                     }
                 });
             }
-            window.changeImage('');
             return;
         }
 
@@ -324,20 +332,109 @@ function styleNavbar() {
                     ease: "power3.out"
                 });
             }
-
-            window.changeImage(imageUrl);
         }
     };
 
     let imageRequestId = 0;
     let imageChangeTimeout;
+    let previewMode = 'idle';
+    let submenuPromptTimeline;
+
+    // Matches the standard CSS `ease` curve: cubic-bezier(0.25, 0.1, 0.25, 1).
+    function createCssEase(x1, y1, x2, y2) {
+        const cx = 3 * x1;
+        const bx = 3 * (x2 - x1) - cx;
+        const ax = 1 - cx - bx;
+        const cy = 3 * y1;
+        const by = 3 * (y2 - y1) - cy;
+        const ay = 1 - cy - by;
+        const sampleX = (time) => ((ax * time + bx) * time + cx) * time;
+        const sampleY = (time) => ((ay * time + by) * time + cy) * time;
+        const sampleDerivativeX = (time) => (3 * ax * time + 2 * bx) * time + cx;
+
+        return (progress) => {
+            let time = progress;
+
+            for (let index = 0; index < 8; index += 1) {
+                const error = sampleX(time) - progress;
+                const derivative = sampleDerivativeX(time);
+
+                if (Math.abs(error) < 0.000001 || Math.abs(derivative) < 0.000001) break;
+                time -= error / derivative;
+            }
+
+            return sampleY(Math.min(1, Math.max(0, time)));
+        };
+    }
+
+    const submenuPromptEase = createCssEase(0.25, 0.1, 0.25, 1);
+
+    function cancelPendingImage() {
+        imageRequestId += 1;
+        window.clearTimeout(imageChangeTimeout);
+    }
+
+    function showSubmenuPrompt() {
+        const prompt = document.querySelector('.submenu-hover-prompt');
+
+        if (submenuPromptTimeline) {
+            submenuPromptTimeline.timeScale(1).play();
+        } else if (prompt) {
+            prompt.classList.add('active');
+        }
+    }
+
+    function hideSubmenuPrompt(immediate = false) {
+        const prompt = document.querySelector('.submenu-hover-prompt');
+
+        if (submenuPromptTimeline) {
+            if (immediate) {
+                submenuPromptTimeline.pause(0);
+            } else {
+                submenuPromptTimeline.timeScale(1).reverse();
+            }
+        } else if (prompt) {
+            prompt.classList.remove('active');
+        }
+    }
+
+    function setPreviewState(mode, imageUrl = '') {
+        previewMode = mode;
+
+        if (mode === 'prompt') {
+            window.changeImage('');
+            showSubmenuPrompt();
+            return;
+        }
+
+        hideSubmenuPrompt();
+
+        if (mode === 'image' && imageUrl) {
+            window.changeImage(imageUrl);
+        } else {
+            window.changeImage('');
+        }
+    }
+
+    function resetPreviewState() {
+        const imageDisplay = document.querySelector('.options-image');
+
+        previewMode = 'idle';
+        cancelPendingImage();
+        hideSubmenuPrompt(true);
+
+        if (imageDisplay) {
+            imageDisplay.classList.remove('active');
+            imageDisplay.src = '';
+        }
+    }
 
     window.changeImage = function(imageUrl) {
         const imageDisplay = document.querySelector('.options-image');
         if (!imageDisplay) return;
 
-        const requestId = ++imageRequestId;
-        window.clearTimeout(imageChangeTimeout);
+        cancelPendingImage();
+        const requestId = imageRequestId;
         imageDisplay.classList.remove('active');
 
         imageChangeTimeout = window.setTimeout(() => {
@@ -396,13 +493,51 @@ function styleNavbar() {
                         stagger: 0.08,
                         ease: "power2.out"
                     }, 0.6);
+
+                const promptBackground = document.querySelector('.submenu-prompt-background');
+                const promptWords = document.querySelectorAll('.submenu-prompt-text .word-content');
+                const submenuPrompt = document.querySelector('.submenu-hover-prompt');
+
+                if (promptBackground && promptWords.length) {
+                    submenuPrompt?.classList.add('gsap-ready');
+                    gsap.set(promptBackground, { scaleY: 0, transformOrigin: 'bottom center' });
+                    gsap.set(promptWords, { y: '130%', opacity: 0 });
+
+                    submenuPromptTimeline = gsap.timeline({ paused: true });
+                    submenuPromptTimeline
+                        .to(promptBackground, {
+                            scaleY: 1,
+                            duration: 0.75,
+                            ease: submenuPromptEase
+                        }, 0)
+                        .to(promptWords, {
+                            y: '0%',
+                            opacity: 1,
+                            duration: 0.5,
+                            stagger: 0.05,
+                            ease: submenuPromptEase
+                        }, 0.16);
+                }
             }
 
-            // Handle image display for primary and submenu links, plus submenu star animation.
+            // Submenu openers share one reversible prompt timeline. Playing and reversing
+            // from the current progress keeps rapid movement between links smooth.
+            document.querySelectorAll('.menu [data-submenu-trigger]').forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    setPreviewState('prompt');
+                });
+                link.addEventListener('mouseleave', function() {
+                    if (previewMode === 'prompt') {
+                        setPreviewState('idle');
+                    }
+                });
+            });
+
+            // Keep image previews for direct and submenu destination links.
             document.querySelectorAll('.menu a[data-image]').forEach(link => {
                 link.addEventListener('mouseenter', function() {
                     const imageUrl = this.getAttribute('data-image');
-                    window.changeImage(imageUrl);
+                    setPreviewState('image', imageUrl);
                     this.classList.add('hovered');
                 });
                 link.addEventListener('mouseleave', function() {

@@ -2026,27 +2026,92 @@ ul li {
 }
 
 .options-image-display {
-    /* flex: 1; */
-    display: flex;
-    /* align-items: center; */
-    justify-content: flex-end;
-    padding-right: 0;
-    height:max-content;
+    position: relative;
+    flex: 0 0 25vw;
+    width: 25vw;
+    height: 30vh;
+    overflow: hidden;
     border-radius: 7px;
-    background:#eee;
+    background: #eee;
 }
 
 .options-image {
-    width: 25vw !important;
-    height: 30vh !important;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: inherit;
     background: #ddd;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
 
 .options-image.active {
+    opacity: 1;
+}
+
+.submenu-hover-prompt {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+    pointer-events: none;
+}
+
+.submenu-prompt-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #6A6BF4;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    will-change: transform;
+}
+
+.submenu-prompt-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.25em;
+    line-height: 1.35;
+    text-align: center;
+    text-transform: none !important;
+}
+
+.submenu-prompt-text .word-mask {
+    margin-right: 0.35em;
+}
+
+.submenu-prompt-text .word-mask:last-child {
+    margin-right: 0;
+}
+
+/* CSS fallback for pages where GSAP is unavailable. */
+.submenu-prompt-text .word-content {
+    transform: translateY(130%);
+    opacity: 0;
+}
+
+.submenu-hover-prompt:not(.gsap-ready) .submenu-prompt-background {
+    transition: transform 0.75s ease;
+}
+
+.submenu-hover-prompt:not(.gsap-ready) .word-content {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.submenu-hover-prompt.active .submenu-prompt-background {
+    transform: scaleY(1);
+}
+
+.submenu-hover-prompt.active .word-content {
+    transform: translateY(0);
     opacity: 1;
 }
 
