@@ -120,25 +120,27 @@ function styleNavbar() {
                     </div>
                 </div>
             </div>
-            <div class="navigation-announcement-section">
-                <div class="navigation-announcement reveal-image">
-                    <p class="navigation-announcement-text">Applications are now open for the 2027 MilliPheDe Program.</p>
-                    <a href="${rootPath('programs.html')}" class="announcement-link underline-button">
-                        <div>
-                            <div class="text-indicator">
-                                <p>Learn More</p>
-                                <p>Learn More</p>
+            <div class="navigation-bottom-row">
+                <div class="navigation-announcement-section">
+                    <div class="navigation-announcement reveal-image">
+                        <p class="navigation-announcement-text">Applications are now open for the 2027 MilliPheDe Program.</p>
+                        <a href="${rootPath('programs.html')}" class="announcement-link underline-button">
+                            <div>
+                                <div class="text-indicator">
+                                    <p>Learn More</p>
+                                    <p>Learn More</p>
+                                </div>
+                                <div class="img-indicator">
+                                    <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                                    <img src="${assetPath('icons/arrow-link.svg')}" alt="">
+                                </div>
                             </div>
-                            <div class="img-indicator">
-                                <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                                <img src="${assetPath('icons/arrow-link.svg')}" alt="">
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="navigation-menu-star-entrance" aria-hidden="true">
-                <img class="navigation-menu-star" src="${assetPath('icons/rainbow-star-filled.svg')}" alt="">
+                <div class="navigation-menu-star-entrance" aria-hidden="true">
+                    <img class="navigation-menu-star" src="${assetPath('icons/rainbow-star-filled.svg')}" alt="">
+                </div>
             </div>
         </div>
     </div>`;

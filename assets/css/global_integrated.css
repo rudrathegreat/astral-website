@@ -2298,13 +2298,20 @@ ul li {
 }
 
 /* Navigation application announcement */
+.navigation-bottom-row {
+    position: absolute;
+    right: 5vw;
+    bottom: 3vh;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .navigation-announcement-section {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     transition-delay: 0s;
-    position: absolute;
-    bottom: 3vh;
-    left: 5vw;
     width: max-content;
     max-width: 90vw;
     display: flex;
@@ -2330,9 +2337,7 @@ ul li {
 }
 
 .navbar .navigation-menu-star-entrance {
-    position: absolute;
-    right: 5vw;
-    bottom: 3vh;
+    flex: 0 0 auto;
     width: clamp(3rem, 4vw, 4rem);
 }
 
@@ -2704,6 +2709,13 @@ body .projects .underline-button p {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
+        flex: none;
+    }
+
+    .menu .navigation-bottom-row {
+        position: static;
+        display: block;
+        width: 100%;
         flex: none;
     }
 
