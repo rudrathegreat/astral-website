@@ -249,57 +249,99 @@ function styleNavbar() {
     window.toggleOptions = function(optionsClass) {
         const optionsDiv = document.querySelector(`.${optionsClass}`);
         const allOptions = document.querySelectorAll('.nav-options');
+        const trigger = getSubmenuTrigger(optionsClass);
+        const triggerImage = trigger?.getAttribute('data-image') || '';
+
+        if (!optionsDiv) return;
         
-        if (optionsDiv && optionsDiv.classList.contains('options-activated')) {
+        if (activeSubmenuTarget === optionsClass) {
+            activeSubmenuTarget = '';
+
             const units = optionsDiv.querySelectorAll('.line-content, .word-content');
             if (window.gsap) {
+                gsap.killTweensOf(units);
                 gsap.to(units, {
                     y: '130%',
                     opacity: 0,
                     duration: 0.4,
                     ease: "power3.in",
                     onComplete: () => {
-                        optionsDiv.classList.remove('options-activated');
+                        if (activeSubmenuTarget !== optionsClass) {
+                            optionsDiv.classList.remove('options-activated');
+                        }
                     }
                 });
             } else {
                 optionsDiv.classList.remove('options-activated');
             }
-            setPreviewState('idle');
+            setStablePreview(triggerImage);
             return;
         }
+
+        activeSubmenuTarget = optionsClass;
 
         allOptions.forEach(opt => {
             if (opt.classList.contains('options-activated')) {
                 const units = opt.querySelectorAll('.line-content, .word-content');
                 if (window.gsap) {
+                    gsap.killTweensOf(units);
                     gsap.set(units, { y: '130%', opacity: 0 });
                 }
                 opt.classList.remove('options-activated');
             }
         });
         
-        if (optionsDiv) {
-            optionsDiv.classList.add('options-activated');
-            const units = optionsDiv.querySelectorAll('.line-content, .word-content');
-            
-            if (window.gsap) {
-                gsap.set(units, { y: '130%', opacity: 0 });
-                gsap.to(units, {
-                    y: '0%',
-                    opacity: 1,
-                    duration: 0.6,
-                    stagger: 0.04,
-                    ease: "power3.out"
-                });
-            }
+        optionsDiv.classList.add('options-activated');
+        const units = optionsDiv.querySelectorAll('.line-content, .word-content');
+
+        if (window.gsap) {
+            gsap.killTweensOf(units);
+            gsap.set(units, { y: '130%', opacity: 0 });
+            gsap.to(units, {
+                y: '0%',
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.04,
+                ease: "power3.out"
+            });
         }
+
+        setStablePreview(triggerImage);
     };
 
     let imageRequestId = 0;
     let imageChangeTimeout;
-    let previewMode = 'idle';
     let submenuPromptTimeline;
+    let activeSubmenuTarget = '';
+    let stablePreviewImage = '';
+
+    function getSubmenuTrigger(optionsClass) {
+        return Array.from(document.querySelectorAll('.menu [data-submenu-trigger]')).find((trigger) => {
+            return trigger.getAttribute('data-submenu-target') === optionsClass;
+        }) || null;
+    }
+
+    function getActiveSubmenuImage() {
+        if (!activeSubmenuTarget) return '';
+
+        return getSubmenuTrigger(activeSubmenuTarget)?.getAttribute('data-image') || '';
+    }
+
+    function setStablePreview(imageUrl = '') {
+        stablePreviewImage = imageUrl;
+        setPreviewState(imageUrl ? 'image' : 'idle', imageUrl);
+    }
+
+    function restoreStablePreview(fallbackImage = '') {
+        setStablePreview(getActiveSubmenuImage() || fallbackImage || stablePreviewImage);
+    }
+
+    function preloadImage(imageUrl) {
+        if (!imageUrl) return;
+
+        const image = new Image();
+        image.src = imageUrl;
+    }
 
     // Matches the standard CSS `ease` curve: cubic-bezier(0.25, 0.1, 0.25, 1).
     function createCssEase(x1, y1, x2, y2) {
@@ -360,10 +402,7 @@ function styleNavbar() {
     }
 
     function setPreviewState(mode, imageUrl = '') {
-        previewMode = mode;
-
         if (mode === 'prompt') {
-            window.changeImage('');
             showSubmenuPrompt();
             return;
         }
@@ -380,9 +419,11 @@ function styleNavbar() {
     function resetPreviewState() {
         const imageDisplay = document.querySelector('.options-image');
 
-        previewMode = 'idle';
+        activeSubmenuTarget = '';
+        stablePreviewImage = '';
         cancelPendingImage();
         hideSubmenuPrompt(true);
+        document.querySelectorAll('.menu a.hovered').forEach(link => link.classList.remove('hovered'));
 
         if (imageDisplay) {
             imageDisplay.classList.remove('active');
@@ -395,6 +436,12 @@ function styleNavbar() {
         if (!imageDisplay) return;
 
         cancelPendingImage();
+
+        if (imageUrl && imageDisplay.getAttribute('src') === imageUrl) {
+            imageDisplay.classList.add('active');
+            return;
+        }
+
         const requestId = imageRequestId;
         imageDisplay.classList.remove('active');
 
@@ -489,24 +536,25 @@ function styleNavbar() {
                 }
             }
 
-            // Submenu openers show their representative image only after their own
-            // submenu is active. Otherwise, they share the reversible instruction prompt.
+            // Submenu openers share the prompt unless they already own the active submenu.
+            // Their images are preloaded so the correct stable preview is ready when the
+            // prompt reverses or the pointer leaves.
             document.querySelectorAll('.menu [data-submenu-trigger]').forEach(link => {
                 link.addEventListener('mouseenter', function() {
                     const submenuTarget = this.getAttribute('data-submenu-target');
-                    const submenu = submenuTarget ? document.querySelector(`.${submenuTarget}`) : null;
-                    const imageUrl = this.getAttribute('data-image');
+                    const imageUrl = this.getAttribute('data-image') || '';
 
-                    if (submenu?.classList.contains('options-activated') && imageUrl) {
-                        setPreviewState('image', imageUrl);
+                    preloadImage(imageUrl);
+
+                    if (submenuTarget === activeSubmenuTarget && imageUrl) {
+                        setStablePreview(imageUrl);
                     } else {
                         setPreviewState('prompt');
                     }
                 });
                 link.addEventListener('mouseleave', function() {
-                    if (previewMode === 'prompt') {
-                        setPreviewState('idle');
-                    }
+                    const imageUrl = this.getAttribute('data-image') || '';
+                    restoreStablePreview(imageUrl);
                 });
             });
 
@@ -519,6 +567,7 @@ function styleNavbar() {
                 });
                 link.addEventListener('mouseleave', function() {
                     this.classList.remove('hovered');
+                    restoreStablePreview(this.getAttribute('data-image') || '');
                 });
             });
 

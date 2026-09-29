@@ -2653,9 +2653,7 @@ body .projects .underline-button p {
     }
 
     .navbar .navigation-menu-star-entrance {
-        width: 2.75rem;
-        right: 5vw;
-        bottom: 2vh;
+        display: none;
     }
 
     .menu .links {
