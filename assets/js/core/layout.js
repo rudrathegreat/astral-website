@@ -73,7 +73,7 @@ function styleNavbar() {
         <div class="menu">
             <div class="links">
                 <div class="categories">
-                    ${samePageLink('index.html', 'HOME', '.hero', 'reveal-text', 'images/Miscellaneous/Carl-images/homepage-photo.jpg')}
+                    ${samePageLink('index.html', 'HOME', '.hero', 'reveal-text', 'images/Miscellaneous/Placeholders/astral-website.jpg')}
                     <a onclick="toggleOptions('programs-options');" data-submenu-trigger data-submenu-target="programs-options" data-image="${assetPath('images/Classroom-shots/0F7A1278.jpg')}" class="reveal-text">PROGRAMS</a>
                     <a onclick="toggleOptions('about-options');" data-submenu-trigger data-submenu-target="about-options" data-image="${assetPath('images/Classroom-shots/0F7A1294.jpg')}" class="reveal-text">ABOUT</a>
                     <a onclick="toggleOptions('people-options');" data-submenu-trigger data-submenu-target="people-options" data-image="${assetPath('images/Mentors/all-mentors.jpg')}" class="reveal-text">PEOPLE</a>
