@@ -123,7 +123,7 @@ function styleNavbar() {
             <div class="navigation-bottom-row">
                 <div class="navigation-announcement-section">
                     <div class="navigation-announcement reveal-image">
-                        <p class="navigation-announcement-text">Applications are now open for the 2027 MilliPheDe Program.</p>
+                        <p class="navigation-announcement-text">Applications are now open for the 2027 MilliPheDe Program!</p>
                         <a href="${rootPath('programs.html')}" class="announcement-link underline-button">
                             <div>
                                 <div class="text-indicator">

@@ -2370,6 +2370,11 @@ ul li {
     line-height: 1.4;
     margin: 0;
     text-transform: none;
+    transform: translateY(0.5vh);
+}
+
+.navigation-announcement .underline-button {
+    transform: translateY(0.5vh);
 }
 
 /* Underline Button Styles */
