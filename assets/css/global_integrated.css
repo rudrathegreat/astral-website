@@ -379,7 +379,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 5em;
+    font-size: min(4em, 4.5vw);
     font-weight: 300;
     width: 85%;
     margin-bottom: 3vh;
@@ -1998,7 +1998,7 @@ ul li {
     transition-delay: 0.2s;
     display: flex;
     flex-direction: column;
-    min-height: 67vh;
+    min-height: 69vh;
 }
 
 .menu .links {
